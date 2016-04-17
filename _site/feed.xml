@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+<title type="text">My SCARLET</title>
+<generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
+<link rel="self" type="application/atom+xml" href="/feed.xml" />
+<link rel="alternate" type="text/html" href="" />
+<updated>2016-04-17T15:19:45+00:00</updated>
+<id>/</id>
+<author>
+  <name>Haojie PAN</name>
+  <uri>/</uri>
+  <email>3140102237@zju.edu.cn</email>
+</author>
+
+</feed>
