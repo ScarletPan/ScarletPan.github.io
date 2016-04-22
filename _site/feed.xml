@@ -4,12 +4,53 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2016-04-17T15:19:45+00:00</updated>
+<updated>2016-04-22T15:42:15+00:00</updated>
 <id>/</id>
 <author>
   <name>Haojie PAN</name>
   <uri>/</uri>
   <email>3140102237@zju.edu.cn</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Reasons to write]]></title>
+ <link rel="alternate" type="text/html" href="/reasons/" />
+  <id>/reasons</id>
+  <published>2016-04-22T00:00:00+00:00</published>
+  <updated>2016-04-22T00:00:00+00:00</updated>
+  <author>
+    <name>Haojie PAN</name>
+    <uri></uri>
+    <email>3140102237@zju.edu.cn</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;&amp;emsp;&amp;emsp;最早想写博客的想法是15年我开始学Python那会，那时候刚接触网路爬虫，需要调用不同的库，beautiful soap, requests, selenium, sqlite3, etc. 当时就觉得这么多api无法靠记来完成，而在实际coding的过程中，遇到了一些官方文档中无法解决的问题，各种查询之后才debug成功，但由于没有记录下来，导致以后再次遇到忘记了解决之法。&lt;/p&gt;
+
+&lt;p&gt;&amp;emsp;&amp;emsp;比如Sqlite3当初使用过程中有这么一个句子：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;cursor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SELECT name FROM db WHERE id = ?&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;emsp;&amp;emsp;当初怎么都debug不出来到底为何错了（因为还没学数据库），最后去stackoverflow搜罗了好久答案才知道就算只有一个元素也要以元组的方式插入：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;cursor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SELECT name FROM db WHERE id = ?&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;emsp;&amp;emsp;然而在到后来在用Python通信mysql的时候又犯了同样的错误，又花费了一点时间，于是想想如果有个专门的平台给自己做记录用还是不错的。&lt;/p&gt;
+
+&lt;p&gt;&amp;emsp;&amp;emsp;后来我用上了印象笔记，尽管在生活上整理一些琐碎的事务它的确帮了我很大的忙，但实话说想要记录技术博文的话实在不合我的胃口。&lt;/p&gt;
+
+&lt;p&gt;&amp;emsp;&amp;emsp;另外就是一些专门的国内博客网站，曾经生过在上面写博文的想法，但是看到那个网页玲琅满目的条目和广告，作为一个对界面美观和整洁度有一定洁癖的人来说，的确是难以忍受的。于是我又想去学python的django等框架、学一些前端的东西然后建立一个独立博客，但由于不是自己的专业喜好以及平时学业的繁忙，一直都没有付诸实践。&lt;/p&gt;
+
+&lt;p&gt;&amp;emsp;&amp;emsp;最后是在查询RNN相关博文时看到了 &lt;a href=&quot;http://colah.github.io/&quot;&gt;colah的博客&lt;/a&gt;，非常整洁和美观，又看到了github.io的后缀名，知道了github托管静态网页，就觉得这正是我想要的。&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&amp;emsp;&amp;emsp;所以这个博客主要是记录我在学习中所碰到的一些情况，为未来碰到同样情况的我自己和一些能够发现这个博客的人做一个前车之鉴吧。&lt;/p&gt;
+
+&lt;p&gt;&amp;emsp;&amp;emsp;同时也会记录一些生活的点滴，做一个伪文学爱好者。&lt;/p&gt;
+
+&lt;p&gt;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;2016/04/22&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/reasons/&quot;&gt;Reasons to write&lt;/a&gt; was originally published by Haojie PAN at &lt;a href=&quot;&quot;&gt;My SCARLET&lt;/a&gt; on April 22, 2016.&lt;/p&gt;
+  </content>
+</entry>
 
 </feed>

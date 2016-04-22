@@ -38,7 +38,7 @@ bing_verify:
 timezone:    China/Beijing
 future:      true
 highlighter: rouge
-markdown:    kramdown
+markdown:    redcarpet
 gems:
   - jekyll-sitemap
   - jekyll-paginate
@@ -54,11 +54,17 @@ permalink:   /:categories/:title/
 paginate: 5
 
 kramdown:
-  auto_ids: true
-  footnote_nr: 1
-  entity_output: as_char
-  toc_levels: 1..6
-  enable_coderay: false
+  input:                     GFM
+  auto_ids:                  true
+  footnote_nr:               1
+  entity_output:             as_char
+  toc_levels:                1..6
+  smart_quotes:              lsquo,rsquo,ldquo,rdquo
+  enable_coderay:            false
+  hard_wrap:                 false
+  syntax_highlighter:        rouge
+  transliterated_header_ids: true
+  footnote_backlink:         "&#8617;&#xfe0e;"
 
   coderay:
     coderay_line_numbers: nil
@@ -79,3 +85,5 @@ titlecase: true
 
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
+
+encoding: utf-8
