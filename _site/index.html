@@ -151,25 +151,45 @@ Reading time ~1 minute
 
 <p>&emsp;&emsp;由于在搜集方法的过程中很多人都只讲了如何静态编译Qt，而给出更明确的目标（如何静态发布自己的.exe）为了不让以后的自己或者看到这篇人多走弯路特地记录了以高效的方式静态编译的方法：</p>
 
-<ol>
-<li><p>步骤一：安装minGW
-&emsp;&emsp;总之我觉得懂编译的人对它应该都不陌生，对于不懂编译的孩子（比如我），只要知道它可以编译你的Qt程序，允许你在没有第三方动态链接库的情况下使用 GCC 产生 Windows32 程序。具体下载地址在<a href="https://sourceforge.net/projects/mingw/files/">这里</a>,注意的是如果嫌麻烦，就别戳进那些文件夹里去了，直接点 <a href="https://sourceforge.net/projects/mingw/files/latest/download?source=files">Download mingw-get-setup.exe (86.5 kB)</a>,exe安装帮你免去了配置各种环境的麻烦：) 安装时候据说最好选择最新版本，不过我自己的话选择的是4.9.2的</p></li>
-<li><p>步骤二：取得Qt静态编译后的版本
-&emsp;&emsp;法一：最简单也是最高效的方法，直接去Qt社区找，如果运气好的话是能找到自己相应Qt版本其他人静态编译好的成果，比如本次汇编器发布所用的静态Qt版本我是从<a href="http://www.qtcn.org/bbs/thread-htm-fid-68.html">这里</a>找到的。
-&emsp;&emsp;法二：很费时间也可能会出现一系列问题的方法，就是自己去用minGW静态编译，具体可以看一下<a href="http://blog.csdn.net/wsj18808050/article/details/50909381">这篇博文</a>
-&emsp;&emsp;法三：把人家弄好的虚拟机环境下载下来，在虚拟机里面编译。可以戳这个<a href="http://blog.csdn.net/wsj18808050/article/details/50935343">链接</a></p></li>
-<li><p>步骤三：在Qt里面进行配置 
-&emsp;&emsp;主要是人工建立静态编译环境，具体仍然可以参考上面的博文，我在这里贴上自己的配置（先戳进工具里面的选项一栏）：
-&emsp;&emsp;<img src="http://ww1.sinaimg.cn/mw690/005INZAsgw1f36q1lbbhdj30rk0gq76c.jpg" alt="套件">
+<ul>
+<li>步骤一：安装minGW</li>
+</ul>
+
+<p>&emsp;&emsp;总之我觉得懂编译的人对它应该都不陌生，对于不懂编译的孩子（比如我），只要知道它可以编译你的Qt程序，允许你在没有第三方动态链接库的情况下使用 GCC 产生 Windows32 程序。具体下载地址在<a href="https://sourceforge.net/projects/mingw/files/">这里</a>,注意的是如果嫌麻烦，就别戳进那些文件夹里去了，直接点 <a href="https://sourceforge.net/projects/mingw/files/latest/download?source=files">Download mingw-get-setup.exe (86.5 kB)</a>,exe安装帮你免去了配置各种环境的麻烦：) 安装时候据说最好选择最新版本，不过我自己的话选择的是4.9.2的</p>
+
+<ul>
+<li>步骤二：取得Qt静态编译后的版本</li>
+</ul>
+
+<p>&emsp;&emsp;法一：最简单也是最高效的方法，直接去Qt社区找，如果运气好的话是能找到自己相应Qt版本其他人静态编译好的成果，比如本次汇编器发布所用的静态Qt版本我是从<a href="http://www.qtcn.org/bbs/thread-htm-fid-68.html">这里</a>找到的。</p>
+
+<p>&emsp;&emsp;法二：很费时间也可能会出现一系列问题的方法，就是自己去用minGW静态编译，具体可以看一下<a href="http://blog.csdn.net/wsj18808050/article/details/50909381">这篇博文</a></p>
+
+<p>&emsp;&emsp;法三：把人家弄好的虚拟机环境下载下来，在虚拟机里面编译。可以戳这个<a href="http://blog.csdn.net/wsj18808050/article/details/50935343">链接</a></p>
+
+<ul>
+<li>步骤三：在Qt里面进行配置 </li>
+</ul>
+
+<p>&emsp;&emsp;主要是人工建立静态编译环境，具体仍然可以参考上面的博文，我在这里贴上自己的配置（先戳进工具里面的选项一栏）：</p>
+
+<p>&emsp;&emsp;<img src="http://ww1.sinaimg.cn/mw690/005INZAsgw1f36q1lbbhdj30rk0gq76c.jpg" alt="套件">
 &emsp;&emsp;<img src="http://ww1.sinaimg.cn/mw690/005INZAsgw1f36q1lqnf9j30rk0gqabt.jpg" alt="版本">
 &emsp;&emsp;<img src="http://ww4.sinaimg.cn/mw690/005INZAsgw1f36q1mp5i0j30rk0gqdhx.jpg" alt="编译器">
-&emsp;&emsp;<img src="http://ww2.sinaimg.cn/mw690/005INZAsgw1f36q1n8jzuj30rk0gqjt0.jpg" alt="Debug"></p></li>
-<li><p>步骤四：新建静态项目
-&emsp;&emsp;这里只要注意一点点就行了，就是在建立项目的时候选择静态version:
-&emsp;&emsp;<img src="http://ww2.sinaimg.cn/mw690/005INZAsgw1f36q1nrxqpj30p20cj0tb.jpg" alt="新建">
-&emsp;&emsp;在这里有另一个值得注意的是：Debug的话最好在动态编译环境完成，因为静态编译出来的debug太大了，所以最后发布时候一定要以release的方式构建:)</p></li>
-<li><p>步骤五：get .exe应用程序</p></li>
-</ol>
+&emsp;&emsp;<img src="http://ww2.sinaimg.cn/mw690/005INZAsgw1f36q1n8jzuj30rk0gqjt0.jpg" alt="Debug"></p>
+
+<ul>
+<li>步骤四：新建静态项目</li>
+</ul>
+
+<p>&emsp;&emsp;这里只要注意一点点就行了，就是在建立项目的时候选择静态version:</p>
+
+<p>&emsp;&emsp;<img src="http://ww2.sinaimg.cn/mw690/005INZAsgw1f36q1nrxqpj30p20cj0tb.jpg" alt="新建">
+&emsp;&emsp;在这里有另一个值得注意的是：Debug的话最好在动态编译环境完成，因为静态编译出来的debug太大了，所以最后发布时候一定要以release的方式构建:)</p>
+
+<ul>
+<li>步骤五：get .exe应用程序</li>
+</ul>
 
 <p>&emsp;&emsp;最后你可以在release的文件夹中找到.exe文件，此时已经可以在别人家的电脑上运行了~</p>
 
