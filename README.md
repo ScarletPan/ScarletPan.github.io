@@ -1,2 +1,2 @@
 ---
-[My first blog](scarletpan.github.io)
+[My first blog](http//:scarletpan.github.io)
