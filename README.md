@@ -1,2 +1,2 @@
 ---
-[My first blog](scarletpan.gihub.io)
+My first blog
