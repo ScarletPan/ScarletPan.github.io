@@ -124,6 +124,119 @@
   <header>
     
     <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2016-07-18T00:00:00+00:00"><a href="/linux_software/">July 18, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="/about/" title="About Haojie PAN">Haojie PAN</a></span></span>
+      
+      <span class="entry-reading-time">
+        <i class="fa fa-clock-o"></i>
+        
+Reading time ~1 minute
+      </span><!-- /.entry-reading-time -->
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="/linux_software/" rel="bookmark" title="Software config in linux" itemprop="url">Software config in linux</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    <h1>目录</h1>
+
+<ul>
+<li><a href="#1">搜狗拼音</a></li>
+<li><a href="#2">SS-link</a></li>
+<li><a href="#4">Git</a></li>
+<li><a href="#5">Ruby</a></li>
+<li><a href="#6">Nodejs</a></li>
+<li><a href="#7">Jekyll</a></li>
+<li><a href="#8">Mysql</a></li>
+<li><a href="#9">Apache</a></li>
+</ul>
+
+<h3><h2 id="1"> [1] &emsp;Sougoupinyin</h2></h3>
+
+<ol>
+<li>download from website</li>
+<li><code>$ sudo dpkg -i sogoupinyin_2.0.0.0078_amd64.deb</code></li>
+<li><code>$ sudo apt-get install -f</code></li>
+<li><code>$ sudo dpkg -i sogoupinyin_2.0.0.0078_amd64.deb</code></li>
+</ol>
+
+<h3><h2 id="2"> [2] &emsp; Shadowsocks Qt-5 + SwitchyOmega</h2></h3>
+
+<ol>
+<li>下载</li>
+</ol>
+<div class="highlight"><pre><code class="language-" data-lang="">$ sudo add-apt-repository ppa:hzwhuang/ss-qt5
+$ sudo apt-get update
+$ sudo apt-get install shadowsocks-qt5
+</code></pre></div>
+<ol>
+<li>setting-&gt;network-&gt;proxy-&gt;socks host + port.</li>
+<li>add SwitchyOmega into chromium</li>
+</ol>
+
+<h3><h2 id="3"> [3] &emsp; Atom text edit </h2></h3>
+<div class="highlight"><pre><code class="language-" data-lang="">$ sudo add-apt-repository ppa:webupd8team/atom
+$ sudo apt-get update
+$ sudo apt-get install atom
+</code></pre></div>
+<h3><h2 id="4"> [4] &emsp; git </h2></h3>
+
+<ol>
+<li>下载：</li>
+</ol>
+<div class="highlight"><pre><code class="language-" data-lang="">$ sudo apt-get git
+</code></pre></div>
+<ol>
+<li>配置：</li>
+</ol>
+<div class="highlight"><pre><code class="language-" data-lang="">$ git config --global user.name "ScarletPan"
+$ git config --global user.email "myscarlet@sina.com"
+$ ssh-keygen -t rsa -C "myscarlet@sina.com" #生成 ssh-key
+$ eval "$(ssh-agent -s)" # 检查ssh-agent
+$ ssh-add ~/.ssh/id_rsa # 将新产生的秘钥加入
+$ gedit .ssh/id_rsa.pub # 将内容复制到github用户SSH-key中
+</code></pre></div>
+<h3><h2 id="5"> [5] &emsp; ruby</h2></h3>
+
+<ol>
+<li>下载：</li>
+</ol>
+<div class="highlight"><pre><code class="language-" data-lang="">$ sudo apt-get install ruby2.3
+</code></pre></div>
+<ol>
+<li>配置</li>
+</ol>
+<div class="highlight"><pre><code class="language-" data-lang="">$ gem source -r https://rubygems.org/  #更换到内陆的下载源
+$ gem source -a https://ruby.taobao.org
+$ sudo apt-get install ruby-dev
+</code></pre></div>
+<h3><h2 id="6"> [6] &emsp; Nodejs </h2></h3>
+<div class="highlight"><pre><code class="language-" data-lang="">$ sudo apt-get install nodejs # nodejs -v4.2.6
+</code></pre></div>
+<h3><h2 id="7"> [7] &emsp; jekyll </h2></h3>
+<div class="highlight"><pre><code class="language-" data-lang="">$ sudo gem install jekyll
+$ sudo gem install jekyll-sitemap
+$ sudo gem install jekyll-paginate
+$ sudo gem install jekyll-gist
+$ sudo gem install redcarpet
+</code></pre></div>
+<h3><h2 id="8"> [8] &emsp; mysql </h2></h3>
+<div class="highlight"><pre><code class="language-" data-lang="">$ sudo apt-get install mysql-server
+</code></pre></div><div class="highlight"><pre><code class="language-" data-lang="">$ mysql_secure_installation
+</code></pre></div>
+<p>&emsp; The first question will ask if you want to change the root password, but because you just set it, enter n. For all other questions, press ENTER to accept the default response.</p>
+
+<h3><h2 id="9"> [9] &emsp; apache </h2></h3>
+
+<p>参考：<a href="%22https://www.digitalocean.com/community/tutorials/how-to-set-up-an-apache-mysql-and-python-lamp-server-without-frameworks-on-ubuntu-14-04%22">python + apache + django 配置  </a></p>
+
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  <header>
+    
+    <div class="entry-meta">
       <span class="entry-date date published updated"><time datetime="2016-05-19T00:00:00+00:00"><a href="/ASR/">May 19, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="/about/" title="About Haojie PAN">Haojie PAN</a></span></span>
       
       <span class="entry-reading-time">

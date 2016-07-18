@@ -4,13 +4,122 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2016-05-21T13:57:55+00:00</updated>
+<updated>2016-07-18T12:16:29+00:00</updated>
 <id>/</id>
 <author>
   <name>Haojie PAN</name>
   <uri>/</uri>
   <email>3140102237@zju.edu.cn</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Software config in linux]]></title>
+ <link rel="alternate" type="text/html" href="/linux_software/" />
+  <id>/linux_software</id>
+  <published>2016-07-18T00:00:00+00:00</published>
+  <updated>2016-07-18T00:00:00+00:00</updated>
+  <author>
+    <name>Haojie PAN</name>
+    <uri></uri>
+    <email>3140102237@zju.edu.cn</email>
+  </author>
+  <content type="html">
+    &lt;h1&gt;目录&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1&quot;&gt;搜狗拼音&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2&quot;&gt;SS-link&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#4&quot;&gt;Git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#5&quot;&gt;Ruby&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#6&quot;&gt;Nodejs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#7&quot;&gt;Jekyll&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#8&quot;&gt;Mysql&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#9&quot;&gt;Apache&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;&lt;h2 id=&quot;1&quot;&gt; [1] &amp;emsp;Sougoupinyin&lt;/h2&gt;&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;download from website&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ sudo dpkg -i sogoupinyin_2.0.0.0078_amd64.deb&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ sudo apt-get install -f&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ sudo dpkg -i sogoupinyin_2.0.0.0078_amd64.deb&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;&lt;h2 id=&quot;2&quot;&gt; [2] &amp;emsp; Shadowsocks Qt-5 + SwitchyOmega&lt;/h2&gt;&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;下载&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ sudo add-apt-repository ppa:hzwhuang/ss-qt5
+$ sudo apt-get update
+$ sudo apt-get install shadowsocks-qt5
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;setting-&amp;gt;network-&amp;gt;proxy-&amp;gt;socks host + port.&lt;/li&gt;
+&lt;li&gt;add SwitchyOmega into chromium&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;&lt;h2 id=&quot;3&quot;&gt; [3] &amp;emsp; Atom text edit &lt;/h2&gt;&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ sudo add-apt-repository ppa:webupd8team/atom
+$ sudo apt-get update
+$ sudo apt-get install atom
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;&lt;h2 id=&quot;4&quot;&gt; [4] &amp;emsp; git &lt;/h2&gt;&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;下载：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ sudo apt-get git
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;配置：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ git config --global user.name &quot;ScarletPan&quot;
+$ git config --global user.email &quot;myscarlet@sina.com&quot;
+$ ssh-keygen -t rsa -C &quot;myscarlet@sina.com&quot; #生成 ssh-key
+$ eval &quot;$(ssh-agent -s)&quot; # 检查ssh-agent
+$ ssh-add ~/.ssh/id_rsa # 将新产生的秘钥加入
+$ gedit .ssh/id_rsa.pub # 将内容复制到github用户SSH-key中
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;&lt;h2 id=&quot;5&quot;&gt; [5] &amp;emsp; ruby&lt;/h2&gt;&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;下载：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ sudo apt-get install ruby2.3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;配置&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ gem source -r https://rubygems.org/  #更换到内陆的下载源
+$ gem source -a https://ruby.taobao.org
+$ sudo apt-get install ruby-dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;&lt;h2 id=&quot;6&quot;&gt; [6] &amp;emsp; Nodejs &lt;/h2&gt;&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ sudo apt-get install nodejs # nodejs -v4.2.6
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;&lt;h2 id=&quot;7&quot;&gt; [7] &amp;emsp; jekyll &lt;/h2&gt;&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ sudo gem install jekyll
+$ sudo gem install jekyll-sitemap
+$ sudo gem install jekyll-paginate
+$ sudo gem install jekyll-gist
+$ sudo gem install redcarpet
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;&lt;h2 id=&quot;8&quot;&gt; [8] &amp;emsp; mysql &lt;/h2&gt;&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ sudo apt-get install mysql-server
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ mysql_secure_installation
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&amp;emsp; The first question will ask if you want to change the root password, but because you just set it, enter n. For all other questions, press ENTER to accept the default response.&lt;/p&gt;
+
+&lt;h3&gt;&lt;h2 id=&quot;9&quot;&gt; [9] &amp;emsp; apache &lt;/h2&gt;&lt;/h3&gt;
+
+&lt;p&gt;参考：&lt;a href=&quot;%22https://www.digitalocean.com/community/tutorials/how-to-set-up-an-apache-mysql-and-python-lamp-server-without-frameworks-on-ubuntu-14-04%22&quot;&gt;python + apache + django 配置  &lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/linux_software/&quot;&gt;Software config in linux&lt;/a&gt; was originally published by Haojie PAN at &lt;a href=&quot;&quot;&gt;My SCARLET&lt;/a&gt; on July 18, 2016.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
