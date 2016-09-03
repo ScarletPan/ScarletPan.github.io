@@ -16,6 +16,8 @@ modifed: 2016-07-18
 * [Jekyll](#7)
 * [Mysql](#8)
 * [Apache](#9)
+* [Latex](#10)
+* [Flash Player](#11)
 
 
 ### <h2 id="1"> [1] &emsp;Sougoupinyin</h2>
@@ -100,3 +102,15 @@ $ mysql_secure_installation
 
 ### <h2 id="9"> [9] &emsp; apache </h2>
 参考：[python + apache + django 配置  ]("https://www.digitalocean.com/community/tutorials/how-to-set-up-an-apache-mysql-and-python-lamp-server-without-frameworks-on-ubuntu-14-04")
+
+### <h2 id="10"> [10] &emsp; latex </h2>
+```
+$ sudo apt-get install texlive-full
+$ sudo atp-get install texmaker
+```
+
+### <h2 id="11"> [11] &emsp; Flash-Player </h2>
+System-settings -> Software & Update -> other Software -> Canonical Partners (get-in)
+```
+sudo apt install adobe-flashplugin
+```
