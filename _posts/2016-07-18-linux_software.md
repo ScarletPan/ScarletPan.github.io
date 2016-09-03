@@ -101,7 +101,7 @@ $ mysql_secure_installation
 &emsp; The first question will ask if you want to change the root password, but because you just set it, enter n. For all other questions, press ENTER to accept the default response.
 
 ### <h2 id="9"> [9] &emsp; apache </h2>
-参考：[python + apache + django 配置  ]("https://www.digitalocean.com/community/tutorials/how-to-set-up-an-apache-mysql-and-python-lamp-server-without-frameworks-on-ubuntu-14-04")
+参考：[python + apache + django 配置  ](https://www.digitalocean.com/community/tutorials/how-to-set-up-an-apache-mysql-and-python-lamp-server-without-frameworks-on-ubuntu-14-04)
 
 ### <h2 id="10"> [10] &emsp; latex </h2>
 ```
