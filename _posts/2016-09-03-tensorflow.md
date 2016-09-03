@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)
-tags: Deep learning
+tags: Deep-learning
 comments: true
 modifed: 2016-09-03
 ---
