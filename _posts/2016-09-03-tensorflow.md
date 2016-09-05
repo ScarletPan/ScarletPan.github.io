@@ -47,6 +47,10 @@ $ ./deviceQuery
 &emsp;成功后大概长这样：
 <center>![pic5](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-5.png)</center>
 
+**UPDATE** 
+
+* 装了cuda 8运行pip下载的tensorflow会出现问题。如果读者出现问题，可以考虑安装7.5
+* cuda7.5并没有支持ubuntu16.04。但可以参考这个[博文](https://www.pugetsystems.com/labs/hpc/NVIDIA-CUDA-with-Ubuntu-16-04-beta-on-a-laptop-if-you-just-cannot-wait-775/)
 
 ## 5 &emsp; 部署cudnn4.0
 1. 前往　[cudnn下载页面](https://developer.nvidia.com/cudnn)

@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2016-09-03T09:08:04+00:00</updated>
+<updated>2016-09-05T14:49:09+00:00</updated>
 <id>/</id>
 <author>
   <name>Haojie PAN</name>
@@ -67,6 +67,13 @@ $ ./deviceQuery
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&amp;emsp;成功后大概长这样：
 &lt;center&gt;&lt;img src=&quot;http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-5.png&quot; alt=&quot;pic5&quot;&gt;&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt; &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;装了cuda 8运行pip下载的tensorflow会出现问题。如果读者出现问题，可以考虑安装7.5&lt;/li&gt;
+&lt;li&gt;cuda7.5并没有支持ubuntu16.04。但可以参考这个&lt;a href=&quot;https://www.pugetsystems.com/labs/hpc/NVIDIA-CUDA-with-Ubuntu-16-04-beta-on-a-laptop-if-you-just-cannot-wait-775/&quot;&gt;博文&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2&gt;5 &amp;emsp; 部署cudnn4.0&lt;/h2&gt;
 
@@ -316,6 +323,7 @@ MEDIA_URL =  BASE_URL + &#39;xxx/media/&#39;   # 两者其实相同
 &lt;li&gt;&lt;a href=&quot;#9&quot;&gt;Apache&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#10&quot;&gt;Latex&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#11&quot;&gt;Flash Player&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#12&quot;&gt;Sublime texter&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3&gt;&lt;h2 id=&quot;1&quot;&gt; [1] &amp;emsp;Sougoupinyin&lt;/h2&gt;&lt;/h3&gt;
@@ -395,7 +403,7 @@ $ sudo gem install redcarpet
 
 &lt;h3&gt;&lt;h2 id=&quot;9&quot;&gt; [9] &amp;emsp; apache &lt;/h2&gt;&lt;/h3&gt;
 
-&lt;p&gt;参考：&lt;a href=&quot;%22https://www.digitalocean.com/community/tutorials/how-to-set-up-an-apache-mysql-and-python-lamp-server-without-frameworks-on-ubuntu-14-04%22&quot;&gt;python + apache + django 配置  &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;参考：&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-set-up-an-apache-mysql-and-python-lamp-server-without-frameworks-on-ubuntu-14-04&quot;&gt;python + apache + django 配置  &lt;/a&gt;&lt;/p&gt;
 
 &lt;h3&gt;&lt;h2 id=&quot;10&quot;&gt; [10] &amp;emsp; latex &lt;/h2&gt;&lt;/h3&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ sudo apt-get install texlive-full
@@ -407,6 +415,8 @@ $ sudo atp-get install texmaker
 &lt;code&gt;
 sudo apt install adobe-flashplugin
 &lt;/code&gt;&lt;/p&gt;
+
+&lt;h3&gt;&lt;h2 id=&quot;12&quot;&gt; [11] &amp;emsp; sublime-text &lt;/h2&gt;&lt;/h3&gt;
 
     &lt;p&gt;&lt;a href=&quot;/linux_software/&quot;&gt;Software config in linux&lt;/a&gt; was originally published by Haojie PAN at &lt;a href=&quot;&quot;&gt;My SCARLET&lt;/a&gt; on July 18, 2016.&lt;/p&gt;
   </content>

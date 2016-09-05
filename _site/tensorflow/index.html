@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <title>极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04) &#8211; My SCARLET</title>
 <meta name="description" content="My first blog.">
-<meta name="keywords" content="Deep, learning">
+<meta name="keywords" content="Deep_learning">
 
 
 
@@ -166,6 +166,13 @@ $ ./deviceQuery
 <p>&emsp;成功后大概长这样：
 <center><img src="http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-5.png" alt="pic5"></center></p>
 
+<p><strong>UPDATE</strong> </p>
+
+<ul>
+<li>装了cuda 8运行pip下载的tensorflow会出现问题。如果读者出现问题，可以考虑安装7.5</li>
+<li>cuda7.5并没有支持ubuntu16.04。但可以参考这个<a href="https://www.pugetsystems.com/labs/hpc/NVIDIA-CUDA-with-Ubuntu-16-04-beta-on-a-laptop-if-you-just-cannot-wait-775/">博文</a></li>
+</ul>
+
 <h2>5 &emsp; 部署cudnn4.0</h2>
 
 <ol>
@@ -191,7 +198,7 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 <center><img src="http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-7.png" alt="pic7"></center></p>
 
       <footer class="entry-meta">
-        <span class="entry-tags"><a href="/tags/#Deep" title="Pages tagged Deep" class="tag"><span class="term">Deep</span></a><a href="/tags/#learning" title="Pages tagged learning" class="tag"><span class="term">learning</span></a></span>
+        <span class="entry-tags"><a href="/tags/#Deep_learning" title="Pages tagged Deep_learning" class="tag"><span class="term">Deep_learning</span></a></span>
         
         <div class="social-share">
   <ul class="socialcount socialcount-small inline-list">

@@ -18,7 +18,7 @@ modifed: 2016-07-18
 * [Apache](#9)
 * [Latex](#10)
 * [Flash Player](#11)
-
+* [Sublime texter](#12)
 
 ### <h2 id="1"> [1] &emsp;Sougoupinyin</h2>
 1. download from website
@@ -114,3 +114,6 @@ System-settings -> Software & Update -> other Software -> Canonical Partners (ge
 ```
 sudo apt install adobe-flashplugin
 ```
+
+### <h2 id="12"> [11] &emsp; sublime-text </h2>
+
