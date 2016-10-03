@@ -123,85 +123,79 @@ Reading time ~1 minute
       </div><!-- /.header-title-wrap -->
     </header>
     <div class="entry-content">
-      <h2 id="emsp-linux-">1   Linux 版本</h2>
-<center>![pic1](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-1.png)</center>
+      <h2>1 &emsp; Linux 版本</h2>
 
-<h2 id="emsp-gpu-">2   GPU 信息</h2>
-<center>![pic2](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-2.png)</center>
+<p><center><img src="http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-1.png" alt="pic1"></center></p>
 
-<h2 id="emsp-nvidia">3   安装nvidia驱动</h2>
-<p>在software &amp; update中直接更改即可, 由于cuda对驱动版本要求高, 因此最好选择361．安装完后重启一下</p>
-<center>![pic3](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-3.png)</center>
+<h2>2 &emsp; GPU 信息</h2>
 
-<h2 id="emsp-cuda-80">4   安装cuda 8.0</h2>
+<p><center><img src="http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-2.png" alt="pic2"></center></p>
+
+<h2>3 &emsp; 安装nvidia驱动</h2>
+
+<p>在software &amp; update中直接更改即可, 由于cuda对驱动版本要求高, 因此最好选择361．安装完后重启一下
+<center><img src="http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-3.png" alt="pic3"></center></p>
+
+<h2>4 &emsp; 安装cuda 8.0</h2>
+
 <ul>
-  <li>前往 <a href="https://developer.nvidia.com/cuda-release-candidate-download">cuda下载页面</a></li>
-  <li>注册（如果还没有账号）</li>
-  <li>选择deb下载</li>
+<li>前往 <a href="https://developer.nvidia.com/cuda-release-candidate-download">cuda下载页面</a></li>
+<li>注册（如果还没有账号）</li>
+<li>选择deb下载
+<center><img src="http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-4.png" alt="pic4"></center></li>
+<li>下载成功后在本地解包安装</li>
 </ul>
-<center>![pic4](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-4.png)</center>
-<ul>
-  <li>下载成功后在本地解包安装</li>
-</ul>
-
-<p><code class="highlighter-rouge">linux
-$ sudo dpkg -i cuda-repo-ubuntu1604-8-0-rc_8.0.27-1_amd64.deb
+<div class="highlight"><pre><code class="language-linux" data-lang="linux">$ sudo dpkg -i cuda-repo-ubuntu1604-8-0-rc_8.0.27-1_amd64.deb
 $ sudo apt-get update
 $ sudo apt-get install cuda
-</code></p>
-
+</code></pre></div>
 <ul>
-  <li>设置环境变量</li>
+<li>设置环境变量
+<p>在.bashrc中输入下列语句：</p></li>
 </ul>
-<p>在.bashrc中输入下列语句：</p>
-
-<p><code class="highlighter-rouge">
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
+<div class="highlight"><pre><code class="language-" data-lang="">export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
 export CUDA_HOME=/usr/local/cuda
-</code></p>
-
+</code></pre></div>
 <ul>
-  <li>测试(以1_Utilities/deviceQuery为例)：</li>
+<li>测试(以1_Utilities/deviceQuery为例)：</li>
 </ul>
-
-<p><code class="highlighter-rouge">
-$ cd /usr/local/cuda/samples/1_Utilities/deviceQuery
+<div class="highlight"><pre><code class="language-" data-lang="">$ cd /usr/local/cuda/samples/1_Utilities/deviceQuery
 $ make
 $ ./deviceQuery
-</code>
- 成功后大概长这样：</p>
-<center>![pic5](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-5.png)</center>
+</code></pre></div>
+<p>&emsp;成功后大概长这样：
+<center><img src="http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-5.png" alt="pic5"></center></p>
 
-<p><strong>UPDATE</strong></p>
+<p><strong>UPDATE</strong> </p>
 
 <ul>
-  <li>装了cuda 8运行pip下载的tensorflow会出现问题。如果读者出现问题，可以考虑安装7.5</li>
-  <li>cuda7.5并没有支持ubuntu16.04。但可以参考这个<a href="https://www.pugetsystems.com/labs/hpc/NVIDIA-CUDA-with-Ubuntu-16-04-beta-on-a-laptop-if-you-just-cannot-wait-775/">博文</a></li>
+<li>装了cuda 8运行pip下载的tensorflow会出现问题。如果读者出现问题，可以考虑安装7.5</li>
+<li>cuda7.5并没有支持ubuntu16.04。但可以参考这个<a href="https://www.pugetsystems.com/labs/hpc/NVIDIA-CUDA-with-Ubuntu-16-04-beta-on-a-laptop-if-you-just-cannot-wait-775/">博文</a></li>
 </ul>
 
-<h2 id="emsp-cudnn40">5   部署cudnn4.0</h2>
-<ol>
-  <li>前往　<a href="https://developer.nvidia.com/cudnn">cudnn下载页面</a></li>
-  <li>下载相应版本的cudnn4</li>
-  <li>将相应内容拷贝到cuda目录中</li>
-</ol>
+<h2>5 &emsp; 部署cudnn4.0</h2>
 
-<p><code class="highlighter-rouge">
-tar xvzf cudnn-7.5-linux-x64-v4.tgz
+<ol>
+<li>前往　<a href="https://developer.nvidia.com/cudnn">cudnn下载页面</a></li>
+<li>下载相应版本的cudnn4</li>
+<li>将相应内容拷贝到cuda目录中</li>
+</ol>
+<div class="highlight"><pre><code class="language-" data-lang="">tar xvzf cudnn-7.5-linux-x64-v4.tgz
 sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
-</code></p>
+</code></pre></div>
+<h2>6 &emsp; 安装相应的tensorflow</h2>
 
-<h2 id="emsp-tensorflow">6   安装相应的tensorflow</h2>
 <p>前往 <a href="https://www.tensorflow.org/versions/r0.10/get_started/os_setup.html">tensorflow官网</a>，其中列举了不少安装方式，安装带gpu的版本</p>
 
-<h2 id="emsp-">7   测试</h2>
-<p>可以用tensorflow自带的sample测试,可以看到gpu相对与cpu测试速度有很大的提升：</p>
+<h2>7 &emsp; 测试</h2>
+
+<p>可以用tensorflow自带的sample测试,可以看到gpu相对与cpu测试速度有很大的提升：
 <p> cpu版本 </p>
-<center>![pic6](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-6.png)</center>
+<center><img src="http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-6.png" alt="pic6"></center>
 <p> gpu版本 </p>
-<center>![pic7](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-7.png)</center>
+<center><img src="http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-7.png" alt="pic7"></center></p>
 
       <footer class="entry-meta">
         <span class="entry-tags"><a href="/tags/#Deep_learning" title="Pages tagged Deep_learning" class="tag"><span class="term">Deep_learning</span></a></span>
@@ -222,20 +216,20 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
       <a href="/django/" class="read-more-btn">Read More</a>
     </div><!-- /.read-more-header -->
     <div class="read-more-content">
-      <h3><a href="/bayes-decision-rule/" title="Bayes Decision Rule">Bayes Decision Rule</a></h3>
-      <p>> 情景引入： 作为一个classificaton的问题，假设有sea bass 和 salmon两类鱼，而我们决策的目的是为了区分它们，用于区分我们将引入feature这个概念，大致意思就是可以用一系列特征来判断出某一条打捞上来的鱼是sea bass还是salmon，在这...&hellip; <a href="/bayes-decision-rule/">Continue reading</a></p>
+      <h3><a href="/pr-bayes-decision-rule/" title="Bayes Decision Rule">Bayes Decision Rule</a></h3>
+      <p>> 情景引入： 作为一个classificaton的问题，假设有sea bass 和 salmon两类鱼，而我们决策的目的是为了区分它们，用于区分我们将引入feature这个概念，大致意思就是可以用一系列特征来判断出某一条打捞上来的鱼是sea bass还是salmon，在这...&hellip; <a href="/pr-bayes-decision-rule/">Continue reading</a></p>
     </div><!-- /.read-more-content -->
   
   <div class="read-more-list">
     
       <div class="list-item">
-        <h4><a href="/django/" title="Steps for starting a django app">Steps for starting a django app</a></h4>
-        <span>Published on August 24, 2016</span>
+        <h4><a href="/pr-introduction/" title="导言">导言</a></h4>
+        <span>Published on October 03, 2016</span>
       </div><!-- /.list-item -->
     
       <div class="list-item">
-        <h4><a href="/linux_software/" title="Software config in linux">Software config in linux</a></h4>
-        <span>Published on July 18, 2016</span>
+        <h4><a href="/django/" title="Steps for starting a django app">Steps for starting a django app</a></h4>
+        <span>Published on August 24, 2016</span>
       </div><!-- /.list-item -->
     
   </div><!-- /.read-more-list -->
@@ -257,8 +251,6 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 
 
 <script type="text/javascript"
- src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script src="/assets/js/mathjx.js"></script>
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

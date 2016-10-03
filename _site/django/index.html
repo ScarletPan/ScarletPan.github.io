@@ -123,226 +123,183 @@ Reading time ~2 minutes
       </div><!-- /.header-title-wrap -->
     </header>
     <div class="entry-content">
-      <h3 id="tips1-emsp--pymysql">Tips1:   配置 pymysql　*</h3>
+      <h3>Tips1: &emsp; 配置 pymysql　*</h3>
+
 <p>在　<strong>init</strong>.py 中添加：</p>
-
-<p><code class="highlighter-rouge">python
-import pymysql
-pymysql.install_as_MySQLdb()
-</code></p>
-
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pymysql</span>
+<span class="n">pymysql</span><span class="o">.</span><span class="n">install_as_MySQLdb</span><span class="p">()</span>
+</code></pre></div>
 <p>在　setting.py中修改：</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'default'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'ENGINE'</span><span class="p">:</span> <span class="s">'django.db.backends.mysql'</span><span class="p">,</span>
+        <span class="s">'NAME'</span><span class="p">:</span> <span class="s">'vqa'</span><span class="p">,</span>  <span class="c"># mysql数据库名</span>
+        <span class="s">'USER'</span><span class="p">:</span><span class="s">'root'</span><span class="p">,</span>  <span class="c">#　mysql用户名，留空则默认为当前linux用户名　</span>
+        <span class="s">'PASSWORD'</span><span class="p">:</span><span class="s">'123456'</span><span class="p">,</span>
+        <span class="s">'HOST'</span><span class="p">:</span><span class="s">''</span><span class="p">,</span>     <span class="c"># 留空默认为localhost</span>
+        <span class="s">'PORT'</span><span class="p">:</span><span class="s">''</span><span class="p">,</span>     <span class="c"># 留空默认为3306端口</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3>Tips2: &emsp; 创建数据库并且migrate</h3>
 
-<p><code class="highlighter-rouge">python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'vqa',  # mysql数据库名
-        'USER':'root',  #　mysql用户名，留空则默认为当前linux用户名　
-        'PASSWORD':'123456',
-        'HOST':'',     # 留空默认为localhost
-        'PORT':'',     # 留空默认为3306端口
-    }
-}
-</code></p>
-
-<h3 id="tips2-emsp-migrate">Tips2:   创建数据库并且migrate</h3>
 <p>在 mysql  中创建数据库
 在项目目录中输入</p>
-
-<p><code class="highlighter-rouge">
-$ python manage.py migrate
-</code></p>
-
+<div class="highlight"><pre><code class="language-" data-lang="">$ python manage.py migrate
+</code></pre></div>
 <p>成功后会看到：</p>
-
-<p>```
-Operations to perform:
+<div class="highlight"><pre><code class="language-" data-lang="">Operations to perform:
   Apply all migrations: auth, sessions, admin, contenttypes
 Running migrations:
-  Rendering model states… DONE
-  Applying contenttypes.0001_initial… OK
-  Applying auth.0001_initial… OK
-  Applying admin.0001_initial… OK
-  Applying admin.0002_logentry_remove_auto_add… OK
-  Applying contenttypes.0002_remove_content_type_name… OK
-  Applying auth.0002_alter_permission_name_max_length… OK
-  Applying auth.0003_alter_user_email_max_length… OK
-  Applying auth.0004_alter_user_username_opts… OK
-  Applying auth.0005_alter_user_last_login_null… OK
-  Applying auth.0006_require_contenttypes_0002… OK
-  Applying auth.0007_alter_validators_add_error_messages… OK
-  Applying sessions.0001_initial… OK</p>
+  Rendering model states... DONE
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying sessions.0001_initial... OK
 
-<p>```</p>
+</code></pre></div>
+<h3>Tips3: &emsp; 创建app</h3>
 
-<h3 id="tips3-emsp-app">Tips3:   创建app</h3>
 <p>在项目目录中输入</p>
+<div class="highlight"><pre><code class="language-" data-lang="">$ python manage.py startapp polls
+</code></pre></div>
+<h3>Tips4: &emsp; 创建模型</h3>
 
-<p><code class="highlighter-rouge">
-$ python manage.py startapp polls
-</code></p>
-
-<h3 id="tips4-emsp-">Tips4:   创建模型</h3>
 <p>编辑　app/models.py</p>
 
-<h3 id="tips5-emsp-">Tips5:   激活模型</h3>
+<h3>Tips5: &emsp; 激活模型</h3>
+
 <p>编辑　project/settings/py</p>
-
-<p><code class="highlighter-rouge">python
-INSTALLED_APPS = (
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'app',    # 这是新增的app
-)
-</code></p>
-
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s">'django.contrib.admin'</span><span class="p">,</span>
+    <span class="s">'django.contrib.auth'</span><span class="p">,</span>
+    <span class="s">'django.contrib.contenttypes'</span><span class="p">,</span>
+    <span class="s">'django.contrib.sessions'</span><span class="p">,</span>
+    <span class="s">'django.contrib.messages'</span><span class="p">,</span>
+    <span class="s">'django.contrib.staticfiles'</span><span class="p">,</span>
+    <span class="s">'app'</span><span class="p">,</span>    <span class="c"># 这是新增的app</span>
+<span class="p">)</span>
+</code></pre></div>
 <p>运行命令</p>
-
-<p><code class="highlighter-rouge">
-$ python manage.py makemigrations app    # app迁移
+<div class="highlight"><pre><code class="language-" data-lang="">$ python manage.py makemigrations app    # app迁移
 $ python manage.py sqlmigrate vqa 0001　 # sql迁移
 $ python manage.py migrate # 将这些改变更新到数据库中。
-</code></p>
-
-<h3 id="tips5-emsp--1">Tips5(+):   修改模型</h3>
-
-<p><code class="highlighter-rouge">
-$ 修改models.py （最好每个类中都写上 def __str__())
+</code></pre></div>
+<h3>Tips5(+): &emsp; 修改模型</h3>
+<div class="highlight"><pre><code class="language-" data-lang="">$ 修改models.py （最好每个类中都写上 def __str__())
 $ python manage.py makemigrations
 $ python manage.py migrate
-</code></p>
-
-<h3 id="tips6-emsp-">Tips6:   创建管理网站</h3>
-
-<p><code class="highlighter-rouge">
-$ python manage.py createsuperuser # 创建一个能够登录管理站点的用户
-</code></p>
-
+</code></pre></div>
+<h3>Tips6: &emsp; 创建管理网站</h3>
+<div class="highlight"><pre><code class="language-" data-lang="">$ python manage.py createsuperuser # 创建一个能够登录管理站点的用户
+</code></pre></div>
 <p>在admin.py中注册，添加</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
 
-<p>``` python
-from django.contrib import admin</p>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">xxx</span>
 
-<p>from .models import xxx</p>
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">xxx</span><span class="p">)</span>
+</code></pre></div>
+<h3>Tips7: &emsp; 制作对外view</h3>
 
-<p>admin.site.register(xxx)
-```</p>
-
-<h3 id="tips7-emsp-view">Tips7:   制作对外view</h3>
 <ul>
-  <li>html 模板
+<li>html 模板
 在app中创建 app/templates/app/xxx.html</li>
-  <li>css,js, images 模板,
-    <ol>
-      <li>在app中创建 app/static/css/xxx.css</li>
-      <li>在project/setting.py 找到 STATIC_URL 并在下方添加</li>
-    </ol>
-  </li>
+<li>css,js, images 模板,</li>
+<li>在app中创建 app/static/css/xxx.css</li>
+<li>在project/setting.py 找到 STATIC_URL 并在下方添加</li>
 </ul>
-
-<p><code class="highlighter-rouge">
-STATIC_ROOT = os.path.join(os.path.dirname(__file__),'static')
+<div class="highlight"><pre><code class="language-" data-lang="">STATIC_ROOT = os.path.join(os.path.dirname(__file__),'static')
 STATICFILES_DIRS = (
     ('css',os.path.join(STATIC_ROOT,'css').replace('\\','/') ), 
     ('js',os.path.join(STATIC_ROOT,'js').replace('\\','/') ),
     ('images',os.path.join(STATIC_ROOT,'images').replace('\\','/') ),
 )
-</code></p>
-
+</code></pre></div>
 <p>并创建相应的文件。
 3. 相应的html中的link改为：</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;link</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/static/css/xxx.css"</span> <span class="nt">/&gt;</span>
+</code></pre></div>
+<h3>Tips8: &emsp; 部署项目</h3>
 
-<p><code class="highlighter-rouge">html
-    &lt;link type="text/css" rel="stylesheet" href="/static/css/xxx.css" /&gt;
-</code></p>
-
-<h3 id="tips8-emsp-">Tips8:   部署项目</h3>
 <p>详见：http://djangobook.py3k.cn/2.0/chapter12/</p>
 
-<h3 id="imagefield-">*ImageField 的使用</h3>
-<ol>
-  <li>在setting.py中添加路径和url:</li>
-</ol>
+<h3>*ImageField 的使用</h3>
 
-<p><code class="highlighter-rouge">
-MEDIA_ROOT = BASE_DIR + 'xxx/media/'
+<ol>
+<li>在setting.py中添加路径和url:</li>
+</ol>
+<div class="highlight"><pre><code class="language-" data-lang="">MEDIA_ROOT = BASE_DIR + 'xxx/media/'
 MEDIA_URL =  BASE_URL + 'xxx/media/'   # 两者其实相同
-</code></p>
-
+</code></pre></div>
 <ol>
-  <li>在project/urls.py添加 url:</li>
+<li>在project/urls.py添加 url:</li>
 </ol>
-
-<p><code class="highlighter-rouge">python
-from django.conf.urls.static import static
-from django.conf import settings
-***
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-</code></p>
-
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.conf.urls.static</span> <span class="kn">import</span> <span class="n">static</span>
+<span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
+<span class="o">***</span>
+<span class="n">urlpatterns</span> <span class="o">+=</span> <span class="n">static</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">MEDIA_URL</span><span class="p">,</span> <span class="n">document_root</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">MEDIA_ROOT</span><span class="p">)</span>
+</code></pre></div>
 <ol>
-  <li>在app/model.py中对于相应的model:</li>
+<li>在app/model.py中对于相应的model:</li>
 </ol>
+<div class="highlight"><pre><code class="language-" data-lang="">xxx = models.ImageField(upload_to = '***') # ***为相对路径
+</code></pre></div>
+<h3>*配置ajax</h3>
 
-<p><code class="highlighter-rouge">
-xxx = models.ImageField(upload_to = '***') # ***为相对路径
-</code></p>
-
-<h3 id="ajax">*配置ajax</h3>
 <p>在js脚本前添加配置：</p>
-
-<p><code class="highlighter-rouge">javascript
-function getCookie(name) {
-    var cookieValue = null;
-    if (document.cookie &amp;&amp; document.cookie != '') {
-        var cookies = document.cookie.split(';');
-        for (var i = 0; i &lt; cookies.length; i++) {
-            var cookie = jQuery.trim(cookies[i]);
-            // Does this cookie string begin with the name we want?
-            if (cookie.substring(0, name.length + 1) == (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-            }
-        }
-    }
-    return cookieValue;
-}
-var csrftoken = getCookie('csrftoken');
-function csrfSafeMethod(method) {
-    // these HTTP methods do not require CSRF protection
-    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-}
-function sameOrigin(url) {
-    // test that a given url is a same-origin URL
-    // url could be relative or scheme relative or absolute
-    var host = document.location.host; // host + port
-    var protocol = document.location.protocol;
-    var sr_origin = '//' + host;
-    var origin = protocol + sr_origin;
-    // Allow absolute or scheme relative URLs to same origin
-    return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
-        (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
-        // or any other URL that isn't scheme relative or absolute i.e relative.
-        !(/^(\/\/|http:|https:).*/.test(url));
-}
-$.ajaxSetup({
-    beforeSend: function(xhr, settings) {
-        if (!csrfSafeMethod(settings.type) &amp;&amp; sameOrigin(settings.url)) {
-            // Send the token to same-origin, relative URLs only.
-            // Send the token only if the method warrants CSRF protection
-            // Using the CSRFToken value acquired earlier
-            xhr.setRequestHeader("X-CSRFToken", csrftoken);
-        }
-    }
-});
-</code></p>
-
-
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">getCookie</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">cookieValue</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">&amp;&amp;</span> <span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">!=</span> <span class="s1">''</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">cookies</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">';'</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">cookies</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">cookie</span> <span class="o">=</span> <span class="nx">jQuery</span><span class="p">.</span><span class="nx">trim</span><span class="p">(</span><span class="nx">cookies</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+            <span class="c1">// Does this cookie string begin with the name we want?</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">name</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">'='</span><span class="p">))</span> <span class="p">{</span>
+                <span class="nx">cookieValue</span> <span class="o">=</span> <span class="nb">decodeURIComponent</span><span class="p">(</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">));</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">cookieValue</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">csrftoken</span> <span class="o">=</span> <span class="nx">getCookie</span><span class="p">(</span><span class="s1">'csrftoken'</span><span class="p">);</span>
+<span class="kd">function</span> <span class="nx">csrfSafeMethod</span><span class="p">(</span><span class="nx">method</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// these HTTP methods do not require CSRF protection</span>
+    <span class="k">return</span> <span class="p">(</span><span class="sr">/^</span><span class="se">(</span><span class="sr">GET|HEAD|OPTIONS|TRACE</span><span class="se">)</span><span class="sr">$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">method</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">sameOrigin</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// test that a given url is a same-origin URL</span>
+    <span class="c1">// url could be relative or scheme relative or absolute</span>
+    <span class="kd">var</span> <span class="nx">host</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="p">;</span> <span class="c1">// host + port</span>
+    <span class="kd">var</span> <span class="nx">protocol</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">sr_origin</span> <span class="o">=</span> <span class="s1">'//'</span> <span class="o">+</span> <span class="nx">host</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">origin</span> <span class="o">=</span> <span class="nx">protocol</span> <span class="o">+</span> <span class="nx">sr_origin</span><span class="p">;</span>
+    <span class="c1">// Allow absolute or scheme relative URLs to same origin</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">url</span> <span class="o">==</span> <span class="nx">origin</span> <span class="o">||</span> <span class="nx">url</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">origin</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="nx">origin</span> <span class="o">+</span> <span class="s1">'/'</span><span class="p">)</span> <span class="o">||</span>
+        <span class="p">(</span><span class="nx">url</span> <span class="o">==</span> <span class="nx">sr_origin</span> <span class="o">||</span> <span class="nx">url</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">sr_origin</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="nx">sr_origin</span> <span class="o">+</span> <span class="s1">'/'</span><span class="p">)</span> <span class="o">||</span>
+        <span class="c1">// or any other URL that isn't scheme relative or absolute i.e relative.</span>
+        <span class="o">!</span><span class="p">(</span><span class="sr">/^</span><span class="se">(\/\/</span><span class="sr">|http:|https:</span><span class="se">)</span><span class="sr">.*/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">url</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajaxSetup</span><span class="p">({</span>
+    <span class="na">beforeSend</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">settings</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">csrfSafeMethod</span><span class="p">(</span><span class="nx">settings</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">sameOrigin</span><span class="p">(</span><span class="nx">settings</span><span class="p">.</span><span class="nx">url</span><span class="p">))</span> <span class="p">{</span>
+            <span class="c1">// Send the token to same-origin, relative URLs only.</span>
+            <span class="c1">// Send the token only if the method warrants CSRF protection</span>
+            <span class="c1">// Using the CSRFToken value acquired earlier</span>
+            <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"X-CSRFToken"</span><span class="p">,</span> <span class="nx">csrftoken</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
       <footer class="entry-meta">
         <span class="entry-tags"><a href="/tags/#python" title="Pages tagged python" class="tag"><span class="term">python</span></a></span>
         
@@ -362,20 +319,20 @@ $.ajaxSetup({
       <a href="/linux_software/" class="read-more-btn">Read More</a>
     </div><!-- /.read-more-header -->
     <div class="read-more-content">
-      <h3><a href="/bayes-decision-rule/" title="Bayes Decision Rule">Bayes Decision Rule</a></h3>
-      <p>> 情景引入： 作为一个classificaton的问题，假设有sea bass 和 salmon两类鱼，而我们决策的目的是为了区分它们，用于区分我们将引入feature这个概念，大致意思就是可以用一系列特征来判断出某一条打捞上来的鱼是sea bass还是salmon，在这...&hellip; <a href="/bayes-decision-rule/">Continue reading</a></p>
+      <h3><a href="/pr-bayes-decision-rule/" title="Bayes Decision Rule">Bayes Decision Rule</a></h3>
+      <p>> 情景引入： 作为一个classificaton的问题，假设有sea bass 和 salmon两类鱼，而我们决策的目的是为了区分它们，用于区分我们将引入feature这个概念，大致意思就是可以用一系列特征来判断出某一条打捞上来的鱼是sea bass还是salmon，在这...&hellip; <a href="/pr-bayes-decision-rule/">Continue reading</a></p>
     </div><!-- /.read-more-content -->
   
   <div class="read-more-list">
     
       <div class="list-item">
-        <h4><a href="/tensorflow/" title="极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)">极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)</a></h4>
-        <span>Published on September 03, 2016</span>
+        <h4><a href="/pr-introduction/" title="导言">导言</a></h4>
+        <span>Published on October 03, 2016</span>
       </div><!-- /.list-item -->
     
       <div class="list-item">
-        <h4><a href="/linux_software/" title="Software config in linux">Software config in linux</a></h4>
-        <span>Published on July 18, 2016</span>
+        <h4><a href="/tensorflow/" title="极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)">极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)</a></h4>
+        <span>Published on September 03, 2016</span>
       </div><!-- /.list-item -->
     
   </div><!-- /.read-more-list -->
@@ -397,8 +354,6 @@ $.ajaxSetup({
 
 
 <script type="text/javascript"
- src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script src="/assets/js/mathjx.js"></script>
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

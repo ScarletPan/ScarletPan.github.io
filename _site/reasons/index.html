@@ -123,36 +123,29 @@ Reading time ~1 minute
       </div><!-- /.header-title-wrap -->
     </header>
     <div class="entry-content">
-      <p>  最早想写博客的想法是15年我开始学Python那会，那时候刚接触网路爬虫，需要调用不同的库，beautiful soap, requests, selenium, sqlite3, etc. 当时就觉得这么多api无法靠记来完成，而在实际coding的过程中，遇到了一些官方文档中无法解决的问题，各种查询之后才debug成功，但由于没有记录下来，导致以后再次遇到忘记了解决之法。</p>
+      <p>&emsp;&emsp;最早想写博客的想法是15年我开始学Python那会，那时候刚接触网路爬虫，需要调用不同的库，beautiful soap, requests, selenium, sqlite3, etc. 当时就觉得这么多api无法靠记来完成，而在实际coding的过程中，遇到了一些官方文档中无法解决的问题，各种查询之后才debug成功，但由于没有记录下来，导致以后再次遇到忘记了解决之法。</p>
 
-<p>  比如Sqlite3当初使用过程中有这么一个句子：</p>
+<p>&emsp;&emsp;比如Sqlite3当初使用过程中有这么一个句子：</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">"SELECT name FROM db WHERE id = ?"</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</code></pre></div>
+<p>&emsp;&emsp;当初怎么都debug不出来到底为何错了（因为还没学数据库），最后去stackoverflow搜罗了好久答案才知道就算只有一个元素也要以元组的方式插入：</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s">"SELECT name FROM db WHERE id = ?"</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,))</span>
+</code></pre></div>
+<p>&emsp;&emsp;然而在到后来在用Python通信mysql的时候又犯了同样的错误，又花费了一点时间，于是想想如果有个专门的平台给自己做记录用还是不错的。</p>
 
-<p><code class="highlighter-rouge">python
-cursor.execute("SELECT name FROM db WHERE id = ?", name)
-</code></p>
+<p>&emsp;&emsp;后来我用上了印象笔记，尽管在生活上整理一些琐碎的事务它的确帮了我很大的忙，但实话说想要记录技术博文的话实在不合我的胃口。</p>
 
-<p>  当初怎么都debug不出来到底为何错了（因为还没学数据库），最后去stackoverflow搜罗了好久答案才知道就算只有一个元素也要以元组的方式插入：</p>
+<p>&emsp;&emsp;另外就是一些专门的国内博客网站，曾经生过在上面写博文的想法，但是看到那个网页玲琅满目的条目和广告，作为一个对界面美观和整洁度有一定洁癖的人来说，的确是难以忍受的。于是我又想去学python的django等框架、学一些前端的东西然后建立一个独立博客，但由于不是自己的专业喜好以及平时学业的繁忙，一直都没有付诸实践。</p>
 
-<p><code class="highlighter-rouge">python
-cursor.execute("SELECT name FROM db WHERE id = ?", (name,))
-</code></p>
+<p>&emsp;&emsp;最后是在查询RNN相关博文时看到了 <a href="http://colah.github.io/">colah的博客</a>，非常整洁和美观，又看到了github.io的后缀名，知道了github托管静态网页，就觉得这正是我想要的。</p>
 
-<p>  然而在到后来在用Python通信mysql的时候又犯了同样的错误，又花费了一点时间，于是想想如果有个专门的平台给自己做记录用还是不错的。
-#</p>
+<hr>
 
-<p>  后来我用上了印象笔记，尽管在生活上整理一些琐碎的事务它的确帮了我很大的忙，但实话说想要记录技术博文的话实在不合我的胃口。</p>
+<p>&emsp;&emsp;所以这个博客主要是记录我在学习中所碰到的一些情况，为未来碰到同样情况的我自己和一些能够发现这个博客的人做一个前车之鉴吧。</p>
 
-<p>  另外就是一些专门的国内博客网站，曾经生过在上面写博文的想法，但是看到那个网页玲琅满目的条目和广告，作为一个对界面美观和整洁度有一定洁癖的人来说，的确是难以忍受的。于是我又想去学python的django等框架、学一些前端的东西然后建立一个独立博客，但由于不是自己的专业喜好以及平时学业的繁忙，一直都没有付诸实践。</p>
+<p>&emsp;&emsp;同时也会记录一些生活的点滴，做一个伪文学爱好者。</p>
 
-<p>  最后是在查询RNN相关博文时看到了 <a href="http://colah.github.io/">colah的博客</a>，非常整洁和美观，又看到了github.io的后缀名，知道了github托管静态网页，就觉得这正是我想要的。</p>
-
-<hr />
-
-<p>  所以这个博客主要是记录我在学习中所碰到的一些情况，为未来碰到同样情况的我自己和一些能够发现这个博客的人做一个前车之鉴吧。</p>
-
-<p>  同时也会记录一些生活的点滴，做一个伪文学爱好者。</p>
-
-<p>                                    2016/04/22</p>
+<p>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2016/04/22</p>
 
       <footer class="entry-meta">
         <span class="entry-tags"><a href="/tags/#others" title="Pages tagged others" class="tag"><span class="term">others</span></a></span>
@@ -173,20 +166,20 @@ cursor.execute("SELECT name FROM db WHERE id = ?", (name,))
       <a href="" class="read-more-btn">Read More</a>
     </div><!-- /.read-more-header -->
     <div class="read-more-content">
-      <h3><a href="/bayes-decision-rule/" title="Bayes Decision Rule">Bayes Decision Rule</a></h3>
-      <p>> 情景引入： 作为一个classificaton的问题，假设有sea bass 和 salmon两类鱼，而我们决策的目的是为了区分它们，用于区分我们将引入feature这个概念，大致意思就是可以用一系列特征来判断出某一条打捞上来的鱼是sea bass还是salmon，在这...&hellip; <a href="/bayes-decision-rule/">Continue reading</a></p>
+      <h3><a href="/pr-bayes-decision-rule/" title="Bayes Decision Rule">Bayes Decision Rule</a></h3>
+      <p>> 情景引入： 作为一个classificaton的问题，假设有sea bass 和 salmon两类鱼，而我们决策的目的是为了区分它们，用于区分我们将引入feature这个概念，大致意思就是可以用一系列特征来判断出某一条打捞上来的鱼是sea bass还是salmon，在这...&hellip; <a href="/pr-bayes-decision-rule/">Continue reading</a></p>
     </div><!-- /.read-more-content -->
   
   <div class="read-more-list">
     
       <div class="list-item">
-        <h4><a href="/tensorflow/" title="极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)">极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)</a></h4>
-        <span>Published on September 03, 2016</span>
+        <h4><a href="/pr-introduction/" title="导言">导言</a></h4>
+        <span>Published on October 03, 2016</span>
       </div><!-- /.list-item -->
     
       <div class="list-item">
-        <h4><a href="/django/" title="Steps for starting a django app">Steps for starting a django app</a></h4>
-        <span>Published on August 24, 2016</span>
+        <h4><a href="/tensorflow/" title="极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)">极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)</a></h4>
+        <span>Published on September 03, 2016</span>
       </div><!-- /.list-item -->
     
   </div><!-- /.read-more-list -->
@@ -208,8 +201,6 @@ cursor.execute("SELECT name FROM db WHERE id = ?", (name,))
 
 
 <script type="text/javascript"
- src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script src="/assets/js/mathjx.js"></script>
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

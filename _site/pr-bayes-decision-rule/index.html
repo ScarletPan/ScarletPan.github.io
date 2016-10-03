@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <title>Bayes Decision Rule &#8211; My SCARLET</title>
 <meta name="description" content="My first blog.">
-<meta name="keywords" content="Pattern, Classification">
+<meta name="keywords" content="Pattern_Classification">
 
 
 
@@ -16,14 +16,14 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Bayes Decision Rule">
 <meta property="og:description" content="My first blog.">
-<meta property="og:url" content="/bayes-decision-rule/">
+<meta property="og:url" content="/pr-bayes-decision-rule/">
 <meta property="og:site_name" content="My SCARLET">
 
 
 
 
 
-<link rel="canonical" href="/bayes-decision-rule/">
+<link rel="canonical" href="/pr-bayes-decision-rule/">
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My SCARLET Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -110,9 +110,9 @@
     <header class="header-title">
       <div class="header-title-wrap">
         
-          <h1 class="entry-title"><a href="/bayes-decision-rule/" rel="bookmark" title="Bayes Decision Rule">Bayes Decision Rule</a></h1>
+          <h1 class="entry-title"><a href="/pr-bayes-decision-rule/" rel="bookmark" title="Bayes Decision Rule">Bayes Decision Rule</a></h1>
         
-        <h2><span class="entry-date date published"><time datetime="2016-10-03T00:00:00+00:00">October 03, 2016</time></span></h2>
+        <h2><span class="entry-date date published"><time datetime="2016-10-04T00:00:00+00:00">October 04, 2016</time></span></h2>
         
         <p class="entry-reading-time">
           <i class="fa fa-clock-o"></i>
@@ -124,53 +124,40 @@ Reading time ~1 minute
     </header>
     <div class="entry-content">
       <blockquote>
-  <p>情景引入： 作为一个classificaton的问题，假设有sea bass 和 salmon两类鱼，而我们决策的目的是为了区分它们，用于区分我们将引入feature这个概念，大致意思就是可以用一系列特征来判断出某一条打捞上来的鱼是sea bass还是salmon，在这里我们只取一条鱼的lightness作为feature。</p>
+<p>情景引入： 作为一个classificaton的问题，假设有sea bass 和 salmon两类鱼，而我们决策的目的是为了区分它们，用于区分我们将引入feature这个概念，大致意思就是可以用一系列特征来判断出某一条打捞上来的鱼是sea bass还是salmon，在这里我们只取一条鱼的lightness作为feature。</p>
 </blockquote>
 
-<h4 id="section">相关术语</h4>
+<h4>相关术语</h4>
+
 <ul>
-  <li>state of nature:  在这个例子的前提下，我们可以断定自然状态下只有两种可能：sea bass和salmon. 如果我们用符号$w$来表示state of nature, 则$w = w_1$为sea bass, $w = w_2$为salmon</li>
-  <li>priori probability(<strong>prior</strong>):  $P(w_1)$指打捞上来的下一条鱼为sea bass, $P(w_2)$指打捞上来的下一条鱼为salmon，很显然, $P(w_1) + P(w_2) = 1$. 从上述陈述中我们可以将prior理解为我们事先知道的知识，比如我们知道我们要打捞的海域这两种鱼的比例为2:1。</li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>class-conditional probability density(<strong>likelihood</strong>): $P(x \space</td>
-          <td>w_j) $, 用概率论的知识我们可以这么理解它：假设feature $x$在$w_j$这一类中服从某种分布，那么在这一类鱼的lightness为某一直的概率越大，相应的$P(x \space</td>
-          <td>w_j) $也就越大，比如说sea bass 的lightness 为10的可能性非常高，则$P(x=10 \space</td>
-          <td>w_1) $也就非常大。</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>evidence：$p(x)$， 在这个例子中表示的就是某个lightness在打捞上来的鱼中出现的概率有多高。同事我们也可以将其当做一个scale因子，这可以保证posterior概率之和为1.</li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>posterior：$P(w_j\space</td>
-          <td>x)$， 在这个例子上即为当捞上一条鱼他的lightness为某一值时，它为sea bass和salmon的概率各自有多大</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+<li>state of nature:
+<p>&emsp;&emsp;在这个例子的前提下，我们可以断定自然状态下只有两种可能：sea bass和salmon. 如果我们用符号\( w \)来表示state of nature, 则\( w = w_1 \)为sea bass, \( w = w_2 \)为salmon</p></li>
+<li>priori probability(<strong>prior</strong>):
+<p>&emsp;&emsp;\( P(w_1) \)指打捞上来的下一条鱼为sea bass, \( P(w_2) \)指打捞上来的下一条鱼为salmon，很显然, \( P(w_1) + P(w_2) = 1 \). 从上述陈述中我们可以将prior理解为我们事先知道的知识，比如我们知道我们要打捞的海域这两种鱼的比例为2:1。</li>
+<li>class-conditional probability density(<strong>likelihood</strong>):
+<p>&emsp;&emsp;\( P(x \space | w_j) \), 用概率论的知识我们可以这么理解它：假设feature \( x \)在\( w_j \)这一类中服从某种分布，那么在这一类鱼的lightness为某一直的概率越大，相应的\( P(x \space | w_j) \)也就越大，比如说sea bass 的lightness 为10的可能性非常高，则\( P(x=10 \space | w_1) \)也就非常大。</li>
+<li>evidence：
+<p>&emsp;&emsp;\( p(x) \)， 在这个例子中表示的就是某个lightness在打捞上来的鱼中出现的概率有多高。同事我们也可以将其当做一个scale因子，这可以保证posterior概率之和为1.</li>
+<li>posterior：
+<p>&emsp;&emsp;\( P(w_j \space | x) \)， 在这个例子上即为当捞上一条鱼他的lightness为某一值时，它为sea bass和salmon的概率各自有多大</li>
 </ul>
 
-<h4 id="section-1">贝叶斯公式</h4>
-<p> 学过概率论的同学应该对下面这个式子并不陌生：</p>
-<center> $P(w_j \space | x) = \frac{p(x|w_j)P(w_j)}{p(x)}$ </center>
-<p> 有了上面的术语解释，我们可以用相关的术语来表达这个式子:</p>
-<center> $$ posterior = \frac{likelihood \times prior}{evidence} $$</center>
-<p> 这就是所谓的贝叶斯公式了</p>
+<h4>贝叶斯公式</h4>
+
+<p>&emsp;&emsp;学过概率论的同学应该对下面这个式子并不陌生：
+<center> \[ P(w_j  | x) = \frac{p(x \space | w_j) P(w_j)}{p(x)} \] </center>
+&emsp;&emsp;有了上面的术语解释，我们可以用相关的术语来表达这个式子:
+<center> \[ posterior = \frac{likelihood \times prior}{evidence} \]</center>
+&emsp;&emsp;这就是所谓的贝叶斯公式了</p>
 
       <footer class="entry-meta">
-        <span class="entry-tags"><a href="/tags/#Pattern" title="Pages tagged Pattern" class="tag"><span class="term">Pattern</span></a><a href="/tags/#Classification" title="Pages tagged Classification" class="tag"><span class="term">Classification</span></a></span>
+        <span class="entry-tags"><a href="/tags/#Pattern_Classification" title="Pages tagged Pattern_Classification" class="tag"><span class="term">Pattern_Classification</span></a></span>
         
         <div class="social-share">
   <ul class="socialcount socialcount-small inline-list">
-    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=/bayes-decision-rule/" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
-    <li class="twitter"><a href="https://twitter.com/intent/tweet?text=/bayes-decision-rule/" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
-    <li class="googleplus"><a href="https://plus.google.com/share?url=/bayes-decision-rule/" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
+    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=/pr-bayes-decision-rule/" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+    <li class="twitter"><a href="https://twitter.com/intent/tweet?text=/pr-bayes-decision-rule/" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+    <li class="googleplus"><a href="https://plus.google.com/share?url=/pr-bayes-decision-rule/" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
   </ul>
 </div><!-- /.social-share -->
       </footer>
@@ -179,23 +166,23 @@ Reading time ~1 minute
     <div class="read-more">
   
     <div class="read-more-header">
-      <a href="/tensorflow/" class="read-more-btn">Read More</a>
+      <a href="/pr-introduction/" class="read-more-btn">Read More</a>
     </div><!-- /.read-more-header -->
     <div class="read-more-content">
-      <h3><a href="/tensorflow/" title="极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)">极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)</a></h3>
-      <p>1   Linux 版本![pic1](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-1.png)2   GPU 信息![pic2](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03...&hellip; <a href="/tensorflow/">Continue reading</a></p>
+      <h3><a href="/pr-introduction/" title="导言">导言</a></h3>
+      <p>&emsp;&emsp; 到了大三了，VQA项目暂时没有新的进展，因此告一段落。与professor Cai 交流后，听从他的建议将基础知识一步步地再搭建起来，对我以后将会有很大的帮助。回顾之前的学习生涯，在ML基础知识上花的其实挺少的，上过Andrew Ng在course...&hellip; <a href="/pr-introduction/">Continue reading</a></p>
     </div><!-- /.read-more-content -->
   
   <div class="read-more-list">
     
       <div class="list-item">
-        <h4><a href="/django/" title="Steps for starting a django app">Steps for starting a django app</a></h4>
-        <span>Published on August 24, 2016</span>
+        <h4><a href="/tensorflow/" title="极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)">极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)</a></h4>
+        <span>Published on September 03, 2016</span>
       </div><!-- /.list-item -->
     
       <div class="list-item">
-        <h4><a href="/linux_software/" title="Software config in linux">Software config in linux</a></h4>
-        <span>Published on July 18, 2016</span>
+        <h4><a href="/django/" title="Steps for starting a django app">Steps for starting a django app</a></h4>
+        <span>Published on August 24, 2016</span>
       </div><!-- /.list-item -->
     
   </div><!-- /.read-more-list -->
@@ -217,8 +204,6 @@ Reading time ~1 minute
 
 
 <script type="text/javascript"
- src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-<script src="/assets/js/mathjx.js"></script>
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

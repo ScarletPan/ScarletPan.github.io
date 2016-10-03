@@ -124,7 +124,7 @@
   <header>
     
     <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2016-10-03T00:00:00+00:00"><a href="/bayes-decision-rule/">October 03, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="/about/" title="About Haojie PAN">Haojie PAN</a></span></span>
+      <span class="entry-date date published updated"><time datetime="2016-10-04T00:00:00+00:00"><a href="/pr-bayes-decision-rule/">October 04, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="/about/" title="About Haojie PAN">Haojie PAN</a></span></span>
       
       <span class="entry-reading-time">
         <i class="fa fa-clock-o"></i>
@@ -134,49 +134,60 @@ Reading time ~1 minute
       
     </div><!-- /.entry-meta -->
     
-      <h1 class="entry-title"><a href="/bayes-decision-rule/" rel="bookmark" title="Bayes Decision Rule" itemprop="url">Bayes Decision Rule</a></h1>
+      <h1 class="entry-title"><a href="/pr-bayes-decision-rule/" rel="bookmark" title="Bayes Decision Rule" itemprop="url">Bayes Decision Rule</a></h1>
     
   </header>
   <div class="entry-content">
     <blockquote>
-  <p>情景引入： 作为一个classificaton的问题，假设有sea bass 和 salmon两类鱼，而我们决策的目的是为了区分它们，用于区分我们将引入feature这个概念，大致意思就是可以用一系列特征来判断出某一条打捞上来的鱼是sea bass还是salmon，在这里我们只取一条鱼的lightness作为feature。</p>
+<p>情景引入： 作为一个classificaton的问题，假设有sea bass 和 salmon两类鱼，而我们决策的目的是为了区分它们，用于区分我们将引入feature这个概念，大致意思就是可以用一系列特征来判断出某一条打捞上来的鱼是sea bass还是salmon，在这里我们只取一条鱼的lightness作为feature。</p>
 </blockquote>
 
-<h4 id="section">相关术语</h4>
+<h4>相关术语</h4>
+
 <ul>
-  <li>state of nature:  在这个例子的前提下，我们可以断定自然状态下只有两种可能：sea bass和salmon. 如果我们用符号$w$来表示state of nature, 则$w = w_1$为sea bass, $w = w_2$为salmon</li>
-  <li>priori probability(<strong>prior</strong>):  $P(w_1)$指打捞上来的下一条鱼为sea bass, $P(w_2)$指打捞上来的下一条鱼为salmon，很显然, $P(w_1) + P(w_2) = 1$. 从上述陈述中我们可以将prior理解为我们事先知道的知识，比如我们知道我们要打捞的海域这两种鱼的比例为2:1。</li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>class-conditional probability density(<strong>likelihood</strong>): $P(x \space</td>
-          <td>w_j) $, 用概率论的知识我们可以这么理解它：假设feature $x$在$w_j$这一类中服从某种分布，那么在这一类鱼的lightness为某一直的概率越大，相应的$P(x \space</td>
-          <td>w_j) $也就越大，比如说sea bass 的lightness 为10的可能性非常高，则$P(x=10 \space</td>
-          <td>w_1) $也就非常大。</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
-  <li>evidence：$p(x)$， 在这个例子中表示的就是某个lightness在打捞上来的鱼中出现的概率有多高。同事我们也可以将其当做一个scale因子，这可以保证posterior概率之和为1.</li>
-  <li>
-    <table>
-      <tbody>
-        <tr>
-          <td>posterior：$P(w_j\space</td>
-          <td>x)$， 在这个例子上即为当捞上一条鱼他的lightness为某一值时，它为sea bass和salmon的概率各自有多大</td>
-        </tr>
-      </tbody>
-    </table>
-  </li>
+<li>state of nature:
+<p>&emsp;&emsp;在这个例子的前提下，我们可以断定自然状态下只有两种可能：sea bass和salmon. 如果我们用符号\( w \)来表示state of nature, 则\( w = w_1 \)为sea bass, \( w = w_2 \)为salmon</p></li>
+<li>priori probability(<strong>prior</strong>):
+<p>&emsp;&emsp;\( P(w_1) \)指打捞上来的下一条鱼为sea bass, \( P(w_2) \)指打捞上来的下一条鱼为salmon，很显然, \( P(w_1) + P(w_2) = 1 \). 从上述陈述中我们可以将prior理解为我们事先知道的知识，比如我们知道我们要打捞的海域这两种鱼的比例为2:1。</li>
+<li>class-conditional probability density(<strong>likelihood</strong>):
+<p>&emsp;&emsp;\( P(x \space | w_j) \), 用概率论的知识我们可以这么理解它：假设feature \( x \)在\( w_j \)这一类中服从某种分布，那么在这一类鱼的lightness为某一直的概率越大，相应的\( P(x \space | w_j) \)也就越大，比如说sea bass 的lightness 为10的可能性非常高，则\( P(x=10 \space | w_1) \)也就非常大。</li>
+<li>evidence：
+<p>&emsp;&emsp;\( p(x) \)， 在这个例子中表示的就是某个lightness在打捞上来的鱼中出现的概率有多高。同事我们也可以将其当做一个scale因子，这可以保证posterior概率之和为1.</li>
+<li>posterior：
+<p>&emsp;&emsp;\( P(w_j \space | x) \)， 在这个例子上即为当捞上一条鱼他的lightness为某一值时，它为sea bass和salmon的概率各自有多大</li>
 </ul>
 
-<h4 id="section-1">贝叶斯公式</h4>
-<p> 学过概率论的同学应该对下面这个式子并不陌生：</p>
-<center> $P(w_j \space | x) = \frac{p(x|w_j)P(w_j)}{p(x)}$ </center>
-<p> 有了上面的术语解释，我们可以用相关的术语来表达这个式子:</p>
-<center> $$ posterior = \frac{likelihood \times prior}{evidence} $$</center>
-<p> 这就是所谓的贝叶斯公式了</p>
+<h4>贝叶斯公式</h4>
+
+<p>&emsp;&emsp;学过概率论的同学应该对下面这个式子并不陌生：
+<center> \[ P(w_j  | x) = \frac{p(x \space | w_j) P(w_j)}{p(x)} \] </center>
+&emsp;&emsp;有了上面的术语解释，我们可以用相关的术语来表达这个式子:
+<center> \[ posterior = \frac{likelihood \times prior}{evidence} \]</center>
+&emsp;&emsp;这就是所谓的贝叶斯公式了</p>
+
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  <header>
+    
+    <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2016-10-03T00:00:00+00:00"><a href="/pr-introduction/">October 03, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="/about/" title="About Haojie PAN">Haojie PAN</a></span></span>
+      
+      <span class="entry-reading-time">
+        <i class="fa fa-clock-o"></i>
+        
+Reading time ~1 minute
+      </span><!-- /.entry-reading-time -->
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="/pr-introduction/" rel="bookmark" title="导言" itemprop="url">导言</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    <p><p>&emsp;&emsp; 到了大三了，<a href="https://github.com/ScarletPan/VisualQA">VQA</a>项目暂时没有新的进展，因此告一段落。与<a href="http://dengcai.zjulearning.org/">professor Cai</a> 交流后，听从他的建议将基础知识一步步地再搭建起来，对我以后将会有很大的帮助。回顾之前的学习生涯，在ML基础知识上花的其实挺少的，上过Andrew Ng在coursera上开的Machine learning课后似乎就直接开始学习NLP的相关知识了，再接着就是学习深度学习啊，学习RNN, LSTM之类的（虽然没有写博文），一开始professor Cai叫我看的 <em>Pattern Classification</em>  一书开了个头就没有继续看下去了。突然之间感觉自己的基础还不怎么扎实就想着飞了，可能对于自己以后的学习会造成影响，因此打算从头开始学ML的算法，重新开始看 <em>Pattern Classification</em> ，并且借助professor Cai的<a href="http://dengcai.zjulearning.org/Courses/DM/">课程网站</a>继续学习。
+<p>&emsp;&emsp;理想中是每学习一块内容就同步一篇博文归纳，希望自己能好好坚持下去。</p>
 
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
@@ -199,85 +210,79 @@ Reading time ~1 minute
     
   </header>
   <div class="entry-content">
-    <h2 id="emsp-linux-">1   Linux 版本</h2>
-<center>![pic1](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-1.png)</center>
+    <h2>1 &emsp; Linux 版本</h2>
 
-<h2 id="emsp-gpu-">2   GPU 信息</h2>
-<center>![pic2](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-2.png)</center>
+<p><center><img src="http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-1.png" alt="pic1"></center></p>
 
-<h2 id="emsp-nvidia">3   安装nvidia驱动</h2>
-<p>在software &amp; update中直接更改即可, 由于cuda对驱动版本要求高, 因此最好选择361．安装完后重启一下</p>
-<center>![pic3](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-3.png)</center>
+<h2>2 &emsp; GPU 信息</h2>
 
-<h2 id="emsp-cuda-80">4   安装cuda 8.0</h2>
+<p><center><img src="http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-2.png" alt="pic2"></center></p>
+
+<h2>3 &emsp; 安装nvidia驱动</h2>
+
+<p>在software &amp; update中直接更改即可, 由于cuda对驱动版本要求高, 因此最好选择361．安装完后重启一下
+<center><img src="http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-3.png" alt="pic3"></center></p>
+
+<h2>4 &emsp; 安装cuda 8.0</h2>
+
 <ul>
-  <li>前往 <a href="https://developer.nvidia.com/cuda-release-candidate-download">cuda下载页面</a></li>
-  <li>注册（如果还没有账号）</li>
-  <li>选择deb下载</li>
+<li>前往 <a href="https://developer.nvidia.com/cuda-release-candidate-download">cuda下载页面</a></li>
+<li>注册（如果还没有账号）</li>
+<li>选择deb下载
+<center><img src="http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-4.png" alt="pic4"></center></li>
+<li>下载成功后在本地解包安装</li>
 </ul>
-<center>![pic4](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-4.png)</center>
-<ul>
-  <li>下载成功后在本地解包安装</li>
-</ul>
-
-<p><code class="highlighter-rouge">linux
-$ sudo dpkg -i cuda-repo-ubuntu1604-8-0-rc_8.0.27-1_amd64.deb
+<div class="highlight"><pre><code class="language-linux" data-lang="linux">$ sudo dpkg -i cuda-repo-ubuntu1604-8-0-rc_8.0.27-1_amd64.deb
 $ sudo apt-get update
 $ sudo apt-get install cuda
-</code></p>
-
+</code></pre></div>
 <ul>
-  <li>设置环境变量</li>
+<li>设置环境变量
+<p>在.bashrc中输入下列语句：</p></li>
 </ul>
-<p>在.bashrc中输入下列语句：</p>
-
-<p><code class="highlighter-rouge">
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
+<div class="highlight"><pre><code class="language-" data-lang="">export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
 export CUDA_HOME=/usr/local/cuda
-</code></p>
-
+</code></pre></div>
 <ul>
-  <li>测试(以1_Utilities/deviceQuery为例)：</li>
+<li>测试(以1_Utilities/deviceQuery为例)：</li>
 </ul>
-
-<p><code class="highlighter-rouge">
-$ cd /usr/local/cuda/samples/1_Utilities/deviceQuery
+<div class="highlight"><pre><code class="language-" data-lang="">$ cd /usr/local/cuda/samples/1_Utilities/deviceQuery
 $ make
 $ ./deviceQuery
-</code>
- 成功后大概长这样：</p>
-<center>![pic5](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-5.png)</center>
+</code></pre></div>
+<p>&emsp;成功后大概长这样：
+<center><img src="http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-5.png" alt="pic5"></center></p>
 
-<p><strong>UPDATE</strong></p>
+<p><strong>UPDATE</strong> </p>
 
 <ul>
-  <li>装了cuda 8运行pip下载的tensorflow会出现问题。如果读者出现问题，可以考虑安装7.5</li>
-  <li>cuda7.5并没有支持ubuntu16.04。但可以参考这个<a href="https://www.pugetsystems.com/labs/hpc/NVIDIA-CUDA-with-Ubuntu-16-04-beta-on-a-laptop-if-you-just-cannot-wait-775/">博文</a></li>
+<li>装了cuda 8运行pip下载的tensorflow会出现问题。如果读者出现问题，可以考虑安装7.5</li>
+<li>cuda7.5并没有支持ubuntu16.04。但可以参考这个<a href="https://www.pugetsystems.com/labs/hpc/NVIDIA-CUDA-with-Ubuntu-16-04-beta-on-a-laptop-if-you-just-cannot-wait-775/">博文</a></li>
 </ul>
 
-<h2 id="emsp-cudnn40">5   部署cudnn4.0</h2>
-<ol>
-  <li>前往　<a href="https://developer.nvidia.com/cudnn">cudnn下载页面</a></li>
-  <li>下载相应版本的cudnn4</li>
-  <li>将相应内容拷贝到cuda目录中</li>
-</ol>
+<h2>5 &emsp; 部署cudnn4.0</h2>
 
-<p><code class="highlighter-rouge">
-tar xvzf cudnn-7.5-linux-x64-v4.tgz
+<ol>
+<li>前往　<a href="https://developer.nvidia.com/cudnn">cudnn下载页面</a></li>
+<li>下载相应版本的cudnn4</li>
+<li>将相应内容拷贝到cuda目录中</li>
+</ol>
+<div class="highlight"><pre><code class="language-" data-lang="">tar xvzf cudnn-7.5-linux-x64-v4.tgz
 sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
-</code></p>
+</code></pre></div>
+<h2>6 &emsp; 安装相应的tensorflow</h2>
 
-<h2 id="emsp-tensorflow">6   安装相应的tensorflow</h2>
 <p>前往 <a href="https://www.tensorflow.org/versions/r0.10/get_started/os_setup.html">tensorflow官网</a>，其中列举了不少安装方式，安装带gpu的版本</p>
 
-<h2 id="emsp-">7   测试</h2>
-<p>可以用tensorflow自带的sample测试,可以看到gpu相对与cpu测试速度有很大的提升：</p>
+<h2>7 &emsp; 测试</h2>
+
+<p>可以用tensorflow自带的sample测试,可以看到gpu相对与cpu测试速度有很大的提升：
 <p> cpu版本 </p>
-<center>![pic6](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-6.png)</center>
+<center><img src="http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-6.png" alt="pic6"></center>
 <p> gpu版本 </p>
-<center>![pic7](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-7.png)</center>
+<center><img src="http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-7.png" alt="pic7"></center></p>
 
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
@@ -300,226 +305,183 @@ Reading time ~2 minutes
     
   </header>
   <div class="entry-content">
-    <h3 id="tips1-emsp--pymysql">Tips1:   配置 pymysql　*</h3>
+    <h3>Tips1: &emsp; 配置 pymysql　*</h3>
+
 <p>在　<strong>init</strong>.py 中添加：</p>
-
-<p><code class="highlighter-rouge">python
-import pymysql
-pymysql.install_as_MySQLdb()
-</code></p>
-
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pymysql</span>
+<span class="n">pymysql</span><span class="o">.</span><span class="n">install_as_MySQLdb</span><span class="p">()</span>
+</code></pre></div>
 <p>在　setting.py中修改：</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'default'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'ENGINE'</span><span class="p">:</span> <span class="s">'django.db.backends.mysql'</span><span class="p">,</span>
+        <span class="s">'NAME'</span><span class="p">:</span> <span class="s">'vqa'</span><span class="p">,</span>  <span class="c"># mysql数据库名</span>
+        <span class="s">'USER'</span><span class="p">:</span><span class="s">'root'</span><span class="p">,</span>  <span class="c">#　mysql用户名，留空则默认为当前linux用户名　</span>
+        <span class="s">'PASSWORD'</span><span class="p">:</span><span class="s">'123456'</span><span class="p">,</span>
+        <span class="s">'HOST'</span><span class="p">:</span><span class="s">''</span><span class="p">,</span>     <span class="c"># 留空默认为localhost</span>
+        <span class="s">'PORT'</span><span class="p">:</span><span class="s">''</span><span class="p">,</span>     <span class="c"># 留空默认为3306端口</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3>Tips2: &emsp; 创建数据库并且migrate</h3>
 
-<p><code class="highlighter-rouge">python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'vqa',  # mysql数据库名
-        'USER':'root',  #　mysql用户名，留空则默认为当前linux用户名　
-        'PASSWORD':'123456',
-        'HOST':'',     # 留空默认为localhost
-        'PORT':'',     # 留空默认为3306端口
-    }
-}
-</code></p>
-
-<h3 id="tips2-emsp-migrate">Tips2:   创建数据库并且migrate</h3>
 <p>在 mysql  中创建数据库
 在项目目录中输入</p>
-
-<p><code class="highlighter-rouge">
-$ python manage.py migrate
-</code></p>
-
+<div class="highlight"><pre><code class="language-" data-lang="">$ python manage.py migrate
+</code></pre></div>
 <p>成功后会看到：</p>
-
-<p>```
-Operations to perform:
+<div class="highlight"><pre><code class="language-" data-lang="">Operations to perform:
   Apply all migrations: auth, sessions, admin, contenttypes
 Running migrations:
-  Rendering model states… DONE
-  Applying contenttypes.0001_initial… OK
-  Applying auth.0001_initial… OK
-  Applying admin.0001_initial… OK
-  Applying admin.0002_logentry_remove_auto_add… OK
-  Applying contenttypes.0002_remove_content_type_name… OK
-  Applying auth.0002_alter_permission_name_max_length… OK
-  Applying auth.0003_alter_user_email_max_length… OK
-  Applying auth.0004_alter_user_username_opts… OK
-  Applying auth.0005_alter_user_last_login_null… OK
-  Applying auth.0006_require_contenttypes_0002… OK
-  Applying auth.0007_alter_validators_add_error_messages… OK
-  Applying sessions.0001_initial… OK</p>
+  Rendering model states... DONE
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying sessions.0001_initial... OK
 
-<p>```</p>
+</code></pre></div>
+<h3>Tips3: &emsp; 创建app</h3>
 
-<h3 id="tips3-emsp-app">Tips3:   创建app</h3>
 <p>在项目目录中输入</p>
+<div class="highlight"><pre><code class="language-" data-lang="">$ python manage.py startapp polls
+</code></pre></div>
+<h3>Tips4: &emsp; 创建模型</h3>
 
-<p><code class="highlighter-rouge">
-$ python manage.py startapp polls
-</code></p>
-
-<h3 id="tips4-emsp-">Tips4:   创建模型</h3>
 <p>编辑　app/models.py</p>
 
-<h3 id="tips5-emsp-">Tips5:   激活模型</h3>
+<h3>Tips5: &emsp; 激活模型</h3>
+
 <p>编辑　project/settings/py</p>
-
-<p><code class="highlighter-rouge">python
-INSTALLED_APPS = (
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'app',    # 这是新增的app
-)
-</code></p>
-
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s">'django.contrib.admin'</span><span class="p">,</span>
+    <span class="s">'django.contrib.auth'</span><span class="p">,</span>
+    <span class="s">'django.contrib.contenttypes'</span><span class="p">,</span>
+    <span class="s">'django.contrib.sessions'</span><span class="p">,</span>
+    <span class="s">'django.contrib.messages'</span><span class="p">,</span>
+    <span class="s">'django.contrib.staticfiles'</span><span class="p">,</span>
+    <span class="s">'app'</span><span class="p">,</span>    <span class="c"># 这是新增的app</span>
+<span class="p">)</span>
+</code></pre></div>
 <p>运行命令</p>
-
-<p><code class="highlighter-rouge">
-$ python manage.py makemigrations app    # app迁移
+<div class="highlight"><pre><code class="language-" data-lang="">$ python manage.py makemigrations app    # app迁移
 $ python manage.py sqlmigrate vqa 0001　 # sql迁移
 $ python manage.py migrate # 将这些改变更新到数据库中。
-</code></p>
-
-<h3 id="tips5-emsp--1">Tips5(+):   修改模型</h3>
-
-<p><code class="highlighter-rouge">
-$ 修改models.py （最好每个类中都写上 def __str__())
+</code></pre></div>
+<h3>Tips5(+): &emsp; 修改模型</h3>
+<div class="highlight"><pre><code class="language-" data-lang="">$ 修改models.py （最好每个类中都写上 def __str__())
 $ python manage.py makemigrations
 $ python manage.py migrate
-</code></p>
-
-<h3 id="tips6-emsp-">Tips6:   创建管理网站</h3>
-
-<p><code class="highlighter-rouge">
-$ python manage.py createsuperuser # 创建一个能够登录管理站点的用户
-</code></p>
-
+</code></pre></div>
+<h3>Tips6: &emsp; 创建管理网站</h3>
+<div class="highlight"><pre><code class="language-" data-lang="">$ python manage.py createsuperuser # 创建一个能够登录管理站点的用户
+</code></pre></div>
 <p>在admin.py中注册，添加</p>
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
 
-<p>``` python
-from django.contrib import admin</p>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">xxx</span>
 
-<p>from .models import xxx</p>
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">xxx</span><span class="p">)</span>
+</code></pre></div>
+<h3>Tips7: &emsp; 制作对外view</h3>
 
-<p>admin.site.register(xxx)
-```</p>
-
-<h3 id="tips7-emsp-view">Tips7:   制作对外view</h3>
 <ul>
-  <li>html 模板
+<li>html 模板
 在app中创建 app/templates/app/xxx.html</li>
-  <li>css,js, images 模板,
-    <ol>
-      <li>在app中创建 app/static/css/xxx.css</li>
-      <li>在project/setting.py 找到 STATIC_URL 并在下方添加</li>
-    </ol>
-  </li>
+<li>css,js, images 模板,</li>
+<li>在app中创建 app/static/css/xxx.css</li>
+<li>在project/setting.py 找到 STATIC_URL 并在下方添加</li>
 </ul>
-
-<p><code class="highlighter-rouge">
-STATIC_ROOT = os.path.join(os.path.dirname(__file__),'static')
+<div class="highlight"><pre><code class="language-" data-lang="">STATIC_ROOT = os.path.join(os.path.dirname(__file__),'static')
 STATICFILES_DIRS = (
     ('css',os.path.join(STATIC_ROOT,'css').replace('\\','/') ), 
     ('js',os.path.join(STATIC_ROOT,'js').replace('\\','/') ),
     ('images',os.path.join(STATIC_ROOT,'images').replace('\\','/') ),
 )
-</code></p>
-
+</code></pre></div>
 <p>并创建相应的文件。
 3. 相应的html中的link改为：</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;link</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/static/css/xxx.css"</span> <span class="nt">/&gt;</span>
+</code></pre></div>
+<h3>Tips8: &emsp; 部署项目</h3>
 
-<p><code class="highlighter-rouge">html
-    &lt;link type="text/css" rel="stylesheet" href="/static/css/xxx.css" /&gt;
-</code></p>
-
-<h3 id="tips8-emsp-">Tips8:   部署项目</h3>
 <p>详见：http://djangobook.py3k.cn/2.0/chapter12/</p>
 
-<h3 id="imagefield-">*ImageField 的使用</h3>
-<ol>
-  <li>在setting.py中添加路径和url:</li>
-</ol>
+<h3>*ImageField 的使用</h3>
 
-<p><code class="highlighter-rouge">
-MEDIA_ROOT = BASE_DIR + 'xxx/media/'
+<ol>
+<li>在setting.py中添加路径和url:</li>
+</ol>
+<div class="highlight"><pre><code class="language-" data-lang="">MEDIA_ROOT = BASE_DIR + 'xxx/media/'
 MEDIA_URL =  BASE_URL + 'xxx/media/'   # 两者其实相同
-</code></p>
-
+</code></pre></div>
 <ol>
-  <li>在project/urls.py添加 url:</li>
+<li>在project/urls.py添加 url:</li>
 </ol>
-
-<p><code class="highlighter-rouge">python
-from django.conf.urls.static import static
-from django.conf import settings
-***
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-</code></p>
-
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.conf.urls.static</span> <span class="kn">import</span> <span class="n">static</span>
+<span class="kn">from</span> <span class="nn">django.conf</span> <span class="kn">import</span> <span class="n">settings</span>
+<span class="o">***</span>
+<span class="n">urlpatterns</span> <span class="o">+=</span> <span class="n">static</span><span class="p">(</span><span class="n">settings</span><span class="o">.</span><span class="n">MEDIA_URL</span><span class="p">,</span> <span class="n">document_root</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">MEDIA_ROOT</span><span class="p">)</span>
+</code></pre></div>
 <ol>
-  <li>在app/model.py中对于相应的model:</li>
+<li>在app/model.py中对于相应的model:</li>
 </ol>
+<div class="highlight"><pre><code class="language-" data-lang="">xxx = models.ImageField(upload_to = '***') # ***为相对路径
+</code></pre></div>
+<h3>*配置ajax</h3>
 
-<p><code class="highlighter-rouge">
-xxx = models.ImageField(upload_to = '***') # ***为相对路径
-</code></p>
-
-<h3 id="ajax">*配置ajax</h3>
 <p>在js脚本前添加配置：</p>
-
-<p><code class="highlighter-rouge">javascript
-function getCookie(name) {
-    var cookieValue = null;
-    if (document.cookie &amp;&amp; document.cookie != '') {
-        var cookies = document.cookie.split(';');
-        for (var i = 0; i &lt; cookies.length; i++) {
-            var cookie = jQuery.trim(cookies[i]);
-            // Does this cookie string begin with the name we want?
-            if (cookie.substring(0, name.length + 1) == (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-            }
-        }
-    }
-    return cookieValue;
-}
-var csrftoken = getCookie('csrftoken');
-function csrfSafeMethod(method) {
-    // these HTTP methods do not require CSRF protection
-    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-}
-function sameOrigin(url) {
-    // test that a given url is a same-origin URL
-    // url could be relative or scheme relative or absolute
-    var host = document.location.host; // host + port
-    var protocol = document.location.protocol;
-    var sr_origin = '//' + host;
-    var origin = protocol + sr_origin;
-    // Allow absolute or scheme relative URLs to same origin
-    return (url == origin || url.slice(0, origin.length + 1) == origin + '/') ||
-        (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + '/') ||
-        // or any other URL that isn't scheme relative or absolute i.e relative.
-        !(/^(\/\/|http:|https:).*/.test(url));
-}
-$.ajaxSetup({
-    beforeSend: function(xhr, settings) {
-        if (!csrfSafeMethod(settings.type) &amp;&amp; sameOrigin(settings.url)) {
-            // Send the token to same-origin, relative URLs only.
-            // Send the token only if the method warrants CSRF protection
-            // Using the CSRFToken value acquired earlier
-            xhr.setRequestHeader("X-CSRFToken", csrftoken);
-        }
-    }
-});
-</code></p>
-
-
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">function</span> <span class="nx">getCookie</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">cookieValue</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">&amp;&amp;</span> <span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">!=</span> <span class="s1">''</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">cookies</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">';'</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">cookies</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">cookie</span> <span class="o">=</span> <span class="nx">jQuery</span><span class="p">.</span><span class="nx">trim</span><span class="p">(</span><span class="nx">cookies</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+            <span class="c1">// Does this cookie string begin with the name we want?</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">name</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">'='</span><span class="p">))</span> <span class="p">{</span>
+                <span class="nx">cookieValue</span> <span class="o">=</span> <span class="nb">decodeURIComponent</span><span class="p">(</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">));</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">cookieValue</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">csrftoken</span> <span class="o">=</span> <span class="nx">getCookie</span><span class="p">(</span><span class="s1">'csrftoken'</span><span class="p">);</span>
+<span class="kd">function</span> <span class="nx">csrfSafeMethod</span><span class="p">(</span><span class="nx">method</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// these HTTP methods do not require CSRF protection</span>
+    <span class="k">return</span> <span class="p">(</span><span class="sr">/^</span><span class="se">(</span><span class="sr">GET|HEAD|OPTIONS|TRACE</span><span class="se">)</span><span class="sr">$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">method</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">sameOrigin</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// test that a given url is a same-origin URL</span>
+    <span class="c1">// url could be relative or scheme relative or absolute</span>
+    <span class="kd">var</span> <span class="nx">host</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="p">;</span> <span class="c1">// host + port</span>
+    <span class="kd">var</span> <span class="nx">protocol</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">sr_origin</span> <span class="o">=</span> <span class="s1">'//'</span> <span class="o">+</span> <span class="nx">host</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">origin</span> <span class="o">=</span> <span class="nx">protocol</span> <span class="o">+</span> <span class="nx">sr_origin</span><span class="p">;</span>
+    <span class="c1">// Allow absolute or scheme relative URLs to same origin</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">url</span> <span class="o">==</span> <span class="nx">origin</span> <span class="o">||</span> <span class="nx">url</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">origin</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="nx">origin</span> <span class="o">+</span> <span class="s1">'/'</span><span class="p">)</span> <span class="o">||</span>
+        <span class="p">(</span><span class="nx">url</span> <span class="o">==</span> <span class="nx">sr_origin</span> <span class="o">||</span> <span class="nx">url</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">sr_origin</span><span class="p">.</span><span class="nx">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="nx">sr_origin</span> <span class="o">+</span> <span class="s1">'/'</span><span class="p">)</span> <span class="o">||</span>
+        <span class="c1">// or any other URL that isn't scheme relative or absolute i.e relative.</span>
+        <span class="o">!</span><span class="p">(</span><span class="sr">/^</span><span class="se">(\/\/</span><span class="sr">|http:|https:</span><span class="se">)</span><span class="sr">.*/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">url</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="nx">$</span><span class="p">.</span><span class="nx">ajaxSetup</span><span class="p">({</span>
+    <span class="na">beforeSend</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">settings</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">csrfSafeMethod</span><span class="p">(</span><span class="nx">settings</span><span class="p">.</span><span class="nx">type</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">sameOrigin</span><span class="p">(</span><span class="nx">settings</span><span class="p">.</span><span class="nx">url</span><span class="p">))</span> <span class="p">{</span>
+            <span class="c1">// Send the token to same-origin, relative URLs only.</span>
+            <span class="c1">// Send the token only if the method warrants CSRF protection</span>
+            <span class="c1">// Using the CSRFToken value acquired earlier</span>
+            <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"X-CSRFToken"</span><span class="p">,</span> <span class="nx">csrftoken</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div>
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
 
@@ -541,242 +503,113 @@ Reading time ~1 minute
     
   </header>
   <div class="entry-content">
-    <h1 id="section">目录</h1>
+    <h1>目录</h1>
 
 <ul>
-  <li><a href="#1">搜狗拼音</a></li>
-  <li><a href="#2">SS-link</a></li>
-  <li><a href="#4">Git</a></li>
-  <li><a href="#5">Ruby</a></li>
-  <li><a href="#6">Nodejs</a></li>
-  <li><a href="#7">Jekyll</a></li>
-  <li><a href="#8">Mysql</a></li>
-  <li><a href="#9">Apache</a></li>
-  <li><a href="#10">Latex</a></li>
-  <li><a href="#11">Flash Player</a></li>
-  <li><a href="#12">Sublime texter</a></li>
+<li><a href="#1">搜狗拼音</a></li>
+<li><a href="#2">SS-link</a></li>
+<li><a href="#4">Git</a></li>
+<li><a href="#5">Ruby</a></li>
+<li><a href="#6">Nodejs</a></li>
+<li><a href="#7">Jekyll</a></li>
+<li><a href="#8">Mysql</a></li>
+<li><a href="#9">Apache</a></li>
+<li><a href="#10">Latex</a></li>
+<li><a href="#11">Flash Player</a></li>
+<li><a href="#12">Sublime texter</a></li>
 </ul>
 
-<h3 id="h2-id1-1-emspsougoupinyinh2">&lt;h2 id="1"&gt; [1]  Sougoupinyin&lt;/h2&gt;</h3>
+<h3><h2 id="1"> [1] &emsp;Sougoupinyin</h2></h3>
+
 <ol>
-  <li>download from website</li>
-  <li><code class="highlighter-rouge">$ sudo dpkg -i sogoupinyin_2.0.0.0078_amd64.deb</code></li>
-  <li><code class="highlighter-rouge">$ sudo apt-get install -f</code></li>
-  <li><code class="highlighter-rouge">$ sudo dpkg -i sogoupinyin_2.0.0.0078_amd64.deb</code></li>
+<li>download from website</li>
+<li><code>$ sudo dpkg -i sogoupinyin_2.0.0.0078_amd64.deb</code></li>
+<li><code>$ sudo apt-get install -f</code></li>
+<li><code>$ sudo dpkg -i sogoupinyin_2.0.0.0078_amd64.deb</code></li>
 </ol>
 
-<h3 id="h2-id2-2-emsp-shadowsocks-qt-5--switchyomegah2">&lt;h2 id="2"&gt; [2]   Shadowsocks Qt-5 + SwitchyOmega&lt;/h2&gt;</h3>
-<ol>
-  <li>下载</li>
-</ol>
+<h3><h2 id="2"> [2] &emsp; Shadowsocks Qt-5 + SwitchyOmega</h2></h3>
 
-<p><code class="highlighter-rouge">
-$ sudo add-apt-repository ppa:hzwhuang/ss-qt5
+<ol>
+<li>下载</li>
+</ol>
+<div class="highlight"><pre><code class="language-" data-lang="">$ sudo add-apt-repository ppa:hzwhuang/ss-qt5
 $ sudo apt-get update
 $ sudo apt-get install shadowsocks-qt5
-</code></p>
-
+</code></pre></div>
 <ol>
-  <li>setting-&gt;network-&gt;proxy-&gt;socks host + port.</li>
-  <li>add SwitchyOmega into chromium</li>
+<li>setting-&gt;network-&gt;proxy-&gt;socks host + port.</li>
+<li>add SwitchyOmega into chromium</li>
 </ol>
 
-<h3 id="h2-id3-3-emsp-atom-text-edit-h2">&lt;h2 id="3"&gt; [3]   Atom text edit &lt;/h2&gt;</h3>
-<p><code class="highlighter-rouge">
-$ sudo add-apt-repository ppa:webupd8team/atom
+<h3><h2 id="3"> [3] &emsp; Atom text edit </h2></h3>
+<div class="highlight"><pre><code class="language-" data-lang="">$ sudo add-apt-repository ppa:webupd8team/atom
 $ sudo apt-get update
 $ sudo apt-get install atom
-</code></p>
-
-<h3 id="h2-id4-4-emsp-git-h2">&lt;h2 id="4"&gt; [4]   git &lt;/h2&gt;</h3>
+</code></pre></div>
+<h3><h2 id="4"> [4] &emsp; git </h2></h3>
 
 <ol>
-  <li>下载：</li>
+<li>下载：</li>
 </ol>
-
-<p><code class="highlighter-rouge">
-$ sudo apt-get git
-</code>
-2. 配置：</p>
-
-<p><code class="highlighter-rouge">
-$ git config --global user.name "ScarletPan"
+<div class="highlight"><pre><code class="language-" data-lang="">$ sudo apt-get git
+</code></pre></div>
+<ol>
+<li>配置：</li>
+</ol>
+<div class="highlight"><pre><code class="language-" data-lang="">$ git config --global user.name "ScarletPan"
 $ git config --global user.email "myscarlet@sina.com"
 $ ssh-keygen -t rsa -C "myscarlet@sina.com" #生成 ssh-key
 $ eval "$(ssh-agent -s)" # 检查ssh-agent
 $ ssh-add ~/.ssh/id_rsa # 将新产生的秘钥加入
 $ gedit .ssh/id_rsa.pub # 将内容复制到github用户SSH-key中
-</code></p>
+</code></pre></div>
+<h3><h2 id="5"> [5] &emsp; ruby</h2></h3>
 
-<h3 id="h2-id5-5-emsp-rubyh2">&lt;h2 id="5"&gt; [5]   ruby&lt;/h2&gt;</h3>
 <ol>
-  <li>下载：</li>
+<li>下载：</li>
 </ol>
-
-<p><code class="highlighter-rouge">
-$ sudo apt-get install ruby2.3
-</code>
-2. 配置</p>
-
-<p><code class="highlighter-rouge">
-$ gem source -r https://rubygems.org/  #更换到内陆的下载源
+<div class="highlight"><pre><code class="language-" data-lang="">$ sudo apt-get install ruby2.3
+</code></pre></div>
+<ol>
+<li>配置</li>
+</ol>
+<div class="highlight"><pre><code class="language-" data-lang="">$ gem source -r https://rubygems.org/  #更换到内陆的下载源
 $ gem source -a https://ruby.taobao.org
 $ sudo apt-get install ruby-dev
-</code></p>
-
-<h3 id="h2-id6-6-emsp-nodejs-h2">&lt;h2 id="6"&gt; [6]   Nodejs &lt;/h2&gt;</h3>
-<p><code class="highlighter-rouge">
-$ sudo apt-get install nodejs # nodejs -v4.2.6
-</code></p>
-
-<h3 id="h2-id7-7-emsp-jekyll-h2">&lt;h2 id="7"&gt; [7]   jekyll &lt;/h2&gt;</h3>
-<p><code class="highlighter-rouge">
-$ sudo gem install jekyll
+</code></pre></div>
+<h3><h2 id="6"> [6] &emsp; Nodejs </h2></h3>
+<div class="highlight"><pre><code class="language-" data-lang="">$ sudo apt-get install nodejs # nodejs -v4.2.6
+</code></pre></div>
+<h3><h2 id="7"> [7] &emsp; jekyll </h2></h3>
+<div class="highlight"><pre><code class="language-" data-lang="">$ sudo gem install jekyll
 $ sudo gem install jekyll-sitemap
 $ sudo gem install jekyll-paginate
 $ sudo gem install jekyll-gist
 $ sudo gem install redcarpet
-</code></p>
+</code></pre></div>
+<h3><h2 id="8"> [8] &emsp; mysql </h2></h3>
+<div class="highlight"><pre><code class="language-" data-lang="">$ sudo apt-get install mysql-server
+</code></pre></div><div class="highlight"><pre><code class="language-" data-lang="">$ mysql_secure_installation
+</code></pre></div>
+<p>&emsp; The first question will ask if you want to change the root password, but because you just set it, enter n. For all other questions, press ENTER to accept the default response.</p>
 
-<h3 id="h2-id8-8-emsp-mysql-h2">&lt;h2 id="8"&gt; [8]   mysql &lt;/h2&gt;</h3>
-<p><code class="highlighter-rouge">
-$ sudo apt-get install mysql-server
-</code>
-<code class="highlighter-rouge">
-$ mysql_secure_installation
-</code>
-  The first question will ask if you want to change the root password, but because you just set it, enter n. For all other questions, press ENTER to accept the default response.</p>
+<h3><h2 id="9"> [9] &emsp; apache </h2></h3>
 
-<h3 id="h2-id9-9-emsp-apache-h2">&lt;h2 id="9"&gt; [9]   apache &lt;/h2&gt;</h3>
 <p>参考：<a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-an-apache-mysql-and-python-lamp-server-without-frameworks-on-ubuntu-14-04">python + apache + django 配置  </a></p>
 
-<h3 id="h2-id10-10-emsp-latex-h2">&lt;h2 id="10"&gt; [10]   latex &lt;/h2&gt;</h3>
-<p><code class="highlighter-rouge">
-$ sudo apt-get install texlive-full
+<h3><h2 id="10"> [10] &emsp; latex </h2></h3>
+<div class="highlight"><pre><code class="language-" data-lang="">$ sudo apt-get install texlive-full
 $ sudo atp-get install texmaker
-</code></p>
+</code></pre></div>
+<h3><h2 id="11"> [11] &emsp; Flash-Player </h2></h3>
 
-<h3 id="h2-id11-11-emsp-flash-player-h2">&lt;h2 id="11"&gt; [11]   Flash-Player &lt;/h2&gt;</h3>
 <p>System-settings -&gt; Software &amp; Update -&gt; other Software -&gt; Canonical Partners (get-in)
-<code class="highlighter-rouge">
+<code>
 sudo apt install adobe-flashplugin
 </code></p>
 
-<h3 id="h2-id12-11-emsp-sublime-text-h2">&lt;h2 id="12"&gt; [11]   sublime-text &lt;/h2&gt;</h3>
-
-
-  </div><!-- /.entry-content -->
-</article><!-- /.hentry -->
-
-<article class="hentry">
-  <header>
-    
-    <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2016-05-19T00:00:00+00:00"><a href="/ASR/">May 19, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="/about/" title="About Haojie PAN">Haojie PAN</a></span></span>
-      
-      <span class="entry-reading-time">
-        <i class="fa fa-clock-o"></i>
-        
-Reading time ~2 minutes
-      </span><!-- /.entry-reading-time -->
-      
-    </div><!-- /.entry-meta -->
-    
-      <h1 class="entry-title"><a href="/ASR/" rel="bookmark" title="语音识别综述" itemprop="url">语音识别综述</a></h1>
-    
-  </header>
-  <div class="entry-content">
-    <p>最近有门课程让我们短时间去了解一个领域，并且做一个文献综述，我看了看几个给题， 还是ASR最好写了，像机器学习、图像处理这些都太宽太泛了。</p>
-
-<p>于是记录如下：</p>
-
-<p><strong>摘要：</strong>   语音识别是一个令人兴奋的研究领域，并在60年以来吸引了不少研究者。本文将会给出语音识别的定义、基础模型，并对语音识别发展脉络、发展方向做出一些简短的阐述。另外是介绍一些当今研究领域中对于语音识别系统的方法，特别是占据主流语音识别系统的隐马尔科夫模型（HMM）以及近年来越来越受到追捧的深度神经网络（DNN）方法。但随着语音识别技术日渐成熟，仍有一些挑战和困难，比如通用的复杂的环境因素、多变的语音变量、语音系统评估等。<br />
-<strong>关键字：</strong>  研究脉络；HMM；深度学习；展望</p>
-
-<p><strong>1   介绍和研究意义</strong></p>
-
-<p>    语音是人们日常交流活动的最基本、也是最有效的一种方式 [1]，从而面向计算机人们也非常希望能够通过直接对话的方式进行交流和传递信息。因此语音识别系统的构建显得十分关键。<br />
-    什么是语音识别? 它的全称是自动语音识别（Automatic Speech Recognition）：它是一个能够通过一系列计算机程序构建的算法将语音信号转换成文字序列的过程
-[2]。也就是说通关过ASR计算机能够“听”懂人所讲述的话，并且再进一步改进后能够与人类进行交流。<br />
-    很显然，ASR的研究是很让人激动的，如果能实现通用的ASR系统应用于不同的环境，这将便捷信息检索、语言翻译、语言教育等，极大地改善人类的生活。</p>
-
-<p><strong>2   背景及研究脉络</strong></p>
-
-<p>    语音识别技术在过去的60年里吸引了大量研究者的注意，最早可以追溯到20世纪二、三十年代，如早期（1939年）贝尔实验室在纽约世博会上展示了他们的语音综合机器。<br />
-    而语音识别的重大发展是在20世纪70年代中叶，那个时代见证了在孤立字识别领域上许多里程碑式的进步。首先俄国的研究者们展示了在语音识别中运用模式识别（Pattern Recognition）的想法，日本的研究者成功运用到了动态编程编码（Dynamic Programming code），如板仓提出的线性预测编码成为低位速下编码（LPC）方法高质量语音最有用的方法之一。另一个值得注意的是卡内基梅隆大学在1973向世人展示了Heresay I语音理解系统，能够在1011个单词的词汇表中以较好的准确性识别语音。<br />
-    而80年代起在连接词识别上获得了比较好的成效，特别是隐马尔可夫模型（Hidden Markov Model，下面简称HMM）[11] 的发展并被大范围的接受，其作为模式匹配策略被当时的很多公司采用和商业化，就算到40多年后的今天也是占据主导的声学模型算法之一。另外就是神经网络的发展，但是在当时由于一些实践上的原因，并没有像HMM那样成功。<br />
-    语音识别的最具转折性和建设性的发展归因于统计方法的引入，包括HMM、期望最大化（EM），最大互信息（MMI）等。另外是信号表述技术的发展，如梅尔频率倒谱系数（MFCC）[12]，感知线性预测常数（PLP）等。<br />
-    基于摩尔法则的硬件技术进步使得ASR研究者能在很短时间内跑一些复杂的算法，另外还有一些大的语音语料库的构建使得语音识别的模型、算法在后来的几十年里不断地改进和延伸。<br />
-    时至今日，由于硬件的支持、GPU的发展使得深度学习不断发展，许多研究者从传统的高斯混合模型（GMM）和HMM结合转向深度神经网络（DNN）与HMM结合，并取得了不小的成效 [3]。深度学习以及深度神经网络在语音处理方向上的应用仍是当今研究的热潮之一。<br />
-    除了在模型上的不断发展以外，另外有两点值得可喜的发展：一是语料库的不断完善和数据集的不断增多（如TIMIT、TI46数据集等），二是面向大量音频数据处理的工具的出现和不断完善（如CMU的Sphinx，剑桥大学的HTK等）[4]。</p>
-
-<p><strong>3   目前的语音识别技术</strong></p>
-
-<p><strong>3.1 基础语音识别模型</strong></p>
-<center> ![图1](http://o6qr23o6z.bkt.clouddn.com/asr_basemodel.png) </center>
-<p>    一个标准的语音识别模型首先假定有一串输入序列O = {O1, O2, .., On},,以及符号词典 W = {W1, W2, .., W_n}, 求解对于该输入序列解码出符号串（输出语句）W = {W1, W2, .., Wk}。通过数学转化成求解以下概率的最大值：</p>
-<center> W = argmaxP(O|W)P(W) </center>
-<p>$emsp;   其中P(O|W)被称之为声学模型，P(W)被称为语言模型。<br />
-    该模型的求解过程如图1所示，其中的搜索，就是依据对公式中的声学模型打分和语言模型打分，寻找一个词模型序列以描述输入语音信号，从而得到词解码序列。<br />
-<strong>3.2 当今的语音识别方法</strong>
-<strong>3.2.1 特征抽取</strong><br />
-    在语音识别中，特征抽取的主要目的是在给定一个紧凑的输入信号表示计算出特征向量的简约序列。主要分成三个步骤：语音分析（语音前端声学处理）；编译成包含动静态的扩展特征向量；将这些扩展后的特征向量转化成影响因子更大的向量，然后提供给识别器。<br />
-    现在主要有下面的一些模型：1.主元成分分析（PCA）；2.线性判别式分析（LDA）；3.独立成分分析（ICA）；4.线性预测编码； 5. 倒谱分析；6.梅尔频率倒谱系数（MFFC）7. 滤波器分析；8.基于核函数的特征抽取等 [2]。<br />
-<strong>3.2.2 语音识别方式</strong><br />
-    声学语音学方法：主要步骤为语音谱段分析、特征提取；分割并标注语段：声音信号被分割成几个稳定的语音区，并进行匹配标注；从语音标注序列中判断一个词或者一串词是否有效。<br />
-    模式识别方式:包括1.基于模板的模式识别；2.随机模型法(最有名的就是上文提到的(HMM))；3.动态时间规整（DTW）；4.矢量量化（VQ）<br />
-    人工智能方式:基于知识的专家系统。<br />
-    神经网络方式：多隐藏层的深度神经网络(DNN)，比如微软研究院的研究[4];深度循环网络（RNN）训练，比如多伦多大学的研究 [5]。<br />
-<strong>3.2.3 现今语音识别系统</strong><br />
-    现今的语音识别系统主要使用下列两个方式。<br />
-    一是使用HMM解决语音的时间变率，然后用高斯混合模型(GMMs)决定每个HMM状态对声学输入的拟合好坏。<br />
-    另一个是用前向传播神经网络去评估拟合好坏，即用系数的一些帧作为输入，以HMM状态的后端概率作为输出。这种深度神经网络的方式已经越来越体现出它的优势性。<br />
-<strong>3.3 存在的问题及原因</strong><br />
-    一是处理环境噪声和缺失信息的处理， M. Cooke等人在 [6]中讨论了这个问题，未来的语音识别系统还是要更优化地解决它。<br />
-    二是各种变量对于语音处理的挑战。M.Bengzeghiba等人在 [7]中描述了一系列变量比如说话风格，演说人的生理因素，年龄，情绪等。
-    三是对于语音系统可行度的评估分析， H. Jiang 在 [8]中提到了一些置信度分析方法，但仍存在不少问题。<br />
-    四是对于数据中一些不能被词典所包括的超纲词汇以及生僻字对于语音识别的影响研究<br />
-    1994年摩尔展示了20个语音识别机制的主题[10]，在现在仍是语音发展的关键。</p>
-
-<p><strong>4   进一步发展与研究概述</strong><br />
-    在以后的研究和发展过程中大致有以下一些需要投入研究[9]：<br />
-    一是对于置信度的研究分析的改进，需要一个更加通用的评估手段。<br />
-    二是日常音频的不断堆积，需要有更加强大的ASR系统在大范围的语音、发音人、频道和娱乐因素环境下去处理声学环境的多变性、混响、外部噪音、交流频道等。<br />
-    三是自我适应（学习）的语言技术研究。<br />
-    四是对于数据中一些不能被词典所包括的超纲词汇以及生僻字对于语音识别的影响研究<br />
-    1994年摩尔展示了20个语音识别机制的主题[10]，在现在仍是语音发展的关键。</p>
-
-<p><strong>5   见解与感想</strong></p>
-
-<p>    对于语音识别技术的研究是令人兴奋的，尤其是统计学习的引进使得这个领域发展迅速。在研究该领域的时候，需要重点对主流算法，比如隐马尔可夫(HMM)的研究，文献[11] 提供了一个系统的HMM的详细描述。 针对于主流算法的不足进行发散思考。<br />
-    另外是由于现在的深度学习研究热潮中，对于深度神经网络在语音识别中的研究也是非常关键。<br />
-    最后是如果能够提供更为强大的语音识别评估系统对这个领域的研究将提供非常大的帮助。</p>
-
-<p><strong>6  参考文献</strong></p>
-
-<p>[1]   Harpreet Singh, Ashok Kumar Bathla, “A Survey on Speech Recognition” <em>in ISSN Volume No. 2, Issue No. 6, June 2013</em></p>
-
-<p>[2] M.A.Anusuya, S.K.Katti, “Speech Recognition by Machine: A Review” <em>in IJCSIS Vol. 6, No. 3, 2009</em></p>
-
-<p>[3] Geoffrey Hinton, Li Deng, Dong Yu, George E. Dahl, Abdel-rahman Mohamed, Navdeep Jaitly, Andrew Senior, Vincent Vanhoucke, Patrick Nguyen, Tara N. Sainath, and Brian Kingsbury, “Deep Neural Networks for Acoustic Modeling in Speech Recognition”* in IEEE SIGNAL PROCESSING MAGAZINE November 2012*</p>
-
-<p>[4] Li Deng, Jinyu Li, Jui-Ting Huang, Kaisheng Yao, Dong Yu, Frank Seide, Michael L. Seltzer, Geoff Zweig, Xiaodong He, Jason Williams, Yifan Gong, and Alex Acero, “Recent Advances in Deep Learning for Speech Research at Microsoft” <em>in IEEE International Conference on Acoustics, Speech and Signal Processing May 2013</em></p>
-
-<p>[5]  Alex Graves, Abdel-rahman Mohamed and Geoffrey Hinton,  “Speech Recognition with Deep Recurrent Neural Networks” <em>in IEEE International Conference on Acoustics, Speech and Signal Processing May 2013</em></p>
-
-<p>[6] Martin Cooke, Phil Green, Ljubomir Josifovski, Ascension Vizinho, “Robust automatic speech recognition with missing and unreliable acoustic data”* in SPEECH COMMUNICATION May 2000*</p>
-
-<p>[7]  M. Benzeghiba, R. De Mori, O. Deroo, S. Dupont <em>, T. Erbes, D. Jouvet, L. Fissore, P. Laface, A. Mertins, C. Ris, R. Rose, V. Tyagi, C. Wellekens, “Automatic speech recognition and speech variability: A review” *in SPEECH COMMUNICATION Volume 49, Issues 10–11, October–November 2007</em></p>
-
-<p>[8] Hui Jiang, “Confidence measures for speech recognition: A survey” <em>in SPEECH COMMUNICATION December 2004</em></p>
-
-<p>[9] Janet M. Baker, Li Deng, James Glass, Sanjeev Khudanpur, Chin-Hui Lee, Nelson Morgan, and Douglas O’Shaughnessy, “Research Developments and Directions in Speech Recognition and Understanding, Part 1” <em>in IEEE SIGNAL PROCESSING MAGAZINE  May 2009</em></p>
-
-<p>[10] Yang Liu et.al, “Enriching Speech Recognition with Automatic Detection of sentence Boundaries an disfluencies” <em>in IEEE Transactions on Audio, Speech and Language processing, V.14, No.4, July 2006</em></p>
-
-<p>[11] L.R.Rabiner, “A Tutorial on Hidden Markov Models and Selected Application in Speech Recognition” <em>in Proc.IEEE February 1989</em></p>
-
-<p>[12] S. Davis and P. Mermelstein, “Comparison of parametric representations for monosyllabic word recognition in continuously spoken sentences” <em>in IEEE Trans. Acoust. Speech Signal Processing, vol. 28, no. 4, pp. 357–366, August 1980</em></p>
+<h3><h2 id="12"> [11] &emsp; sublime-text </h2></h3>
 
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
@@ -830,7 +663,8 @@ Reading time ~2 minutes
 
 
 
-          
 
+<script type="text/javascript"
+        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
