@@ -5,25 +5,25 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Reasons to write &#8211; My SCARLET</title>
+<title>Bayes Decision Rule &#8211; My SCARLET</title>
 <meta name="description" content="My first blog.">
-<meta name="keywords" content="others">
+<meta name="keywords" content="Pattern, Classification">
 
 
 
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Reasons to write">
+<meta property="og:title" content="Bayes Decision Rule">
 <meta property="og:description" content="My first blog.">
-<meta property="og:url" content="/reasons/">
+<meta property="og:url" content="/bayes-decision-rule/">
 <meta property="og:site_name" content="My SCARLET">
 
 
 
 
 
-<link rel="canonical" href="/reasons/">
+<link rel="canonical" href="/bayes-decision-rule/">
 <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My SCARLET Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -110,9 +110,9 @@
     <header class="header-title">
       <div class="header-title-wrap">
         
-          <h1 class="entry-title"><a href="/reasons/" rel="bookmark" title="Reasons to write">Reasons to write</a></h1>
+          <h1 class="entry-title"><a href="/bayes-decision-rule/" rel="bookmark" title="Bayes Decision Rule">Bayes Decision Rule</a></h1>
         
-        <h2><span class="entry-date date published"><time datetime="2016-04-22T00:00:00+00:00">April 22, 2016</time></span></h2>
+        <h2><span class="entry-date date published"><time datetime="2016-10-03T00:00:00+00:00">October 03, 2016</time></span></h2>
         
         <p class="entry-reading-time">
           <i class="fa fa-clock-o"></i>
@@ -123,45 +123,54 @@ Reading time ~1 minute
       </div><!-- /.header-title-wrap -->
     </header>
     <div class="entry-content">
-      <p>  最早想写博客的想法是15年我开始学Python那会，那时候刚接触网路爬虫，需要调用不同的库，beautiful soap, requests, selenium, sqlite3, etc. 当时就觉得这么多api无法靠记来完成，而在实际coding的过程中，遇到了一些官方文档中无法解决的问题，各种查询之后才debug成功，但由于没有记录下来，导致以后再次遇到忘记了解决之法。</p>
+      <blockquote>
+  <p>情景引入： 作为一个classificaton的问题，假设有sea bass 和 salmon两类鱼，而我们决策的目的是为了区分它们，用于区分我们将引入feature这个概念，大致意思就是可以用一系列特征来判断出某一条打捞上来的鱼是sea bass还是salmon，在这里我们只取一条鱼的lightness作为feature。</p>
+</blockquote>
 
-<p>  比如Sqlite3当初使用过程中有这么一个句子：</p>
+<h4 id="section">相关术语</h4>
+<ul>
+  <li>state of nature:  在这个例子的前提下，我们可以断定自然状态下只有两种可能：sea bass和salmon. 如果我们用符号$w$来表示state of nature, 则$w = w_1$为sea bass, $w = w_2$为salmon</li>
+  <li>priori probability(<strong>prior</strong>):  $P(w_1)$指打捞上来的下一条鱼为sea bass, $P(w_2)$指打捞上来的下一条鱼为salmon，很显然, $P(w_1) + P(w_2) = 1$. 从上述陈述中我们可以将prior理解为我们事先知道的知识，比如我们知道我们要打捞的海域这两种鱼的比例为2:1。</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>class-conditional probability density(<strong>likelihood</strong>): $P(x \space</td>
+          <td>w_j) $, 用概率论的知识我们可以这么理解它：假设feature $x$在$w_j$这一类中服从某种分布，那么在这一类鱼的lightness为某一直的概率越大，相应的$P(x \space</td>
+          <td>w_j) $也就越大，比如说sea bass 的lightness 为10的可能性非常高，则$P(x=10 \space</td>
+          <td>w_1) $也就非常大。</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>evidence：$p(x)$， 在这个例子中表示的就是某个lightness在打捞上来的鱼中出现的概率有多高。同事我们也可以将其当做一个scale因子，这可以保证posterior概率之和为1.</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>posterior：$P(w_j\space</td>
+          <td>x)$， 在这个例子上即为当捞上一条鱼他的lightness为某一值时，它为sea bass和salmon的概率各自有多大</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
 
-<p><code class="highlighter-rouge">python
-cursor.execute("SELECT name FROM db WHERE id = ?", name)
-</code></p>
-
-<p>  当初怎么都debug不出来到底为何错了（因为还没学数据库），最后去stackoverflow搜罗了好久答案才知道就算只有一个元素也要以元组的方式插入：</p>
-
-<p><code class="highlighter-rouge">python
-cursor.execute("SELECT name FROM db WHERE id = ?", (name,))
-</code></p>
-
-<p>  然而在到后来在用Python通信mysql的时候又犯了同样的错误，又花费了一点时间，于是想想如果有个专门的平台给自己做记录用还是不错的。
-#</p>
-
-<p>  后来我用上了印象笔记，尽管在生活上整理一些琐碎的事务它的确帮了我很大的忙，但实话说想要记录技术博文的话实在不合我的胃口。</p>
-
-<p>  另外就是一些专门的国内博客网站，曾经生过在上面写博文的想法，但是看到那个网页玲琅满目的条目和广告，作为一个对界面美观和整洁度有一定洁癖的人来说，的确是难以忍受的。于是我又想去学python的django等框架、学一些前端的东西然后建立一个独立博客，但由于不是自己的专业喜好以及平时学业的繁忙，一直都没有付诸实践。</p>
-
-<p>  最后是在查询RNN相关博文时看到了 <a href="http://colah.github.io/">colah的博客</a>，非常整洁和美观，又看到了github.io的后缀名，知道了github托管静态网页，就觉得这正是我想要的。</p>
-
-<hr />
-
-<p>  所以这个博客主要是记录我在学习中所碰到的一些情况，为未来碰到同样情况的我自己和一些能够发现这个博客的人做一个前车之鉴吧。</p>
-
-<p>  同时也会记录一些生活的点滴，做一个伪文学爱好者。</p>
-
-<p>                                    2016/04/22</p>
+<h4 id="section-1">贝叶斯公式</h4>
+<p> 学过概率论的同学应该对下面这个式子并不陌生：</p>
+<center> $P(w_j \space | x) = \frac{p(x|w_j)P(w_j)}{p(x)}$ </center>
+<p> 有了上面的术语解释，我们可以用相关的术语来表达这个式子:</p>
+<center> $$ posterior = \frac{likelihood \times prior}{evidence} $$</center>
+<p> 这就是所谓的贝叶斯公式了</p>
 
       <footer class="entry-meta">
-        <span class="entry-tags"><a href="/tags/#others" title="Pages tagged others" class="tag"><span class="term">others</span></a></span>
+        <span class="entry-tags"><a href="/tags/#Pattern" title="Pages tagged Pattern" class="tag"><span class="term">Pattern</span></a><a href="/tags/#Classification" title="Pages tagged Classification" class="tag"><span class="term">Classification</span></a></span>
         
         <div class="social-share">
   <ul class="socialcount socialcount-small inline-list">
-    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=/reasons/" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
-    <li class="twitter"><a href="https://twitter.com/intent/tweet?text=/reasons/" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
-    <li class="googleplus"><a href="https://plus.google.com/share?url=/reasons/" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
+    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=/bayes-decision-rule/" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+    <li class="twitter"><a href="https://twitter.com/intent/tweet?text=/bayes-decision-rule/" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+    <li class="googleplus"><a href="https://plus.google.com/share?url=/bayes-decision-rule/" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
   </ul>
 </div><!-- /.social-share -->
       </footer>
@@ -170,23 +179,23 @@ cursor.execute("SELECT name FROM db WHERE id = ?", (name,))
     <div class="read-more">
   
     <div class="read-more-header">
-      <a href="" class="read-more-btn">Read More</a>
+      <a href="/tensorflow/" class="read-more-btn">Read More</a>
     </div><!-- /.read-more-header -->
     <div class="read-more-content">
-      <h3><a href="/bayes-decision-rule/" title="Bayes Decision Rule">Bayes Decision Rule</a></h3>
-      <p>> 情景引入： 作为一个classificaton的问题，假设有sea bass 和 salmon两类鱼，而我们决策的目的是为了区分它们，用于区分我们将引入feature这个概念，大致意思就是可以用一系列特征来判断出某一条打捞上来的鱼是sea bass还是salmon，在这...&hellip; <a href="/bayes-decision-rule/">Continue reading</a></p>
+      <h3><a href="/tensorflow/" title="极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)">极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)</a></h3>
+      <p>1   Linux 版本![pic1](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-1.png)2   GPU 信息![pic2](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03...&hellip; <a href="/tensorflow/">Continue reading</a></p>
     </div><!-- /.read-more-content -->
   
   <div class="read-more-list">
     
       <div class="list-item">
-        <h4><a href="/tensorflow/" title="极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)">极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)</a></h4>
-        <span>Published on September 03, 2016</span>
+        <h4><a href="/django/" title="Steps for starting a django app">Steps for starting a django app</a></h4>
+        <span>Published on August 24, 2016</span>
       </div><!-- /.list-item -->
     
       <div class="list-item">
-        <h4><a href="/django/" title="Steps for starting a django app">Steps for starting a django app</a></h4>
-        <span>Published on August 24, 2016</span>
+        <h4><a href="/linux_software/" title="Software config in linux">Software config in linux</a></h4>
+        <span>Published on July 18, 2016</span>
       </div><!-- /.list-item -->
     
   </div><!-- /.read-more-list -->

@@ -123,113 +123,129 @@ Reading time ~1 minute
       </div><!-- /.header-title-wrap -->
     </header>
     <div class="entry-content">
-      <h1>目录</h1>
+      <h1 id="section">目录</h1>
 
 <ul>
-<li><a href="#1">搜狗拼音</a></li>
-<li><a href="#2">SS-link</a></li>
-<li><a href="#4">Git</a></li>
-<li><a href="#5">Ruby</a></li>
-<li><a href="#6">Nodejs</a></li>
-<li><a href="#7">Jekyll</a></li>
-<li><a href="#8">Mysql</a></li>
-<li><a href="#9">Apache</a></li>
-<li><a href="#10">Latex</a></li>
-<li><a href="#11">Flash Player</a></li>
-<li><a href="#12">Sublime texter</a></li>
+  <li><a href="#1">搜狗拼音</a></li>
+  <li><a href="#2">SS-link</a></li>
+  <li><a href="#4">Git</a></li>
+  <li><a href="#5">Ruby</a></li>
+  <li><a href="#6">Nodejs</a></li>
+  <li><a href="#7">Jekyll</a></li>
+  <li><a href="#8">Mysql</a></li>
+  <li><a href="#9">Apache</a></li>
+  <li><a href="#10">Latex</a></li>
+  <li><a href="#11">Flash Player</a></li>
+  <li><a href="#12">Sublime texter</a></li>
 </ul>
 
-<h3><h2 id="1"> [1] &emsp;Sougoupinyin</h2></h3>
-
+<h3 id="h2-id1-1-emspsougoupinyinh2">&lt;h2 id="1"&gt; [1]  Sougoupinyin&lt;/h2&gt;</h3>
 <ol>
-<li>download from website</li>
-<li><code>$ sudo dpkg -i sogoupinyin_2.0.0.0078_amd64.deb</code></li>
-<li><code>$ sudo apt-get install -f</code></li>
-<li><code>$ sudo dpkg -i sogoupinyin_2.0.0.0078_amd64.deb</code></li>
+  <li>download from website</li>
+  <li><code class="highlighter-rouge">$ sudo dpkg -i sogoupinyin_2.0.0.0078_amd64.deb</code></li>
+  <li><code class="highlighter-rouge">$ sudo apt-get install -f</code></li>
+  <li><code class="highlighter-rouge">$ sudo dpkg -i sogoupinyin_2.0.0.0078_amd64.deb</code></li>
 </ol>
 
-<h3><h2 id="2"> [2] &emsp; Shadowsocks Qt-5 + SwitchyOmega</h2></h3>
-
+<h3 id="h2-id2-2-emsp-shadowsocks-qt-5--switchyomegah2">&lt;h2 id="2"&gt; [2]   Shadowsocks Qt-5 + SwitchyOmega&lt;/h2&gt;</h3>
 <ol>
-<li>下载</li>
+  <li>下载</li>
 </ol>
-<div class="highlight"><pre><code class="language-" data-lang="">$ sudo add-apt-repository ppa:hzwhuang/ss-qt5
+
+<p><code class="highlighter-rouge">
+$ sudo add-apt-repository ppa:hzwhuang/ss-qt5
 $ sudo apt-get update
 $ sudo apt-get install shadowsocks-qt5
-</code></pre></div>
+</code></p>
+
 <ol>
-<li>setting-&gt;network-&gt;proxy-&gt;socks host + port.</li>
-<li>add SwitchyOmega into chromium</li>
+  <li>setting-&gt;network-&gt;proxy-&gt;socks host + port.</li>
+  <li>add SwitchyOmega into chromium</li>
 </ol>
 
-<h3><h2 id="3"> [3] &emsp; Atom text edit </h2></h3>
-<div class="highlight"><pre><code class="language-" data-lang="">$ sudo add-apt-repository ppa:webupd8team/atom
+<h3 id="h2-id3-3-emsp-atom-text-edit-h2">&lt;h2 id="3"&gt; [3]   Atom text edit &lt;/h2&gt;</h3>
+<p><code class="highlighter-rouge">
+$ sudo add-apt-repository ppa:webupd8team/atom
 $ sudo apt-get update
 $ sudo apt-get install atom
-</code></pre></div>
-<h3><h2 id="4"> [4] &emsp; git </h2></h3>
+</code></p>
+
+<h3 id="h2-id4-4-emsp-git-h2">&lt;h2 id="4"&gt; [4]   git &lt;/h2&gt;</h3>
 
 <ol>
-<li>下载：</li>
+  <li>下载：</li>
 </ol>
-<div class="highlight"><pre><code class="language-" data-lang="">$ sudo apt-get git
-</code></pre></div>
-<ol>
-<li>配置：</li>
-</ol>
-<div class="highlight"><pre><code class="language-" data-lang="">$ git config --global user.name "ScarletPan"
+
+<p><code class="highlighter-rouge">
+$ sudo apt-get git
+</code>
+2. 配置：</p>
+
+<p><code class="highlighter-rouge">
+$ git config --global user.name "ScarletPan"
 $ git config --global user.email "myscarlet@sina.com"
 $ ssh-keygen -t rsa -C "myscarlet@sina.com" #生成 ssh-key
 $ eval "$(ssh-agent -s)" # 检查ssh-agent
 $ ssh-add ~/.ssh/id_rsa # 将新产生的秘钥加入
 $ gedit .ssh/id_rsa.pub # 将内容复制到github用户SSH-key中
-</code></pre></div>
-<h3><h2 id="5"> [5] &emsp; ruby</h2></h3>
+</code></p>
 
+<h3 id="h2-id5-5-emsp-rubyh2">&lt;h2 id="5"&gt; [5]   ruby&lt;/h2&gt;</h3>
 <ol>
-<li>下载：</li>
+  <li>下载：</li>
 </ol>
-<div class="highlight"><pre><code class="language-" data-lang="">$ sudo apt-get install ruby2.3
-</code></pre></div>
-<ol>
-<li>配置</li>
-</ol>
-<div class="highlight"><pre><code class="language-" data-lang="">$ gem source -r https://rubygems.org/  #更换到内陆的下载源
+
+<p><code class="highlighter-rouge">
+$ sudo apt-get install ruby2.3
+</code>
+2. 配置</p>
+
+<p><code class="highlighter-rouge">
+$ gem source -r https://rubygems.org/  #更换到内陆的下载源
 $ gem source -a https://ruby.taobao.org
 $ sudo apt-get install ruby-dev
-</code></pre></div>
-<h3><h2 id="6"> [6] &emsp; Nodejs </h2></h3>
-<div class="highlight"><pre><code class="language-" data-lang="">$ sudo apt-get install nodejs # nodejs -v4.2.6
-</code></pre></div>
-<h3><h2 id="7"> [7] &emsp; jekyll </h2></h3>
-<div class="highlight"><pre><code class="language-" data-lang="">$ sudo gem install jekyll
+</code></p>
+
+<h3 id="h2-id6-6-emsp-nodejs-h2">&lt;h2 id="6"&gt; [6]   Nodejs &lt;/h2&gt;</h3>
+<p><code class="highlighter-rouge">
+$ sudo apt-get install nodejs # nodejs -v4.2.6
+</code></p>
+
+<h3 id="h2-id7-7-emsp-jekyll-h2">&lt;h2 id="7"&gt; [7]   jekyll &lt;/h2&gt;</h3>
+<p><code class="highlighter-rouge">
+$ sudo gem install jekyll
 $ sudo gem install jekyll-sitemap
 $ sudo gem install jekyll-paginate
 $ sudo gem install jekyll-gist
 $ sudo gem install redcarpet
-</code></pre></div>
-<h3><h2 id="8"> [8] &emsp; mysql </h2></h3>
-<div class="highlight"><pre><code class="language-" data-lang="">$ sudo apt-get install mysql-server
-</code></pre></div><div class="highlight"><pre><code class="language-" data-lang="">$ mysql_secure_installation
-</code></pre></div>
-<p>&emsp; The first question will ask if you want to change the root password, but because you just set it, enter n. For all other questions, press ENTER to accept the default response.</p>
+</code></p>
 
-<h3><h2 id="9"> [9] &emsp; apache </h2></h3>
+<h3 id="h2-id8-8-emsp-mysql-h2">&lt;h2 id="8"&gt; [8]   mysql &lt;/h2&gt;</h3>
+<p><code class="highlighter-rouge">
+$ sudo apt-get install mysql-server
+</code>
+<code class="highlighter-rouge">
+$ mysql_secure_installation
+</code>
+  The first question will ask if you want to change the root password, but because you just set it, enter n. For all other questions, press ENTER to accept the default response.</p>
 
+<h3 id="h2-id9-9-emsp-apache-h2">&lt;h2 id="9"&gt; [9]   apache &lt;/h2&gt;</h3>
 <p>参考：<a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-an-apache-mysql-and-python-lamp-server-without-frameworks-on-ubuntu-14-04">python + apache + django 配置  </a></p>
 
-<h3><h2 id="10"> [10] &emsp; latex </h2></h3>
-<div class="highlight"><pre><code class="language-" data-lang="">$ sudo apt-get install texlive-full
+<h3 id="h2-id10-10-emsp-latex-h2">&lt;h2 id="10"&gt; [10]   latex &lt;/h2&gt;</h3>
+<p><code class="highlighter-rouge">
+$ sudo apt-get install texlive-full
 $ sudo atp-get install texmaker
-</code></pre></div>
-<h3><h2 id="11"> [11] &emsp; Flash-Player </h2></h3>
+</code></p>
 
+<h3 id="h2-id11-11-emsp-flash-player-h2">&lt;h2 id="11"&gt; [11]   Flash-Player &lt;/h2&gt;</h3>
 <p>System-settings -&gt; Software &amp; Update -&gt; other Software -&gt; Canonical Partners (get-in)
-<code>
+<code class="highlighter-rouge">
 sudo apt install adobe-flashplugin
 </code></p>
 
-<h3><h2 id="12"> [11] &emsp; sublime-text </h2></h3>
+<h3 id="h2-id12-11-emsp-sublime-text-h2">&lt;h2 id="12"&gt; [11]   sublime-text &lt;/h2&gt;</h3>
+
 
       <footer class="entry-meta">
         <span class="entry-tags"><a href="/tags/#linux" title="Pages tagged linux" class="tag"><span class="term">linux</span></a></span>
@@ -250,20 +266,20 @@ sudo apt install adobe-flashplugin
       <a href="/ASR/" class="read-more-btn">Read More</a>
     </div><!-- /.read-more-header -->
     <div class="read-more-content">
-      <h3><a href="/tensorflow/" title="极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)">极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)</a></h3>
-      <p>## 1 &emsp; Linux 版本![pic1](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-1.png)## 2 &emsp; GPU 信息![pic2](http://o6qr23o6z.bkt.clouddn.c...&hellip; <a href="/tensorflow/">Continue reading</a></p>
+      <h3><a href="/bayes-decision-rule/" title="Bayes Decision Rule">Bayes Decision Rule</a></h3>
+      <p>> 情景引入： 作为一个classificaton的问题，假设有sea bass 和 salmon两类鱼，而我们决策的目的是为了区分它们，用于区分我们将引入feature这个概念，大致意思就是可以用一系列特征来判断出某一条打捞上来的鱼是sea bass还是salmon，在这...&hellip; <a href="/bayes-decision-rule/">Continue reading</a></p>
     </div><!-- /.read-more-content -->
   
   <div class="read-more-list">
     
       <div class="list-item">
-        <h4><a href="/django/" title="Steps for starting a django app">Steps for starting a django app</a></h4>
-        <span>Published on August 24, 2016</span>
+        <h4><a href="/tensorflow/" title="极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)">极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)</a></h4>
+        <span>Published on September 03, 2016</span>
       </div><!-- /.list-item -->
     
       <div class="list-item">
-        <h4><a href="/ASR/" title="语音识别综述">语音识别综述</a></h4>
-        <span>Published on May 19, 2016</span>
+        <h4><a href="/django/" title="Steps for starting a django app">Steps for starting a django app</a></h4>
+        <span>Published on August 24, 2016</span>
       </div><!-- /.list-item -->
     
   </div><!-- /.read-more-list -->
@@ -283,7 +299,10 @@ sudo apt install adobe-flashplugin
 
 
 
-	        
 
+<script type="text/javascript"
+ src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script src="/assets/js/mathjx.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 title:            My SCARLET
 description:      My first blog.
-disqus_shortname: 
+disqus_shortname:
 reading_time:     true
 words_per_minute: 200
 # Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
@@ -14,31 +14,31 @@ owner:
   bio:            "I wish I could."
   email:         3140102237@zju.edu.cn
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        
-  facebook:       
+  twitter:
+  facebook:
   github:        ScarletPan
-  stackexchange:  
-  linkedin:       
-  instagram:      
-  flickr:         
-  tumblr:         
+  stackexchange:
+  linkedin:
+  instagram:
+  flickr:
+  tumblr:
   # google plus id, include the '+', eg +mmistakes
   google_plus:
 
 # Background image to be tiled on all pages
-background:  
+background:
 
 # Analytics and webmaster tools stuff goes here
-google_analytics:   
-google_verify:      
+google_analytics:
+google_verify:
 # https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:         
+bing_verify:
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 timezone:    China/Beijing
 future:      true
 highlighter: rouge
-markdown:    redcarpet
+markdown:    kramdown
 gems:
   - jekyll-sitemap
   - jekyll-paginate
@@ -52,26 +52,6 @@ permalink:   /:categories/:title/
 
 # Amount of post to show on home page
 paginate: 5
-
-kramdown:
-  input:                     GFM
-  auto_ids:                  true
-  footnote_nr:               1
-  entity_output:             as_char
-  toc_levels:                1..6
-  smart_quotes:              lsquo,rsquo,ldquo,rdquo
-  enable_coderay:            false
-  hard_wrap:                 false
-  syntax_highlighter:        rouge
-  transliterated_header_ids: true
-  footnote_backlink:         "&#8617;&#xfe0e;"
-
-  coderay:
-    coderay_line_numbers: nil
-    coderay_line_numbers_start: 1
-    coderay_tab_width: 4
-    coderay_bold_every: 10
-    coderay_css: class
 
 # Octopress
 # Default extensions

@@ -4,13 +4,70 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="/feed.xml" />
 <link rel="alternate" type="text/html" href="" />
-<updated>2016-09-05T14:49:09+00:00</updated>
+<updated>2016-10-03T15:23:44+00:00</updated>
 <id>/</id>
 <author>
   <name>Haojie PAN</name>
   <uri>/</uri>
   <email>3140102237@zju.edu.cn</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Bayes Decision Rule]]></title>
+ <link rel="alternate" type="text/html" href="/bayes-decision-rule/" />
+  <id>/bayes-decision-rule</id>
+  <published>2016-10-03T00:00:00+00:00</published>
+  <updated>2016-10-03T00:00:00+00:00</updated>
+  <author>
+    <name>Haojie PAN</name>
+    <uri></uri>
+    <email>3140102237@zju.edu.cn</email>
+  </author>
+  <content type="html">
+    &lt;blockquote&gt;
+  &lt;p&gt;情景引入： 作为一个classificaton的问题，假设有sea bass 和 salmon两类鱼，而我们决策的目的是为了区分它们，用于区分我们将引入feature这个概念，大致意思就是可以用一系列特征来判断出某一条打捞上来的鱼是sea bass还是salmon，在这里我们只取一条鱼的lightness作为feature。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;section&quot;&gt;相关术语&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;state of nature:  在这个例子的前提下，我们可以断定自然状态下只有两种可能：sea bass和salmon. 如果我们用符号$w$来表示state of nature, 则$w = w_1$为sea bass, $w = w_2$为salmon&lt;/li&gt;
+  &lt;li&gt;priori probability(&lt;strong&gt;prior&lt;/strong&gt;):  $P(w_1)$指打捞上来的下一条鱼为sea bass, $P(w_2)$指打捞上来的下一条鱼为salmon，很显然, $P(w_1) + P(w_2) = 1$. 从上述陈述中我们可以将prior理解为我们事先知道的知识，比如我们知道我们要打捞的海域这两种鱼的比例为2:1。&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;class-conditional probability density(&lt;strong&gt;likelihood&lt;/strong&gt;): $P(x \space&lt;/td&gt;
+          &lt;td&gt;w_j) $, 用概率论的知识我们可以这么理解它：假设feature $x$在$w_j$这一类中服从某种分布，那么在这一类鱼的lightness为某一直的概率越大，相应的$P(x \space&lt;/td&gt;
+          &lt;td&gt;w_j) $也就越大，比如说sea bass 的lightness 为10的可能性非常高，则$P(x=10 \space&lt;/td&gt;
+          &lt;td&gt;w_1) $也就非常大。&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;evidence：$p(x)$， 在这个例子中表示的就是某个lightness在打捞上来的鱼中出现的概率有多高。同事我们也可以将其当做一个scale因子，这可以保证posterior概率之和为1.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;posterior：$P(w_j\space&lt;/td&gt;
+          &lt;td&gt;x)$， 在这个例子上即为当捞上一条鱼他的lightness为某一值时，它为sea bass和salmon的概率各自有多大&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;贝叶斯公式&lt;/h4&gt;
+&lt;p&gt; 学过概率论的同学应该对下面这个式子并不陌生：&lt;/p&gt;
+&lt;center&gt; $P(w_j \space | x) = \frac{p(x|w_j)P(w_j)}{p(x)}$ &lt;/center&gt;
+&lt;p&gt; 有了上面的术语解释，我们可以用相关的术语来表达这个式子:&lt;/p&gt;
+&lt;center&gt; $$ posterior = \frac{likelihood \times prior}{evidence} $$&lt;/center&gt;
+&lt;p&gt; 这就是所谓的贝叶斯公式了&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;/bayes-decision-rule/&quot;&gt;Bayes Decision Rule&lt;/a&gt; was originally published by Haojie PAN at &lt;a href=&quot;&quot;&gt;My SCARLET&lt;/a&gt; on October 03, 2016.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -25,79 +82,85 @@
     <email>3140102237@zju.edu.cn</email>
   </author>
   <content type="html">
-    &lt;h2&gt;1 &amp;emsp; Linux 版本&lt;/h2&gt;
+    &lt;h2 id=&quot;emsp-linux-&quot;&gt;1   Linux 版本&lt;/h2&gt;
+&lt;center&gt;![pic1](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-1.png)&lt;/center&gt;
 
-&lt;p&gt;&lt;center&gt;&lt;img src=&quot;http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-1.png&quot; alt=&quot;pic1&quot;&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;h2 id=&quot;emsp-gpu-&quot;&gt;2   GPU 信息&lt;/h2&gt;
+&lt;center&gt;![pic2](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-2.png)&lt;/center&gt;
 
-&lt;h2&gt;2 &amp;emsp; GPU 信息&lt;/h2&gt;
+&lt;h2 id=&quot;emsp-nvidia&quot;&gt;3   安装nvidia驱动&lt;/h2&gt;
+&lt;p&gt;在software &amp;amp; update中直接更改即可, 由于cuda对驱动版本要求高, 因此最好选择361．安装完后重启一下&lt;/p&gt;
+&lt;center&gt;![pic3](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-3.png)&lt;/center&gt;
 
-&lt;p&gt;&lt;center&gt;&lt;img src=&quot;http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-2.png&quot; alt=&quot;pic2&quot;&gt;&lt;/center&gt;&lt;/p&gt;
-
-&lt;h2&gt;3 &amp;emsp; 安装nvidia驱动&lt;/h2&gt;
-
-&lt;p&gt;在software &amp;amp; update中直接更改即可, 由于cuda对驱动版本要求高, 因此最好选择361．安装完后重启一下
-&lt;center&gt;&lt;img src=&quot;http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-3.png&quot; alt=&quot;pic3&quot;&gt;&lt;/center&gt;&lt;/p&gt;
-
-&lt;h2&gt;4 &amp;emsp; 安装cuda 8.0&lt;/h2&gt;
-
+&lt;h2 id=&quot;emsp-cuda-80&quot;&gt;4   安装cuda 8.0&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;前往 &lt;a href=&quot;https://developer.nvidia.com/cuda-release-candidate-download&quot;&gt;cuda下载页面&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;注册（如果还没有账号）&lt;/li&gt;
-&lt;li&gt;选择deb下载
-&lt;center&gt;&lt;img src=&quot;http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-4.png&quot; alt=&quot;pic4&quot;&gt;&lt;/center&gt;&lt;/li&gt;
-&lt;li&gt;下载成功后在本地解包安装&lt;/li&gt;
+  &lt;li&gt;前往 &lt;a href=&quot;https://developer.nvidia.com/cuda-release-candidate-download&quot;&gt;cuda下载页面&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;注册（如果还没有账号）&lt;/li&gt;
+  &lt;li&gt;选择deb下载&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-linux&quot; data-lang=&quot;linux&quot;&gt;$ sudo dpkg -i cuda-repo-ubuntu1604-8-0-rc_8.0.27-1_amd64.deb
+&lt;center&gt;![pic4](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-4.png)&lt;/center&gt;
+&lt;ul&gt;
+  &lt;li&gt;下载成功后在本地解包安装&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;linux
+$ sudo dpkg -i cuda-repo-ubuntu1604-8-0-rc_8.0.27-1_amd64.deb
 $ sudo apt-get update
 $ sudo apt-get install cuda
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;ul&gt;
-&lt;li&gt;设置环境变量
-&lt;p&gt;在.bashrc中输入下列语句：&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;设置环境变量&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;export LD_LIBRARY_PATH=&quot;$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64&quot;
+&lt;p&gt;在.bashrc中输入下列语句：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+export LD_LIBRARY_PATH=&quot;$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64&quot;
 export CUDA_HOME=/usr/local/cuda
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;ul&gt;
-&lt;li&gt;测试(以1_Utilities/deviceQuery为例)：&lt;/li&gt;
+  &lt;li&gt;测试(以1_Utilities/deviceQuery为例)：&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ cd /usr/local/cuda/samples/1_Utilities/deviceQuery
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+$ cd /usr/local/cuda/samples/1_Utilities/deviceQuery
 $ make
 $ ./deviceQuery
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&amp;emsp;成功后大概长这样：
-&lt;center&gt;&lt;img src=&quot;http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-5.png&quot; alt=&quot;pic5&quot;&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;/code&gt;
+ 成功后大概长这样：&lt;/p&gt;
+&lt;center&gt;![pic5](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-5.png)&lt;/center&gt;
 
-&lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt; &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;UPDATE&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;装了cuda 8运行pip下载的tensorflow会出现问题。如果读者出现问题，可以考虑安装7.5&lt;/li&gt;
-&lt;li&gt;cuda7.5并没有支持ubuntu16.04。但可以参考这个&lt;a href=&quot;https://www.pugetsystems.com/labs/hpc/NVIDIA-CUDA-with-Ubuntu-16-04-beta-on-a-laptop-if-you-just-cannot-wait-775/&quot;&gt;博文&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;装了cuda 8运行pip下载的tensorflow会出现问题。如果读者出现问题，可以考虑安装7.5&lt;/li&gt;
+  &lt;li&gt;cuda7.5并没有支持ubuntu16.04。但可以参考这个&lt;a href=&quot;https://www.pugetsystems.com/labs/hpc/NVIDIA-CUDA-with-Ubuntu-16-04-beta-on-a-laptop-if-you-just-cannot-wait-775/&quot;&gt;博文&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;5 &amp;emsp; 部署cudnn4.0&lt;/h2&gt;
-
+&lt;h2 id=&quot;emsp-cudnn40&quot;&gt;5   部署cudnn4.0&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;前往　&lt;a href=&quot;https://developer.nvidia.com/cudnn&quot;&gt;cudnn下载页面&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;下载相应版本的cudnn4&lt;/li&gt;
-&lt;li&gt;将相应内容拷贝到cuda目录中&lt;/li&gt;
+  &lt;li&gt;前往　&lt;a href=&quot;https://developer.nvidia.com/cudnn&quot;&gt;cudnn下载页面&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;下载相应版本的cudnn4&lt;/li&gt;
+  &lt;li&gt;将相应内容拷贝到cuda目录中&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;tar xvzf cudnn-7.5-linux-x64-v4.tgz
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+tar xvzf cudnn-7.5-linux-x64-v4.tgz
 sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h2&gt;6 &amp;emsp; 安装相应的tensorflow&lt;/h2&gt;
+&lt;/code&gt;&lt;/p&gt;
 
+&lt;h2 id=&quot;emsp-tensorflow&quot;&gt;6   安装相应的tensorflow&lt;/h2&gt;
 &lt;p&gt;前往 &lt;a href=&quot;https://www.tensorflow.org/versions/r0.10/get_started/os_setup.html&quot;&gt;tensorflow官网&lt;/a&gt;，其中列举了不少安装方式，安装带gpu的版本&lt;/p&gt;
 
-&lt;h2&gt;7 &amp;emsp; 测试&lt;/h2&gt;
-
-&lt;p&gt;可以用tensorflow自带的sample测试,可以看到gpu相对与cpu测试速度有很大的提升：
+&lt;h2 id=&quot;emsp-&quot;&gt;7   测试&lt;/h2&gt;
+&lt;p&gt;可以用tensorflow自带的sample测试,可以看到gpu相对与cpu测试速度有很大的提升：&lt;/p&gt;
 &lt;p&gt; cpu版本 &lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-6.png&quot; alt=&quot;pic6&quot;&gt;&lt;/center&gt;
+&lt;center&gt;![pic6](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-6.png)&lt;/center&gt;
 &lt;p&gt; gpu版本 &lt;/p&gt;
-&lt;center&gt;&lt;img src=&quot;http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-7.png&quot; alt=&quot;pic7&quot;&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;center&gt;![pic7](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-7.png)&lt;/center&gt;
 
     &lt;p&gt;&lt;a href=&quot;/tensorflow/&quot;&gt;极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)&lt;/a&gt; was originally published by Haojie PAN at &lt;a href=&quot;&quot;&gt;My SCARLET&lt;/a&gt; on September 03, 2016.&lt;/p&gt;
   </content>
@@ -116,183 +179,226 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
     <email>3140102237@zju.edu.cn</email>
   </author>
   <content type="html">
-    &lt;h3&gt;Tips1: &amp;emsp; 配置 pymysql　*&lt;/h3&gt;
-
+    &lt;h3 id=&quot;tips1-emsp--pymysql&quot;&gt;Tips1:   配置 pymysql　*&lt;/h3&gt;
 &lt;p&gt;在　&lt;strong&gt;init&lt;/strong&gt;.py 中添加：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pymysql&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;pymysql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;install_as_MySQLdb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;在　setting.py中修改：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;DATABASES&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&#39;default&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&#39;ENGINE&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;django.db.backends.mysql&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&#39;NAME&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;vqa&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# mysql数据库名&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&#39;USER&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;root&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;#　mysql用户名，留空则默认为当前linux用户名　&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&#39;PASSWORD&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;123456&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&#39;HOST&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;     &lt;span class=&quot;c&quot;&gt;# 留空默认为localhost&lt;/span&gt;
-        &lt;span class=&quot;s&quot;&gt;&#39;PORT&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;     &lt;span class=&quot;c&quot;&gt;# 留空默认为3306端口&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Tips2: &amp;emsp; 创建数据库并且migrate&lt;/h3&gt;
 
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;python
+import pymysql
+pymysql.install_as_MySQLdb()
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;在　setting.py中修改：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;python
+DATABASES = {
+    &#39;default&#39;: {
+        &#39;ENGINE&#39;: &#39;django.db.backends.mysql&#39;,
+        &#39;NAME&#39;: &#39;vqa&#39;,  # mysql数据库名
+        &#39;USER&#39;:&#39;root&#39;,  #　mysql用户名，留空则默认为当前linux用户名　
+        &#39;PASSWORD&#39;:&#39;123456&#39;,
+        &#39;HOST&#39;:&#39;&#39;,     # 留空默认为localhost
+        &#39;PORT&#39;:&#39;&#39;,     # 留空默认为3306端口
+    }
+}
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;tips2-emsp-migrate&quot;&gt;Tips2:   创建数据库并且migrate&lt;/h3&gt;
 &lt;p&gt;在 mysql  中创建数据库
 在项目目录中输入&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ python manage.py migrate
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+$ python manage.py migrate
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;p&gt;成功后会看到：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;Operations to perform:
+
+&lt;p&gt;```
+Operations to perform:
   Apply all migrations: auth, sessions, admin, contenttypes
 Running migrations:
-  Rendering model states... DONE
-  Applying contenttypes.0001_initial... OK
-  Applying auth.0001_initial... OK
-  Applying admin.0001_initial... OK
-  Applying admin.0002_logentry_remove_auto_add... OK
-  Applying contenttypes.0002_remove_content_type_name... OK
-  Applying auth.0002_alter_permission_name_max_length... OK
-  Applying auth.0003_alter_user_email_max_length... OK
-  Applying auth.0004_alter_user_username_opts... OK
-  Applying auth.0005_alter_user_last_login_null... OK
-  Applying auth.0006_require_contenttypes_0002... OK
-  Applying auth.0007_alter_validators_add_error_messages... OK
-  Applying sessions.0001_initial... OK
+  Rendering model states… DONE
+  Applying contenttypes.0001_initial… OK
+  Applying auth.0001_initial… OK
+  Applying admin.0001_initial… OK
+  Applying admin.0002_logentry_remove_auto_add… OK
+  Applying contenttypes.0002_remove_content_type_name… OK
+  Applying auth.0002_alter_permission_name_max_length… OK
+  Applying auth.0003_alter_user_email_max_length… OK
+  Applying auth.0004_alter_user_username_opts… OK
+  Applying auth.0005_alter_user_last_login_null… OK
+  Applying auth.0006_require_contenttypes_0002… OK
+  Applying auth.0007_alter_validators_add_error_messages… OK
+  Applying sessions.0001_initial… OK&lt;/p&gt;
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Tips3: &amp;emsp; 创建app&lt;/h3&gt;
+&lt;p&gt;```&lt;/p&gt;
 
+&lt;h3 id=&quot;tips3-emsp-app&quot;&gt;Tips3:   创建app&lt;/h3&gt;
 &lt;p&gt;在项目目录中输入&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ python manage.py startapp polls
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Tips4: &amp;emsp; 创建模型&lt;/h3&gt;
 
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+$ python manage.py startapp polls
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;tips4-emsp-&quot;&gt;Tips4:   创建模型&lt;/h3&gt;
 &lt;p&gt;编辑　app/models.py&lt;/p&gt;
 
-&lt;h3&gt;Tips5: &amp;emsp; 激活模型&lt;/h3&gt;
-
+&lt;h3 id=&quot;tips5-emsp-&quot;&gt;Tips5:   激活模型&lt;/h3&gt;
 &lt;p&gt;编辑　project/settings/py&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;INSTALLED_APPS&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&#39;django.contrib.admin&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&#39;django.contrib.auth&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&#39;django.contrib.contenttypes&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&#39;django.contrib.sessions&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&#39;django.contrib.messages&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&#39;django.contrib.staticfiles&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-    &lt;span class=&quot;s&quot;&gt;&#39;app&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;    &lt;span class=&quot;c&quot;&gt;# 这是新增的app&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;python
+INSTALLED_APPS = (
+    &#39;django.contrib.admin&#39;,
+    &#39;django.contrib.auth&#39;,
+    &#39;django.contrib.contenttypes&#39;,
+    &#39;django.contrib.sessions&#39;,
+    &#39;django.contrib.messages&#39;,
+    &#39;django.contrib.staticfiles&#39;,
+    &#39;app&#39;,    # 这是新增的app
+)
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;p&gt;运行命令&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ python manage.py makemigrations app    # app迁移
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+$ python manage.py makemigrations app    # app迁移
 $ python manage.py sqlmigrate vqa 0001　 # sql迁移
 $ python manage.py migrate # 将这些改变更新到数据库中。
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Tips5(+): &amp;emsp; 修改模型&lt;/h3&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ 修改models.py （最好每个类中都写上 def __str__())
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;tips5-emsp--1&quot;&gt;Tips5(+):   修改模型&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+$ 修改models.py （最好每个类中都写上 def __str__())
 $ python manage.py makemigrations
 $ python manage.py migrate
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Tips6: &amp;emsp; 创建管理网站&lt;/h3&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ python manage.py createsuperuser # 创建一个能够登录管理站点的用户
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;tips6-emsp-&quot;&gt;Tips6:   创建管理网站&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+$ python manage.py createsuperuser # 创建一个能够登录管理站点的用户
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;p&gt;在admin.py中注册，添加&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;django.contrib&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;admin&lt;/span&gt;
 
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;.models&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;xxx&lt;/span&gt;
+&lt;p&gt;``` python
+from django.contrib import admin&lt;/p&gt;
 
-&lt;span class=&quot;n&quot;&gt;admin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;register&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;xxx&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Tips7: &amp;emsp; 制作对外view&lt;/h3&gt;
+&lt;p&gt;from .models import xxx&lt;/p&gt;
 
+&lt;p&gt;admin.site.register(xxx)
+```&lt;/p&gt;
+
+&lt;h3 id=&quot;tips7-emsp-view&quot;&gt;Tips7:   制作对外view&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;html 模板
+  &lt;li&gt;html 模板
 在app中创建 app/templates/app/xxx.html&lt;/li&gt;
-&lt;li&gt;css,js, images 模板,&lt;/li&gt;
-&lt;li&gt;在app中创建 app/static/css/xxx.css&lt;/li&gt;
-&lt;li&gt;在project/setting.py 找到 STATIC_URL 并在下方添加&lt;/li&gt;
+  &lt;li&gt;css,js, images 模板,
+    &lt;ol&gt;
+      &lt;li&gt;在app中创建 app/static/css/xxx.css&lt;/li&gt;
+      &lt;li&gt;在project/setting.py 找到 STATIC_URL 并在下方添加&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;STATIC_ROOT = os.path.join(os.path.dirname(__file__),&#39;static&#39;)
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+STATIC_ROOT = os.path.join(os.path.dirname(__file__),&#39;static&#39;)
 STATICFILES_DIRS = (
     (&#39;css&#39;,os.path.join(STATIC_ROOT,&#39;css&#39;).replace(&#39;\\&#39;,&#39;/&#39;) ), 
     (&#39;js&#39;,os.path.join(STATIC_ROOT,&#39;js&#39;).replace(&#39;\\&#39;,&#39;/&#39;) ),
     (&#39;images&#39;,os.path.join(STATIC_ROOT,&#39;images&#39;).replace(&#39;\\&#39;,&#39;/&#39;) ),
 )
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;p&gt;并创建相应的文件。
 3. 相应的html中的link改为：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/css&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/static/css/xxx.css&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;Tips8: &amp;emsp; 部署项目&lt;/h3&gt;
 
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;html
+    &amp;lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;/static/css/xxx.css&quot; /&amp;gt;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;tips8-emsp-&quot;&gt;Tips8:   部署项目&lt;/h3&gt;
 &lt;p&gt;详见：http://djangobook.py3k.cn/2.0/chapter12/&lt;/p&gt;
 
-&lt;h3&gt;*ImageField 的使用&lt;/h3&gt;
-
+&lt;h3 id=&quot;imagefield-&quot;&gt;*ImageField 的使用&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;在setting.py中添加路径和url:&lt;/li&gt;
+  &lt;li&gt;在setting.py中添加路径和url:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;MEDIA_ROOT = BASE_DIR + &#39;xxx/media/&#39;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+MEDIA_ROOT = BASE_DIR + &#39;xxx/media/&#39;
 MEDIA_URL =  BASE_URL + &#39;xxx/media/&#39;   # 两者其实相同
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ol&gt;
-&lt;li&gt;在project/urls.py添加 url:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;django.conf.urls.static&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;static&lt;/span&gt;
-&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;django.conf&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;settings&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;***&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;urlpatterns&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;static&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MEDIA_URL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;document_root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MEDIA_ROOT&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ol&gt;
-&lt;li&gt;在app/model.py中对于相应的model:&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;xxx = models.ImageField(upload_to = &#39;***&#39;) # ***为相对路径
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;*配置ajax&lt;/h3&gt;
+&lt;/code&gt;&lt;/p&gt;
 
+&lt;ol&gt;
+  &lt;li&gt;在project/urls.py添加 url:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;python
+from django.conf.urls.static import static
+from django.conf import settings
+***
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;在app/model.py中对于相应的model:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+xxx = models.ImageField(upload_to = &#39;***&#39;) # ***为相对路径
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ajax&quot;&gt;*配置ajax&lt;/h3&gt;
 &lt;p&gt;在js脚本前添加配置：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getCookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cookieValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cookies&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cookies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;jQuery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;trim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookies&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;// Does this cookie string begin with the name we want?&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;=&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-                &lt;span class=&quot;nx&quot;&gt;cookieValue&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;decodeURIComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;cookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;substring&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;cookieValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;csrftoken&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;getCookie&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;csrftoken&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;csrfSafeMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// these HTTP methods do not require CSRF protection&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/^&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;GET|HEAD|OPTIONS|TRACE&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;$/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sameOrigin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// test that a given url is a same-origin URL&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// url could be relative or scheme relative or absolute&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;host&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// host + port&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;protocol&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;location&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;protocol&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sr_origin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;//&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;origin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;protocol&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sr_origin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// Allow absolute or scheme relative URLs to same origin&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;origin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;origin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;origin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;/&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sr_origin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;slice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sr_origin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sr_origin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;/&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;
-        &lt;span class=&quot;c1&quot;&gt;// or any other URL that isn&#39;t scheme relative or absolute i.e relative.&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/^&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;(\/\/&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;|http:|https:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;.*/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ajaxSetup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;beforeSend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;csrfSafeMethod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sameOrigin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;settings&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;// Send the token to same-origin, relative URLs only.&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;// Send the token only if the method warrants CSRF protection&lt;/span&gt;
-            &lt;span class=&quot;c1&quot;&gt;// Using the CSRFToken value acquired earlier&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;xhr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setRequestHeader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;X-CSRFToken&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;csrftoken&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;javascript
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie &amp;amp;&amp;amp; document.cookie != &#39;&#39;) {
+        var cookies = document.cookie.split(&#39;;&#39;);
+        for (var i = 0; i &amp;lt; cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + &#39;=&#39;)) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie(&#39;csrftoken&#39;);
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+function sameOrigin(url) {
+    // test that a given url is a same-origin URL
+    // url could be relative or scheme relative or absolute
+    var host = document.location.host; // host + port
+    var protocol = document.location.protocol;
+    var sr_origin = &#39;//&#39; + host;
+    var origin = protocol + sr_origin;
+    // Allow absolute or scheme relative URLs to same origin
+    return (url == origin || url.slice(0, origin.length + 1) == origin + &#39;/&#39;) ||
+        (url == sr_origin || url.slice(0, sr_origin.length + 1) == sr_origin + &#39;/&#39;) ||
+        // or any other URL that isn&#39;t scheme relative or absolute i.e relative.
+        !(/^(\/\/|http:|https:).*/.test(url));
+}
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) &amp;amp;&amp;amp; sameOrigin(settings.url)) {
+            // Send the token to same-origin, relative URLs only.
+            // Send the token only if the method warrants CSRF protection
+            // Using the CSRFToken value acquired earlier
+            xhr.setRequestHeader(&quot;X-CSRFToken&quot;, csrftoken);
+        }
+    }
+});
+&lt;/code&gt;&lt;/p&gt;
+
+
     &lt;p&gt;&lt;a href=&quot;/django/&quot;&gt;Steps for starting a django app&lt;/a&gt; was originally published by Haojie PAN at &lt;a href=&quot;&quot;&gt;My SCARLET&lt;/a&gt; on August 24, 2016.&lt;/p&gt;
   </content>
 </entry>
@@ -310,113 +416,129 @@ MEDIA_URL =  BASE_URL + &#39;xxx/media/&#39;   # 两者其实相同
     <email>3140102237@zju.edu.cn</email>
   </author>
   <content type="html">
-    &lt;h1&gt;目录&lt;/h1&gt;
+    &lt;h1 id=&quot;section&quot;&gt;目录&lt;/h1&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#1&quot;&gt;搜狗拼音&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#2&quot;&gt;SS-link&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#4&quot;&gt;Git&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#5&quot;&gt;Ruby&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#6&quot;&gt;Nodejs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#7&quot;&gt;Jekyll&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#8&quot;&gt;Mysql&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#9&quot;&gt;Apache&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#10&quot;&gt;Latex&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#11&quot;&gt;Flash Player&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#12&quot;&gt;Sublime texter&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#1&quot;&gt;搜狗拼音&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#2&quot;&gt;SS-link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#4&quot;&gt;Git&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#5&quot;&gt;Ruby&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#6&quot;&gt;Nodejs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#7&quot;&gt;Jekyll&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#8&quot;&gt;Mysql&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#9&quot;&gt;Apache&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#10&quot;&gt;Latex&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#11&quot;&gt;Flash Player&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#12&quot;&gt;Sublime texter&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3&gt;&lt;h2 id=&quot;1&quot;&gt; [1] &amp;emsp;Sougoupinyin&lt;/h2&gt;&lt;/h3&gt;
-
+&lt;h3 id=&quot;h2-id1-1-emspsougoupinyinh2&quot;&gt;&amp;lt;h2 id=&quot;1&quot;&amp;gt; [1]  Sougoupinyin&amp;lt;/h2&amp;gt;&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;download from website&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;$ sudo dpkg -i sogoupinyin_2.0.0.0078_amd64.deb&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;$ sudo apt-get install -f&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;$ sudo dpkg -i sogoupinyin_2.0.0.0078_amd64.deb&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;download from website&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ sudo dpkg -i sogoupinyin_2.0.0.0078_amd64.deb&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ sudo apt-get install -f&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ sudo dpkg -i sogoupinyin_2.0.0.0078_amd64.deb&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3&gt;&lt;h2 id=&quot;2&quot;&gt; [2] &amp;emsp; Shadowsocks Qt-5 + SwitchyOmega&lt;/h2&gt;&lt;/h3&gt;
-
+&lt;h3 id=&quot;h2-id2-2-emsp-shadowsocks-qt-5--switchyomegah2&quot;&gt;&amp;lt;h2 id=&quot;2&quot;&amp;gt; [2]   Shadowsocks Qt-5 + SwitchyOmega&amp;lt;/h2&amp;gt;&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;下载&lt;/li&gt;
+  &lt;li&gt;下载&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ sudo add-apt-repository ppa:hzwhuang/ss-qt5
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+$ sudo add-apt-repository ppa:hzwhuang/ss-qt5
 $ sudo apt-get update
 $ sudo apt-get install shadowsocks-qt5
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/p&gt;
+
 &lt;ol&gt;
-&lt;li&gt;setting-&amp;gt;network-&amp;gt;proxy-&amp;gt;socks host + port.&lt;/li&gt;
-&lt;li&gt;add SwitchyOmega into chromium&lt;/li&gt;
+  &lt;li&gt;setting-&amp;gt;network-&amp;gt;proxy-&amp;gt;socks host + port.&lt;/li&gt;
+  &lt;li&gt;add SwitchyOmega into chromium&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3&gt;&lt;h2 id=&quot;3&quot;&gt; [3] &amp;emsp; Atom text edit &lt;/h2&gt;&lt;/h3&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ sudo add-apt-repository ppa:webupd8team/atom
+&lt;h3 id=&quot;h2-id3-3-emsp-atom-text-edit-h2&quot;&gt;&amp;lt;h2 id=&quot;3&quot;&amp;gt; [3]   Atom text edit &amp;lt;/h2&amp;gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+$ sudo add-apt-repository ppa:webupd8team/atom
 $ sudo apt-get update
 $ sudo apt-get install atom
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;&lt;h2 id=&quot;4&quot;&gt; [4] &amp;emsp; git &lt;/h2&gt;&lt;/h3&gt;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;h2-id4-4-emsp-git-h2&quot;&gt;&amp;lt;h2 id=&quot;4&quot;&amp;gt; [4]   git &amp;lt;/h2&amp;gt;&lt;/h3&gt;
 
 &lt;ol&gt;
-&lt;li&gt;下载：&lt;/li&gt;
+  &lt;li&gt;下载：&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ sudo apt-get git
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ol&gt;
-&lt;li&gt;配置：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ git config --global user.name &quot;ScarletPan&quot;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+$ sudo apt-get git
+&lt;/code&gt;
+2. 配置：&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+$ git config --global user.name &quot;ScarletPan&quot;
 $ git config --global user.email &quot;myscarlet@sina.com&quot;
 $ ssh-keygen -t rsa -C &quot;myscarlet@sina.com&quot; #生成 ssh-key
 $ eval &quot;$(ssh-agent -s)&quot; # 检查ssh-agent
 $ ssh-add ~/.ssh/id_rsa # 将新产生的秘钥加入
 $ gedit .ssh/id_rsa.pub # 将内容复制到github用户SSH-key中
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;&lt;h2 id=&quot;5&quot;&gt; [5] &amp;emsp; ruby&lt;/h2&gt;&lt;/h3&gt;
+&lt;/code&gt;&lt;/p&gt;
 
+&lt;h3 id=&quot;h2-id5-5-emsp-rubyh2&quot;&gt;&amp;lt;h2 id=&quot;5&quot;&amp;gt; [5]   ruby&amp;lt;/h2&amp;gt;&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;下载：&lt;/li&gt;
+  &lt;li&gt;下载：&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ sudo apt-get install ruby2.3
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ol&gt;
-&lt;li&gt;配置&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ gem source -r https://rubygems.org/  #更换到内陆的下载源
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+$ sudo apt-get install ruby2.3
+&lt;/code&gt;
+2. 配置&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+$ gem source -r https://rubygems.org/  #更换到内陆的下载源
 $ gem source -a https://ruby.taobao.org
 $ sudo apt-get install ruby-dev
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;&lt;h2 id=&quot;6&quot;&gt; [6] &amp;emsp; Nodejs &lt;/h2&gt;&lt;/h3&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ sudo apt-get install nodejs # nodejs -v4.2.6
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;&lt;h2 id=&quot;7&quot;&gt; [7] &amp;emsp; jekyll &lt;/h2&gt;&lt;/h3&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ sudo gem install jekyll
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;h2-id6-6-emsp-nodejs-h2&quot;&gt;&amp;lt;h2 id=&quot;6&quot;&amp;gt; [6]   Nodejs &amp;lt;/h2&amp;gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+$ sudo apt-get install nodejs # nodejs -v4.2.6
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;h2-id7-7-emsp-jekyll-h2&quot;&gt;&amp;lt;h2 id=&quot;7&quot;&amp;gt; [7]   jekyll &amp;lt;/h2&amp;gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+$ sudo gem install jekyll
 $ sudo gem install jekyll-sitemap
 $ sudo gem install jekyll-paginate
 $ sudo gem install jekyll-gist
 $ sudo gem install redcarpet
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;&lt;h2 id=&quot;8&quot;&gt; [8] &amp;emsp; mysql &lt;/h2&gt;&lt;/h3&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ sudo apt-get install mysql-server
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ mysql_secure_installation
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&amp;emsp; The first question will ask if you want to change the root password, but because you just set it, enter n. For all other questions, press ENTER to accept the default response.&lt;/p&gt;
+&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3&gt;&lt;h2 id=&quot;9&quot;&gt; [9] &amp;emsp; apache &lt;/h2&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;h2-id8-8-emsp-mysql-h2&quot;&gt;&amp;lt;h2 id=&quot;8&quot;&amp;gt; [8]   mysql &amp;lt;/h2&amp;gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+$ sudo apt-get install mysql-server
+&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+$ mysql_secure_installation
+&lt;/code&gt;
+  The first question will ask if you want to change the root password, but because you just set it, enter n. For all other questions, press ENTER to accept the default response.&lt;/p&gt;
 
+&lt;h3 id=&quot;h2-id9-9-emsp-apache-h2&quot;&gt;&amp;lt;h2 id=&quot;9&quot;&amp;gt; [9]   apache &amp;lt;/h2&amp;gt;&lt;/h3&gt;
 &lt;p&gt;参考：&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-set-up-an-apache-mysql-and-python-lamp-server-without-frameworks-on-ubuntu-14-04&quot;&gt;python + apache + django 配置  &lt;/a&gt;&lt;/p&gt;
 
-&lt;h3&gt;&lt;h2 id=&quot;10&quot;&gt; [10] &amp;emsp; latex &lt;/h2&gt;&lt;/h3&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;$ sudo apt-get install texlive-full
+&lt;h3 id=&quot;h2-id10-10-emsp-latex-h2&quot;&gt;&amp;lt;h2 id=&quot;10&quot;&amp;gt; [10]   latex &amp;lt;/h2&amp;gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;
+$ sudo apt-get install texlive-full
 $ sudo atp-get install texmaker
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3&gt;&lt;h2 id=&quot;11&quot;&gt; [11] &amp;emsp; Flash-Player &lt;/h2&gt;&lt;/h3&gt;
+&lt;/code&gt;&lt;/p&gt;
 
+&lt;h3 id=&quot;h2-id11-11-emsp-flash-player-h2&quot;&gt;&amp;lt;h2 id=&quot;11&quot;&amp;gt; [11]   Flash-Player &amp;lt;/h2&amp;gt;&lt;/h3&gt;
 &lt;p&gt;System-settings -&amp;gt; Software &amp;amp; Update -&amp;gt; other Software -&amp;gt; Canonical Partners (get-in)
-&lt;code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
 sudo apt install adobe-flashplugin
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h3&gt;&lt;h2 id=&quot;12&quot;&gt; [11] &amp;emsp; sublime-text &lt;/h2&gt;&lt;/h3&gt;
+&lt;h3 id=&quot;h2-id12-11-emsp-sublime-text-h2&quot;&gt;&amp;lt;h2 id=&quot;12&quot;&amp;gt; [11]   sublime-text &amp;lt;/h2&amp;gt;&lt;/h3&gt;
+
 
     &lt;p&gt;&lt;a href=&quot;/linux_software/&quot;&gt;Software config in linux&lt;/a&gt; was originally published by Haojie PAN at &lt;a href=&quot;&quot;&gt;My SCARLET&lt;/a&gt; on July 18, 2016.&lt;/p&gt;
   </content>
@@ -439,67 +561,67 @@ sudo apt install adobe-flashplugin
 
 &lt;p&gt;于是记录如下：&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;   语音识别是一个令人兴奋的研究领域，并在60年以来吸引了不少研究者。本文将会给出语音识别的定义、基础模型，并对语音识别发展脉络、发展方向做出一些简短的阐述。另外是介绍一些当今研究领域中对于语音识别系统的方法，特别是占据主流语音识别系统的隐马尔科夫模型（HMM）以及近年来越来越受到追捧的深度神经网络（DNN）方法。但随着语音识别技术日渐成熟，仍有一些挑战和困难，比如通用的复杂的环境因素、多变的语音变量、语音系统评估等。&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;摘要：&lt;/strong&gt;   语音识别是一个令人兴奋的研究领域，并在60年以来吸引了不少研究者。本文将会给出语音识别的定义、基础模型，并对语音识别发展脉络、发展方向做出一些简短的阐述。另外是介绍一些当今研究领域中对于语音识别系统的方法，特别是占据主流语音识别系统的隐马尔科夫模型（HMM）以及近年来越来越受到追捧的深度神经网络（DNN）方法。但随着语音识别技术日渐成熟，仍有一些挑战和困难，比如通用的复杂的环境因素、多变的语音变量、语音系统评估等。&lt;br /&gt;
 &lt;strong&gt;关键字：&lt;/strong&gt;  研究脉络；HMM；深度学习；展望&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;1   介绍和研究意义&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&amp;emsp;&amp;ensp;  语音是人们日常交流活动的最基本、也是最有效的一种方式 [1]，从而面向计算机人们也非常希望能够通过直接对话的方式进行交流和传递信息。因此语音识别系统的构建显得十分关键。&lt;br&gt;
-&amp;emsp;&amp;ensp;  什么是语音识别? 它的全称是自动语音识别（Automatic Speech Recognition）：它是一个能够通过一系列计算机程序构建的算法将语音信号转换成文字序列的过程
-[2]。也就是说通关过ASR计算机能够“听”懂人所讲述的话，并且再进一步改进后能够与人类进行交流。&lt;br&gt;
-&amp;emsp;&amp;ensp;  很显然，ASR的研究是很让人激动的，如果能实现通用的ASR系统应用于不同的环境，这将便捷信息检索、语言翻译、语言教育等，极大地改善人类的生活。  &lt;/p&gt;
+&lt;p&gt;    语音是人们日常交流活动的最基本、也是最有效的一种方式 [1]，从而面向计算机人们也非常希望能够通过直接对话的方式进行交流和传递信息。因此语音识别系统的构建显得十分关键。&lt;br /&gt;
+    什么是语音识别? 它的全称是自动语音识别（Automatic Speech Recognition）：它是一个能够通过一系列计算机程序构建的算法将语音信号转换成文字序列的过程
+[2]。也就是说通关过ASR计算机能够“听”懂人所讲述的话，并且再进一步改进后能够与人类进行交流。&lt;br /&gt;
+    很显然，ASR的研究是很让人激动的，如果能实现通用的ASR系统应用于不同的环境，这将便捷信息检索、语言翻译、语言教育等，极大地改善人类的生活。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;2   背景及研究脉络&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&amp;emsp;&amp;ensp;  语音识别技术在过去的60年里吸引了大量研究者的注意，最早可以追溯到20世纪二、三十年代，如早期（1939年）贝尔实验室在纽约世博会上展示了他们的语音综合机器。&lt;br&gt;
-&amp;emsp;&amp;ensp;  而语音识别的重大发展是在20世纪70年代中叶，那个时代见证了在孤立字识别领域上许多里程碑式的进步。首先俄国的研究者们展示了在语音识别中运用模式识别（Pattern Recognition）的想法，日本的研究者成功运用到了动态编程编码（Dynamic Programming code），如板仓提出的线性预测编码成为低位速下编码（LPC）方法高质量语音最有用的方法之一。另一个值得注意的是卡内基梅隆大学在1973向世人展示了Heresay I语音理解系统，能够在1011个单词的词汇表中以较好的准确性识别语音。&lt;br&gt;
-&amp;emsp;&amp;ensp;  而80年代起在连接词识别上获得了比较好的成效，特别是隐马尔可夫模型（Hidden Markov Model，下面简称HMM）[11] 的发展并被大范围的接受，其作为模式匹配策略被当时的很多公司采用和商业化，就算到40多年后的今天也是占据主导的声学模型算法之一。另外就是神经网络的发展，但是在当时由于一些实践上的原因，并没有像HMM那样成功。&lt;br&gt;
-&amp;emsp;&amp;ensp;  语音识别的最具转折性和建设性的发展归因于统计方法的引入，包括HMM、期望最大化（EM），最大互信息（MMI）等。另外是信号表述技术的发展，如梅尔频率倒谱系数（MFCC）[12]，感知线性预测常数（PLP）等。&lt;br&gt;
-&amp;emsp;&amp;ensp;  基于摩尔法则的硬件技术进步使得ASR研究者能在很短时间内跑一些复杂的算法，另外还有一些大的语音语料库的构建使得语音识别的模型、算法在后来的几十年里不断地改进和延伸。&lt;br&gt;
-&amp;emsp;&amp;ensp;  时至今日，由于硬件的支持、GPU的发展使得深度学习不断发展，许多研究者从传统的高斯混合模型（GMM）和HMM结合转向深度神经网络（DNN）与HMM结合，并取得了不小的成效 [3]。深度学习以及深度神经网络在语音处理方向上的应用仍是当今研究的热潮之一。&lt;br&gt;
-&amp;emsp;&amp;ensp;  除了在模型上的不断发展以外，另外有两点值得可喜的发展：一是语料库的不断完善和数据集的不断增多（如TIMIT、TI46数据集等），二是面向大量音频数据处理的工具的出现和不断完善（如CMU的Sphinx，剑桥大学的HTK等）[4]。  &lt;/p&gt;
+&lt;p&gt;    语音识别技术在过去的60年里吸引了大量研究者的注意，最早可以追溯到20世纪二、三十年代，如早期（1939年）贝尔实验室在纽约世博会上展示了他们的语音综合机器。&lt;br /&gt;
+    而语音识别的重大发展是在20世纪70年代中叶，那个时代见证了在孤立字识别领域上许多里程碑式的进步。首先俄国的研究者们展示了在语音识别中运用模式识别（Pattern Recognition）的想法，日本的研究者成功运用到了动态编程编码（Dynamic Programming code），如板仓提出的线性预测编码成为低位速下编码（LPC）方法高质量语音最有用的方法之一。另一个值得注意的是卡内基梅隆大学在1973向世人展示了Heresay I语音理解系统，能够在1011个单词的词汇表中以较好的准确性识别语音。&lt;br /&gt;
+    而80年代起在连接词识别上获得了比较好的成效，特别是隐马尔可夫模型（Hidden Markov Model，下面简称HMM）[11] 的发展并被大范围的接受，其作为模式匹配策略被当时的很多公司采用和商业化，就算到40多年后的今天也是占据主导的声学模型算法之一。另外就是神经网络的发展，但是在当时由于一些实践上的原因，并没有像HMM那样成功。&lt;br /&gt;
+    语音识别的最具转折性和建设性的发展归因于统计方法的引入，包括HMM、期望最大化（EM），最大互信息（MMI）等。另外是信号表述技术的发展，如梅尔频率倒谱系数（MFCC）[12]，感知线性预测常数（PLP）等。&lt;br /&gt;
+    基于摩尔法则的硬件技术进步使得ASR研究者能在很短时间内跑一些复杂的算法，另外还有一些大的语音语料库的构建使得语音识别的模型、算法在后来的几十年里不断地改进和延伸。&lt;br /&gt;
+    时至今日，由于硬件的支持、GPU的发展使得深度学习不断发展，许多研究者从传统的高斯混合模型（GMM）和HMM结合转向深度神经网络（DNN）与HMM结合，并取得了不小的成效 [3]。深度学习以及深度神经网络在语音处理方向上的应用仍是当今研究的热潮之一。&lt;br /&gt;
+    除了在模型上的不断发展以外，另外有两点值得可喜的发展：一是语料库的不断完善和数据集的不断增多（如TIMIT、TI46数据集等），二是面向大量音频数据处理的工具的出现和不断完善（如CMU的Sphinx，剑桥大学的HTK等）[4]。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;3   目前的语音识别技术&lt;/strong&gt;  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3   目前的语音识别技术&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;3.1 基础语音识别模型&lt;/strong&gt;
-&lt;center&gt; &lt;img src=&quot;http://o6qr23o6z.bkt.clouddn.com/asr_basemodel.png&quot; alt=&quot;图1&quot;&gt; &lt;/center&gt;&lt;br&gt;
-&amp;emsp;&amp;ensp;  一个标准的语音识别模型首先假定有一串输入序列O = {O1, O2, .., On},,以及符号词典 W = {W1, W2, .., W_n}, 求解对于该输入序列解码出符号串（输出语句）W = {W1, W2, .., Wk}。通过数学转化成求解以下概率的最大值：&lt;br&gt;
-&lt;center&gt; W = argmaxP(O|W)P(W) &lt;/center&gt;&lt;br&gt;
-$emsp;&amp;ensp;  其中P(O|W)被称之为声学模型，P(W)被称为语言模型。&lt;br&gt;
-&amp;emsp;&amp;ensp;  该模型的求解过程如图1所示，其中的搜索，就是依据对公式中的声学模型打分和语言模型打分，寻找一个词模型序列以描述输入语音信号，从而得到词解码序列。&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;3.1 基础语音识别模型&lt;/strong&gt;&lt;/p&gt;
+&lt;center&gt; ![图1](http://o6qr23o6z.bkt.clouddn.com/asr_basemodel.png) &lt;/center&gt;
+&lt;p&gt;    一个标准的语音识别模型首先假定有一串输入序列O = {O1, O2, .., On},,以及符号词典 W = {W1, W2, .., W_n}, 求解对于该输入序列解码出符号串（输出语句）W = {W1, W2, .., Wk}。通过数学转化成求解以下概率的最大值：&lt;/p&gt;
+&lt;center&gt; W = argmaxP(O|W)P(W) &lt;/center&gt;
+&lt;p&gt;$emsp;   其中P(O|W)被称之为声学模型，P(W)被称为语言模型。&lt;br /&gt;
+    该模型的求解过程如图1所示，其中的搜索，就是依据对公式中的声学模型打分和语言模型打分，寻找一个词模型序列以描述输入语音信号，从而得到词解码序列。&lt;br /&gt;
 &lt;strong&gt;3.2 当今的语音识别方法&lt;/strong&gt;
-&lt;strong&gt;3.2.1 特征抽取&lt;/strong&gt;&lt;br&gt;
-&amp;emsp;&amp;ensp;  在语音识别中，特征抽取的主要目的是在给定一个紧凑的输入信号表示计算出特征向量的简约序列。主要分成三个步骤：语音分析（语音前端声学处理）；编译成包含动静态的扩展特征向量；将这些扩展后的特征向量转化成影响因子更大的向量，然后提供给识别器。&lt;br&gt;
-&amp;emsp;&amp;ensp;  现在主要有下面的一些模型：1.主元成分分析（PCA）；2.线性判别式分析（LDA）；3.独立成分分析（ICA）；4.线性预测编码； 5. 倒谱分析；6.梅尔频率倒谱系数（MFFC）7. 滤波器分析；8.基于核函数的特征抽取等 [2]。&lt;br&gt;
-&lt;strong&gt;3.2.2 语音识别方式&lt;/strong&gt;&lt;br&gt;
-&amp;emsp;&amp;ensp;  声学语音学方法：主要步骤为语音谱段分析、特征提取；分割并标注语段：声音信号被分割成几个稳定的语音区，并进行匹配标注；从语音标注序列中判断一个词或者一串词是否有效。&lt;br&gt;
-&amp;emsp;&amp;ensp;  模式识别方式:包括1.基于模板的模式识别；2.随机模型法(最有名的就是上文提到的(HMM))；3.动态时间规整（DTW）；4.矢量量化（VQ）&lt;br&gt;
-&amp;emsp;&amp;ensp;  人工智能方式:基于知识的专家系统。&lt;br&gt;
-&amp;emsp;&amp;ensp;  神经网络方式：多隐藏层的深度神经网络(DNN)，比如微软研究院的研究[4];深度循环网络（RNN）训练，比如多伦多大学的研究 [5]。&lt;br&gt;
-&lt;strong&gt;3.2.3 现今语音识别系统&lt;/strong&gt;&lt;br&gt;
-&amp;emsp;&amp;ensp;  现今的语音识别系统主要使用下列两个方式。&lt;br&gt;
-&amp;emsp;&amp;ensp;  一是使用HMM解决语音的时间变率，然后用高斯混合模型(GMMs)决定每个HMM状态对声学输入的拟合好坏。&lt;br&gt;
-&amp;emsp;&amp;ensp;  另一个是用前向传播神经网络去评估拟合好坏，即用系数的一些帧作为输入，以HMM状态的后端概率作为输出。这种深度神经网络的方式已经越来越体现出它的优势性。&lt;br&gt;
-&lt;strong&gt;3.3 存在的问题及原因&lt;/strong&gt;&lt;br&gt;
-&amp;emsp;&amp;ensp;  一是处理环境噪声和缺失信息的处理， M. Cooke等人在 [6]中讨论了这个问题，未来的语音识别系统还是要更优化地解决它。&lt;br&gt;
-&amp;emsp;&amp;ensp;  二是各种变量对于语音处理的挑战。M.Bengzeghiba等人在 [7]中描述了一系列变量比如说话风格，演说人的生理因素，年龄，情绪等。
-&amp;emsp;&amp;ensp;  三是对于语音系统可行度的评估分析， H. Jiang 在 [8]中提到了一些置信度分析方法，但仍存在不少问题。&lt;br&gt;
-&amp;emsp;&amp;ensp;  四是对于数据中一些不能被词典所包括的超纲词汇以及生僻字对于语音识别的影响研究&lt;br&gt;
-&amp;emsp;&amp;ensp;  1994年摩尔展示了20个语音识别机制的主题[10]，在现在仍是语音发展的关键。  &lt;/p&gt;
+&lt;strong&gt;3.2.1 特征抽取&lt;/strong&gt;&lt;br /&gt;
+    在语音识别中，特征抽取的主要目的是在给定一个紧凑的输入信号表示计算出特征向量的简约序列。主要分成三个步骤：语音分析（语音前端声学处理）；编译成包含动静态的扩展特征向量；将这些扩展后的特征向量转化成影响因子更大的向量，然后提供给识别器。&lt;br /&gt;
+    现在主要有下面的一些模型：1.主元成分分析（PCA）；2.线性判别式分析（LDA）；3.独立成分分析（ICA）；4.线性预测编码； 5. 倒谱分析；6.梅尔频率倒谱系数（MFFC）7. 滤波器分析；8.基于核函数的特征抽取等 [2]。&lt;br /&gt;
+&lt;strong&gt;3.2.2 语音识别方式&lt;/strong&gt;&lt;br /&gt;
+    声学语音学方法：主要步骤为语音谱段分析、特征提取；分割并标注语段：声音信号被分割成几个稳定的语音区，并进行匹配标注；从语音标注序列中判断一个词或者一串词是否有效。&lt;br /&gt;
+    模式识别方式:包括1.基于模板的模式识别；2.随机模型法(最有名的就是上文提到的(HMM))；3.动态时间规整（DTW）；4.矢量量化（VQ）&lt;br /&gt;
+    人工智能方式:基于知识的专家系统。&lt;br /&gt;
+    神经网络方式：多隐藏层的深度神经网络(DNN)，比如微软研究院的研究[4];深度循环网络（RNN）训练，比如多伦多大学的研究 [5]。&lt;br /&gt;
+&lt;strong&gt;3.2.3 现今语音识别系统&lt;/strong&gt;&lt;br /&gt;
+    现今的语音识别系统主要使用下列两个方式。&lt;br /&gt;
+    一是使用HMM解决语音的时间变率，然后用高斯混合模型(GMMs)决定每个HMM状态对声学输入的拟合好坏。&lt;br /&gt;
+    另一个是用前向传播神经网络去评估拟合好坏，即用系数的一些帧作为输入，以HMM状态的后端概率作为输出。这种深度神经网络的方式已经越来越体现出它的优势性。&lt;br /&gt;
+&lt;strong&gt;3.3 存在的问题及原因&lt;/strong&gt;&lt;br /&gt;
+    一是处理环境噪声和缺失信息的处理， M. Cooke等人在 [6]中讨论了这个问题，未来的语音识别系统还是要更优化地解决它。&lt;br /&gt;
+    二是各种变量对于语音处理的挑战。M.Bengzeghiba等人在 [7]中描述了一系列变量比如说话风格，演说人的生理因素，年龄，情绪等。
+    三是对于语音系统可行度的评估分析， H. Jiang 在 [8]中提到了一些置信度分析方法，但仍存在不少问题。&lt;br /&gt;
+    四是对于数据中一些不能被词典所包括的超纲词汇以及生僻字对于语音识别的影响研究&lt;br /&gt;
+    1994年摩尔展示了20个语音识别机制的主题[10]，在现在仍是语音发展的关键。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;4   进一步发展与研究概述&lt;/strong&gt;&lt;br&gt;
-&amp;emsp;&amp;ensp;  在以后的研究和发展过程中大致有以下一些需要投入研究[9]：&lt;br&gt;
-&amp;emsp;&amp;ensp;  一是对于置信度的研究分析的改进，需要一个更加通用的评估手段。&lt;br&gt;
-&amp;emsp;&amp;ensp;  二是日常音频的不断堆积，需要有更加强大的ASR系统在大范围的语音、发音人、频道和娱乐因素环境下去处理声学环境的多变性、混响、外部噪音、交流频道等。&lt;br&gt;
-&amp;emsp;&amp;ensp;  三是自我适应（学习）的语言技术研究。&lt;br&gt;
-&amp;emsp;&amp;ensp;  四是对于数据中一些不能被词典所包括的超纲词汇以及生僻字对于语音识别的影响研究&lt;br&gt;
-&amp;emsp;&amp;ensp;  1994年摩尔展示了20个语音识别机制的主题[10]，在现在仍是语音发展的关键。  &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4   进一步发展与研究概述&lt;/strong&gt;&lt;br /&gt;
+    在以后的研究和发展过程中大致有以下一些需要投入研究[9]：&lt;br /&gt;
+    一是对于置信度的研究分析的改进，需要一个更加通用的评估手段。&lt;br /&gt;
+    二是日常音频的不断堆积，需要有更加强大的ASR系统在大范围的语音、发音人、频道和娱乐因素环境下去处理声学环境的多变性、混响、外部噪音、交流频道等。&lt;br /&gt;
+    三是自我适应（学习）的语言技术研究。&lt;br /&gt;
+    四是对于数据中一些不能被词典所包括的超纲词汇以及生僻字对于语音识别的影响研究&lt;br /&gt;
+    1994年摩尔展示了20个语音识别机制的主题[10]，在现在仍是语音发展的关键。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;5   见解与感想&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&amp;emsp;&amp;ensp;  对于语音识别技术的研究是令人兴奋的，尤其是统计学习的引进使得这个领域发展迅速。在研究该领域的时候，需要重点对主流算法，比如隐马尔可夫(HMM)的研究，文献[11] 提供了一个系统的HMM的详细描述。 针对于主流算法的不足进行发散思考。&lt;br&gt;
-&amp;emsp;&amp;ensp;  另外是由于现在的深度学习研究热潮中，对于深度神经网络在语音识别中的研究也是非常关键。&lt;br&gt;
-&amp;emsp;&amp;ensp;  最后是如果能够提供更为强大的语音识别评估系统对这个领域的研究将提供非常大的帮助。  &lt;/p&gt;
+&lt;p&gt;    对于语音识别技术的研究是令人兴奋的，尤其是统计学习的引进使得这个领域发展迅速。在研究该领域的时候，需要重点对主流算法，比如隐马尔可夫(HMM)的研究，文献[11] 提供了一个系统的HMM的详细描述。 针对于主流算法的不足进行发散思考。&lt;br /&gt;
+    另外是由于现在的深度学习研究热潮中，对于深度神经网络在语音识别中的研究也是非常关键。&lt;br /&gt;
+    最后是如果能够提供更为强大的语音识别评估系统对这个领域的研究将提供非常大的帮助。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;6  参考文献&lt;/strong&gt;&lt;/p&gt;
 
@@ -544,66 +666,67 @@ $emsp;&amp;ensp;  其中P(O|W)被称之为声学模型，P(W)被称为语言模�
     <email>3140102237@zju.edu.cn</email>
   </author>
   <content type="html">
-    &lt;h1&gt;编译步骤&lt;/h1&gt;
+    &lt;h1 id=&quot;section&quot;&gt;编译步骤&lt;/h1&gt;
 
-&lt;p&gt;&amp;emsp;&amp;emsp;对于第一次接触静态编译的人来说，静态编译GUI工程的确是一项非常艰巨的任务，不过万幸，最终还是把我的&lt;a href=&quot;https://github.com/ScarletPan/Mips-assembler&quot;&gt;汇编器&lt;/a&gt;静态编译成功啦。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;工具：QT creator 5.6.0 community 版本。&lt;/li&gt;
-&lt;li&gt;一些重要的依赖库：Qt5Core、Qt5Widgets等其他Qt库，以及C++的等标准库，Runtime库。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&amp;emsp;&amp;emsp;首先来讲一下静态编译的难点：由于Qt 5.6 涉及到版权问题，因此它并不给社区版的用户提供静态编译的条件，所有的 ** &lt;em&gt;/include&lt;/em&gt;*  和 ** &lt;em&gt;/lib&lt;/em&gt;* 里面的库文件都是通过动态链接dll使用户在本地项目编译并顺利运行，但如果想使自己的应用程序在其他没有相应依赖库环境条件下的电脑上跑（这里只涉及windows），一个方法是找到所有的相关文件（即.dll）打包到发布的.exe文件路径中，但是总是会有疏漏（或者说不能正常运行）， 而且每个.dll的文件都非常巨大,达到10M以上的级别，所以不是非常好，所以另一方法是静态编译，但是静态编译要求有预编译好的静态库，这些只是但从下载下来的Qt软件中是找不到的，下面说说我是怎么实现静态编译的。&lt;/p&gt;
-
-&lt;p&gt;&amp;emsp;&amp;emsp;由于在搜集方法的过程中很多人都只讲了如何静态编译Qt，而给出更明确的目标（如何静态发布自己的.exe）为了不让以后的自己或者看到这篇人多走弯路特地记录了以高效的方式静态编译的方法：&lt;/p&gt;
+&lt;p&gt;  对于第一次接触静态编译的人来说，静态编译GUI工程的确是一项非常艰巨的任务，不过万幸，最终还是把我的&lt;a href=&quot;https://github.com/ScarletPan/Mips-assembler&quot;&gt;汇编器&lt;/a&gt;静态编译成功啦。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;步骤一：安装minGW&lt;/li&gt;
+  &lt;li&gt;工具：QT creator 5.6.0 community 版本。&lt;/li&gt;
+  &lt;li&gt;一些重要的依赖库：Qt5Core、Qt5Widgets等其他Qt库，以及C++的等标准库，Runtime库。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&amp;emsp;&amp;emsp;总之我觉得懂编译的人对它应该都不陌生，对于不懂编译的孩子（比如我），只要知道它可以编译你的Qt程序，允许你在没有第三方动态链接库的情况下使用 GCC 产生 Windows32 程序。具体下载地址在&lt;a href=&quot;https://sourceforge.net/projects/mingw/files/&quot;&gt;这里&lt;/a&gt;,注意的是如果嫌麻烦，就别戳进那些文件夹里去了，直接点 &lt;a href=&quot;https://sourceforge.net/projects/mingw/files/latest/download?source=files&quot;&gt;Download mingw-get-setup.exe (86.5 kB)&lt;/a&gt;,exe安装帮你免去了配置各种环境的麻烦：) 安装时候据说最好选择最新版本，不过我自己的话选择的是4.9.2的&lt;/p&gt;
+&lt;p&gt;  首先来讲一下静态编译的难点：由于Qt 5.6 涉及到版权问题，因此它并不给社区版的用户提供静态编译的条件，所有的 ** */include**  和 ** */lib** 里面的库文件都是通过动态链接dll使用户在本地项目编译并顺利运行，但如果想使自己的应用程序在其他没有相应依赖库环境条件下的电脑上跑（这里只涉及windows），一个方法是找到所有的相关文件（即.dll）打包到发布的.exe文件路径中，但是总是会有疏漏（或者说不能正常运行）， 而且每个.dll的文件都非常巨大,达到10M以上的级别，所以不是非常好，所以另一方法是静态编译，但是静态编译要求有预编译好的静态库，这些只是但从下载下来的Qt软件中是找不到的，下面说说我是怎么实现静态编译的。&lt;/p&gt;
+
+&lt;p&gt;  由于在搜集方法的过程中很多人都只讲了如何静态编译Qt，而给出更明确的目标（如何静态发布自己的.exe）为了不让以后的自己或者看到这篇人多走弯路特地记录了以高效的方式静态编译的方法：&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;步骤二：取得Qt静态编译后的版本&lt;/li&gt;
+  &lt;li&gt;步骤一：安装minGW&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&amp;emsp;&amp;emsp;法一：最简单也是最高效的方法，直接去Qt社区找，如果运气好的话是能找到自己相应Qt版本其他人静态编译好的成果，比如本次汇编器发布所用的静态Qt版本我是从&lt;a href=&quot;http://www.qtcn.org/bbs/thread-htm-fid-68.html&quot;&gt;这里&lt;/a&gt;找到的。&lt;/p&gt;
-
-&lt;p&gt;&amp;emsp;&amp;emsp;法二：很费时间也可能会出现一系列问题的方法，就是自己去用minGW静态编译，具体可以看一下&lt;a href=&quot;http://blog.csdn.net/wsj18808050/article/details/50909381&quot;&gt;这篇博文&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&amp;emsp;&amp;emsp;法三：把人家弄好的虚拟机环境下载下来，在虚拟机里面编译。可以戳这个&lt;a href=&quot;http://blog.csdn.net/wsj18808050/article/details/50935343&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;  总之我觉得懂编译的人对它应该都不陌生，对于不懂编译的孩子（比如我），只要知道它可以编译你的Qt程序，允许你在没有第三方动态链接库的情况下使用 GCC 产生 Windows32 程序。具体下载地址在&lt;a href=&quot;https://sourceforge.net/projects/mingw/files/&quot;&gt;这里&lt;/a&gt;,注意的是如果嫌麻烦，就别戳进那些文件夹里去了，直接点 &lt;a href=&quot;https://sourceforge.net/projects/mingw/files/latest/download?source=files&quot;&gt;Download mingw-get-setup.exe (86.5 kB)&lt;/a&gt;,exe安装帮你免去了配置各种环境的麻烦：) 安装时候据说最好选择最新版本，不过我自己的话选择的是4.9.2的&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;步骤三：在Qt里面进行配置 &lt;/li&gt;
+  &lt;li&gt;步骤二：取得Qt静态编译后的版本&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&amp;emsp;&amp;emsp;主要是人工建立静态编译环境，具体仍然可以参考上面的博文，我在这里贴上自己的配置（先戳进工具里面的选项一栏）：&lt;/p&gt;
+&lt;p&gt;  法一：最简单也是最高效的方法，直接去Qt社区找，如果运气好的话是能找到自己相应Qt版本其他人静态编译好的成果，比如本次汇编器发布所用的静态Qt版本我是从&lt;a href=&quot;http://www.qtcn.org/bbs/thread-htm-fid-68.html&quot;&gt;这里&lt;/a&gt;找到的。&lt;/p&gt;
 
-&lt;p&gt;&amp;emsp;&amp;emsp;&lt;img src=&quot;http://ww1.sinaimg.cn/mw690/005INZAsgw1f36q1lbbhdj30rk0gq76c.jpg&quot; alt=&quot;套件&quot;&gt;
-&amp;emsp;&amp;emsp;&lt;img src=&quot;http://ww1.sinaimg.cn/mw690/005INZAsgw1f36q1lqnf9j30rk0gqabt.jpg&quot; alt=&quot;版本&quot;&gt;
-&amp;emsp;&amp;emsp;&lt;img src=&quot;http://ww4.sinaimg.cn/mw690/005INZAsgw1f36q1mp5i0j30rk0gqdhx.jpg&quot; alt=&quot;编译器&quot;&gt;
-&amp;emsp;&amp;emsp;&lt;img src=&quot;http://ww2.sinaimg.cn/mw690/005INZAsgw1f36q1n8jzuj30rk0gqjt0.jpg&quot; alt=&quot;Debug&quot;&gt;&lt;/p&gt;
+&lt;p&gt;  法二：很费时间也可能会出现一系列问题的方法，就是自己去用minGW静态编译，具体可以看一下&lt;a href=&quot;http://blog.csdn.net/wsj18808050/article/details/50909381&quot;&gt;这篇博文&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;  法三：把人家弄好的虚拟机环境下载下来，在虚拟机里面编译。可以戳这个&lt;a href=&quot;http://blog.csdn.net/wsj18808050/article/details/50935343&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;步骤四：新建静态项目&lt;/li&gt;
+  &lt;li&gt;步骤三：在Qt里面进行配置&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&amp;emsp;&amp;emsp;这里只要注意一点点就行了，就是在建立项目的时候选择静态version:&lt;/p&gt;
+&lt;p&gt;  主要是人工建立静态编译环境，具体仍然可以参考上面的博文，我在这里贴上自己的配置（先戳进工具里面的选项一栏）：&lt;/p&gt;
 
-&lt;p&gt;&amp;emsp;&amp;emsp;&lt;img src=&quot;http://ww2.sinaimg.cn/mw690/005INZAsgw1f36q1nrxqpj30p20cj0tb.jpg&quot; alt=&quot;新建&quot;&gt;
-&amp;emsp;&amp;emsp;在这里有另一个值得注意的是：Debug的话最好在动态编译环境完成，因为静态编译出来的debug太大了，所以最后发布时候一定要以release的方式构建:)&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;http://ww1.sinaimg.cn/mw690/005INZAsgw1f36q1lbbhdj30rk0gq76c.jpg&quot; alt=&quot;套件&quot; /&gt;
+  &lt;img src=&quot;http://ww1.sinaimg.cn/mw690/005INZAsgw1f36q1lqnf9j30rk0gqabt.jpg&quot; alt=&quot;版本&quot; /&gt;
+  &lt;img src=&quot;http://ww4.sinaimg.cn/mw690/005INZAsgw1f36q1mp5i0j30rk0gqdhx.jpg&quot; alt=&quot;编译器&quot; /&gt;
+  &lt;img src=&quot;http://ww2.sinaimg.cn/mw690/005INZAsgw1f36q1n8jzuj30rk0gqjt0.jpg&quot; alt=&quot;Debug&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;步骤五：get .exe应用程序&lt;/li&gt;
+  &lt;li&gt;步骤四：新建静态项目&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&amp;emsp;&amp;emsp;最后你可以在release的文件夹中找到.exe文件，此时已经可以在别人家的电脑上运行了~&lt;/p&gt;
+&lt;p&gt;  这里只要注意一点点就行了，就是在建立项目的时候选择静态version:&lt;/p&gt;
 
-&lt;p&gt;&amp;emsp;&amp;emsp;&lt;img src=&quot;http://ww3.sinaimg.cn/mw690/005INZAsgw1f35qiiy7cjj30tg0ltn0f.jpg&quot; alt=&quot;汇编器&quot;&gt;&lt;/p&gt;
+&lt;p&gt;  &lt;img src=&quot;http://ww2.sinaimg.cn/mw690/005INZAsgw1f36q1nrxqpj30p20cj0tb.jpg&quot; alt=&quot;新建&quot; /&gt;
+  在这里有另一个值得注意的是：Debug的话最好在动态编译环境完成，因为静态编译出来的debug太大了，所以最后发布时候一定要以release的方式构建:)&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;ul&gt;
+  &lt;li&gt;步骤五：get .exe应用程序&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;  最后你可以在release的文件夹中找到.exe文件，此时已经可以在别人家的电脑上运行了~&lt;/p&gt;
+
+&lt;p&gt;  &lt;img src=&quot;http://ww3.sinaimg.cn/mw690/005INZAsgw1f35qiiy7cjj30tg0ltn0f.jpg&quot; alt=&quot;汇编器&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;p&gt;写在最后：静态编译千万别浪费时间在VS上调用QT了！这是个大坑：( 笔者就是因为这样才浪费了大把时间走了弯路。&lt;/p&gt;
+
 
     &lt;p&gt;&lt;a href=&quot;/static/&quot;&gt;Qt 静态编译&lt;/a&gt; was originally published by Haojie PAN at &lt;a href=&quot;&quot;&gt;My SCARLET&lt;/a&gt; on April 23, 2016.&lt;/p&gt;
   </content>
@@ -622,29 +745,36 @@ $emsp;&amp;ensp;  其中P(O|W)被称之为声学模型，P(W)被称为语言模�
     <email>3140102237@zju.edu.cn</email>
   </author>
   <content type="html">
-    &lt;p&gt;&amp;emsp;&amp;emsp;最早想写博客的想法是15年我开始学Python那会，那时候刚接触网路爬虫，需要调用不同的库，beautiful soap, requests, selenium, sqlite3, etc. 当时就觉得这么多api无法靠记来完成，而在实际coding的过程中，遇到了一些官方文档中无法解决的问题，各种查询之后才debug成功，但由于没有记录下来，导致以后再次遇到忘记了解决之法。&lt;/p&gt;
+    &lt;p&gt;  最早想写博客的想法是15年我开始学Python那会，那时候刚接触网路爬虫，需要调用不同的库，beautiful soap, requests, selenium, sqlite3, etc. 当时就觉得这么多api无法靠记来完成，而在实际coding的过程中，遇到了一些官方文档中无法解决的问题，各种查询之后才debug成功，但由于没有记录下来，导致以后再次遇到忘记了解决之法。&lt;/p&gt;
 
-&lt;p&gt;&amp;emsp;&amp;emsp;比如Sqlite3当初使用过程中有这么一个句子：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;cursor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SELECT name FROM db WHERE id = ?&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&amp;emsp;&amp;emsp;当初怎么都debug不出来到底为何错了（因为还没学数据库），最后去stackoverflow搜罗了好久答案才知道就算只有一个元素也要以元组的方式插入：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;cursor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;execute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SELECT name FROM db WHERE id = ?&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&amp;emsp;&amp;emsp;然而在到后来在用Python通信mysql的时候又犯了同样的错误，又花费了一点时间，于是想想如果有个专门的平台给自己做记录用还是不错的。&lt;/p&gt;
+&lt;p&gt;  比如Sqlite3当初使用过程中有这么一个句子：&lt;/p&gt;
 
-&lt;p&gt;&amp;emsp;&amp;emsp;后来我用上了印象笔记，尽管在生活上整理一些琐碎的事务它的确帮了我很大的忙，但实话说想要记录技术博文的话实在不合我的胃口。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;python
+cursor.execute(&quot;SELECT name FROM db WHERE id = ?&quot;, name)
+&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;&amp;emsp;&amp;emsp;另外就是一些专门的国内博客网站，曾经生过在上面写博文的想法，但是看到那个网页玲琅满目的条目和广告，作为一个对界面美观和整洁度有一定洁癖的人来说，的确是难以忍受的。于是我又想去学python的django等框架、学一些前端的东西然后建立一个独立博客，但由于不是自己的专业喜好以及平时学业的繁忙，一直都没有付诸实践。&lt;/p&gt;
+&lt;p&gt;  当初怎么都debug不出来到底为何错了（因为还没学数据库），最后去stackoverflow搜罗了好久答案才知道就算只有一个元素也要以元组的方式插入：&lt;/p&gt;
 
-&lt;p&gt;&amp;emsp;&amp;emsp;最后是在查询RNN相关博文时看到了 &lt;a href=&quot;http://colah.github.io/&quot;&gt;colah的博客&lt;/a&gt;，非常整洁和美观，又看到了github.io的后缀名，知道了github托管静态网页，就觉得这正是我想要的。&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;python
+cursor.execute(&quot;SELECT name FROM db WHERE id = ?&quot;, (name,))
+&lt;/code&gt;&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;p&gt;  然而在到后来在用Python通信mysql的时候又犯了同样的错误，又花费了一点时间，于是想想如果有个专门的平台给自己做记录用还是不错的。
+#&lt;/p&gt;
 
-&lt;p&gt;&amp;emsp;&amp;emsp;所以这个博客主要是记录我在学习中所碰到的一些情况，为未来碰到同样情况的我自己和一些能够发现这个博客的人做一个前车之鉴吧。&lt;/p&gt;
+&lt;p&gt;  后来我用上了印象笔记，尽管在生活上整理一些琐碎的事务它的确帮了我很大的忙，但实话说想要记录技术博文的话实在不合我的胃口。&lt;/p&gt;
 
-&lt;p&gt;&amp;emsp;&amp;emsp;同时也会记录一些生活的点滴，做一个伪文学爱好者。&lt;/p&gt;
+&lt;p&gt;  另外就是一些专门的国内博客网站，曾经生过在上面写博文的想法，但是看到那个网页玲琅满目的条目和广告，作为一个对界面美观和整洁度有一定洁癖的人来说，的确是难以忍受的。于是我又想去学python的django等框架、学一些前端的东西然后建立一个独立博客，但由于不是自己的专业喜好以及平时学业的繁忙，一直都没有付诸实践。&lt;/p&gt;
 
-&lt;p&gt;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;2016/04/22&lt;/p&gt;
+&lt;p&gt;  最后是在查询RNN相关博文时看到了 &lt;a href=&quot;http://colah.github.io/&quot;&gt;colah的博客&lt;/a&gt;，非常整洁和美观，又看到了github.io的后缀名，知道了github托管静态网页，就觉得这正是我想要的。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;  所以这个博客主要是记录我在学习中所碰到的一些情况，为未来碰到同样情况的我自己和一些能够发现这个博客的人做一个前车之鉴吧。&lt;/p&gt;
+
+&lt;p&gt;  同时也会记录一些生活的点滴，做一个伪文学爱好者。&lt;/p&gt;
+
+&lt;p&gt;                                    2016/04/22&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;/reasons/&quot;&gt;Reasons to write&lt;/a&gt; was originally published by Haojie PAN at &lt;a href=&quot;&quot;&gt;My SCARLET&lt;/a&gt; on April 22, 2016.&lt;/p&gt;
   </content>
