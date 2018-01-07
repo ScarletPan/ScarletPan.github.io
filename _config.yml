@@ -19,7 +19,12 @@ description: >- # this means to ignore newlines until "baseurl:"
   Beg you imprison me in Tartarus.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://scarletpan.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  
+organization: zju
+organization_url: http://www.zju.edu.cn
+github_username: scarletpan
+timezone: Asia/Beijing
+encoding: "utf-8"
+location: Hangzhou, China
 
 navs:
   -
@@ -64,6 +69,13 @@ plugins:
 
 github: [metadata]
 
+comments_provider: gitalk
+# https://github.com/gitalk/gitalk#install
+gitalk:
+    owner: scarletpan
+    repo: scarletpan.github.io
+    clientID: 1283a18bfe866f10e44b
+    clientSecret: 07eded0466d1a91334d8cf9861b47d99703ddbe4 
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
