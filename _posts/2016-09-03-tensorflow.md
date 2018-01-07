@@ -1,29 +1,31 @@
 ---
 layout: post
-title: 极简的深度学习环境搭建(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)
-tags: Deep_learning
+title: 极简的深度学习环境搭建
+categories: Environment
 comments: true
-modifed: 2016-09-03
+description: 极简的深度学习环境搭建
 ---
 
+如何以最高效地方式搭建一个深度学习环境(Nvidia GTX850 + cuda8.0 + tensorflow0.10.0 + ubuntu 16.04)。
+
 ## 1 &emsp; Linux 版本
-<center>![pic1](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-1.png)</center>
+![pic1](/images/post/post_16-09-03-1.png)
 
 ## 2 &emsp; GPU 信息
-<center>![pic2](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-2.png)</center>
+![pic2](/images/post/post_16-09-03-2.png)
 
 ## 3 &emsp; 安装nvidia驱动
 在software & update中直接更改即可, 由于cuda对驱动版本要求高, 因此最好选择361．安装完后重启一下
-<center>![pic3](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-3.png)</center>
+![pic3](/images/post/post_16-09-03-3.png)
 
 ## 4 &emsp; 安装cuda 8.0
 * 前往 [cuda下载页面](https://developer.nvidia.com/cuda-release-candidate-download)
 * 注册（如果还没有账号）
 * 选择deb下载
-<center>![pic4](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-4.png)</center>
+![pic4](/images/post/post_16-09-03-4.png)
 * 下载成功后在本地解包安装
 
-```linux
+```bash
 $ sudo dpkg -i cuda-repo-ubuntu1604-8-0-rc_8.0.27-1_amd64.deb
 $ sudo apt-get update
 $ sudo apt-get install cuda
@@ -39,13 +41,13 @@ export CUDA_HOME=/usr/local/cuda
 
 * 测试(以1_Utilities/deviceQuery为例)：
 
-```
+```bash
 $ cd /usr/local/cuda/samples/1_Utilities/deviceQuery
 $ make
 $ ./deviceQuery
 ```
 &emsp;成功后大概长这样：
-<center>![pic5](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-5.png)</center>
+![pic5](/images/post/post_16-09-03-5.png)
 
 **UPDATE** 
 
@@ -57,7 +59,7 @@ $ ./deviceQuery
 2. 下载相应版本的cudnn4
 3. 将相应内容拷贝到cuda目录中
 
-```
+```bash
 tar xvzf cudnn-7.5-linux-x64-v4.tgz
 sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
@@ -70,6 +72,6 @@ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 ## 7 &emsp; 测试
 可以用tensorflow自带的sample测试,可以看到gpu相对与cpu测试速度有很大的提升：
 <p> cpu版本 </p>
-<center>![pic6](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-6.png)</center>
+![pic6](/images/post/post_16-09-03-6.png)
 <p> gpu版本 </p>
-<center>![pic7](http://o6qr23o6z.bkt.clouddn.com/post_16-09-03-7.png)</center>
+![pic7](/images/post/post_16-09-03-7.png)

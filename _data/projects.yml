@@ -1,0 +1,18 @@
+- name: VQA
+  description: Visual Question Answering is a project about automatically generating answers for questions related to images, based on deep learning.
+  image_url: vqa.png
+  link: http://o6qr23o6z.bkt.clouddn.com/demo.mp4
+
+
+- name: Anliku
+  description: Anliku is an Android app to recommend new movies. It contains a lot of short viedos, including movie preview and clips. It also contains movie instroductions, resources and reviews.
+  image_url: anliku.jpg
+  link: https://www.youtube.com/watch?v=VD1VV5X9Hkk
+
+- name: PACMAN
+  description: PACMAN is an FPGA game using my own created 5-stage CPU core and developed by MIPS.
+  image_url: pacman.jpg
+  link: https://www.youtube.com/watch?v=NJHnuTNNsl4
+
+
+

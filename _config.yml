@@ -1,69 +1,78 @@
-title:            My SCARLET
-description:      My first blog.
-disqus_shortname:
-reading_time:     true
-words_per_minute: 200
-# Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
-# When testing locally leave blank or use http://localhost:4000
-url:
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-# Owner/author information
-owner:
-  name:           Haojie PAN
-  avatar:         author.jpg
-  bio:            "I wish I could."
-  email:         3140102237@zju.edu.cn
-  # Social networking links used in footer. Update and remove as you like.
-  twitter:
-  facebook:
-  github:        ScarletPan
-  stackexchange:
-  linkedin:
-  instagram:
-  flickr:
-  tumblr:
-  # google plus id, include the '+', eg +mmistakes
-  google_plus:
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: Myscarlet
+email: myscarletpan@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Beg you imprison me in Tartarus.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://scarletpan.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  
 
-# Background image to be tiled on all pages
-background:
+navs:
+  -
+    href: /
+    label: Home
 
-# Analytics and webmaster tools stuff goes here
-google_analytics:
-google_verify:
-# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
-bing_verify:
+  -
+    href: /categories/
+    label: Category
 
-# http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    China/Beijing
-future:      true
+  -
+    href: /works/
+    label: Works
+
+  -
+    href: /resource/
+    label: Resource
+
+  -
+    href: /about/
+    label: About
+
+# Build settings
+markdown: kramdown
+kramdown:
+    input: GFM
+math_engine: mathjax
 highlighter: rouge
-markdown:    redcarpet
-gems:
-  - jekyll-sitemap
-  - jekyll-paginate
-  - jekyll-gist
-sass:
-  sass_dir: _sass
-  style: compressed
+paginate: 8
+lsi: false
+quiet: false
+excerpt_separator: "\n\n"
+permalink: /:year/:month/:day/:title/
+plugins:
+    - jekyll-github-metadata
+    - rouge
+#     - jekyll-html-pipeline
+    - jekyll-paginate
+    - jekyll-sitemap
+    - jekyll-feed
+    - jemoji
 
-# https://github.com/mojombo/jekyll/wiki/Permalinks
-permalink:   /:categories/:title/
+github: [metadata]
 
-# Amount of post to show on home page
-paginate: 5
 
-# Octopress
-# Default extensions
-post_ext: md
-page_ext: md
-# Found in _templates/
-post_layout: post
-page_layout: page
-# Format titles with titlecase?
-titlecase: true
-
-include: [".htaccess"]
-exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
-
-encoding: utf-8
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

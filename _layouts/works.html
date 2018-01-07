@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<section class="collection-head small geopattern" data-pattern-id="{{ page.title | truncate: 15}}">
+    <div class="container">
+        <div class="collection-title">
+            <h1 class="collection-header">{{ page.title }}</h1>
+            {% if page.subtitle %}
+                <div class="collection-info">
+                    <span class="meta-info">
+                        {{ page.subtitle}}
+                    </span>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+<!-- / .banner -->
+<link rel="stylesheet" type="text/css" href="/assets/css/sections/works.css">
+<section class="container content">
+    <div class="columns">
+        <div class="column" >
+            {% for project in site.data.projects %}
+            <div class="inner">
+                <article class="feature left">
+                    <span class="image"><img src="/images/works/{{ project.image_url }}" alt="" /></span>
+                    <div class="content">
+                        <h2>{{ project.name }}</h2>
+                        <p>{{ project.description }}</p>
+                        <ul class="actions">
+                            <li>
+                                <a href="{{ project.link }}" class="button alt">More</a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- /section.content -->
