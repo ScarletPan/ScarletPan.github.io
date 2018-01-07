@@ -1,10 +1,10 @@
 ---
 layout: about
 title: About
-description: 打码改变世界
-keywords: Zhuang Ma, 马壮
-comments: true
-menu: 关于
+description: My info
+keywords: about
+comments: false
+menu: About
 permalink: /about/
 ---
 
