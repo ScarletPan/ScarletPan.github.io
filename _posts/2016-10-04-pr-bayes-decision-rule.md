@@ -21,9 +21,9 @@ keywords: Bayes
 <p>&emsp;&emsp;在这个例子的前提下，我们可以断定自然状态下只有两种可能：sea bass和salmon. 如果我们用符号 $ w $ 来表示state of nature, 则 $ w = w_1 $ 为sea bass, $ w = w_2 $为salmon</p>
 
 * priori probability(**prior**):
-<p>&emsp;&emsp;$ P(w_1) $指打捞上来的下一条鱼为sea bass, $ P(w_2) $指打捞上来的下一条鱼为salmon，很显然, $ P(w_1) + P(w_2) = 1 $. 从上述陈述中我们可以将prior理解为我们事先知道的知识，比如我们知道我们要打捞的海域这两种鱼的比例为2:1。
+<p>&emsp;&emsp;$ P(w_1) $指打捞上来的下一条鱼为sea bass, $ P(w_2) $指打捞上来的下一条鱼为salmon，很显然, $ P(w_1) + P(w_2) = 1 $. 从上述陈述中我们可以将prior理解为我们事先知道的知识，比如我们知道我们要打捞的海域这两种鱼的比例为2:1。 </p>
 
-* class-conditional probability density(**likelihood**): </p>
+* class-conditional probability density(**likelihood**):
 <p>&emsp;&emsp;$ P(x \space | w_j) $, 用概率论的知识我们可以这么理解它：假设feature $ x $在$ w_j $这一类中服从某种分布，那么在这一类鱼的lightness为某一直的概率越大，相应的$ P(x \space | w_j) $也就越大，比如说sea bass 的lightness 为10的可能性非常高，则$ P(x=10 \space | w_1) $也就非常大。 </p>
 
 * evidence：
@@ -34,7 +34,7 @@ keywords: Bayes
 <p>&emsp;&emsp;</p>
 
 ### 2. 似然值(likelihood)和似然函数([likelihood funciton](https://en.wikipedia.org/wiki/Likelihood_function))
-&emsp;&emsp;我们假设likelihood:$ p(x \space | w_j) $遵循某种涉及到参数$ \theta $的分布（比如关于$ (\mu, \sigma^2) $的正态分布, 则likelihood就相当于参数确定的给定分布下$ x $发生的概率。
+&emsp;&emsp;我们假设likelihood $ p(x \space | w_j) $遵循某种涉及到参数$ \theta $的分布（比如关于$ (\mu, \sigma^2) $的正态分布, 则likelihood就相当于参数确定的给定分布下$ x $发生的概率。
 <p>&emsp;&emsp;从而似然函数即为对于$\space data \space x \in X, state \space w \in W $的一个条件概率分布$ p(x \space | w) \space $</p>
 <p>&emsp;&emsp;</p>
 
@@ -70,7 +70,7 @@ $$ w(x) = argmax_w(p(w \space | x))　$$
 
 ### 5. The Decision rules and loss function
 &emsp;&emsp;假设我们捞上来一条鱼，通过上面陈述的一些方法，你将会判断它是sea bass还是salmon, 但是如果决策发生了错误怎么办？你会受到一定的损失(loss/cost), 这时候我们需要引进一个损失函数来判断这个决策到底会带来多大的损失，这就是loss function. 
-<p>&emsp;&emsp;在讲loss function前，我们先来引进一些符号，我们用$ \alpha(.) $来表示一个　*decision rule*。</p>
+<p>&emsp;&emsp;在讲loss function前，我们先来引进一些符号，我们用$ \alpha(.) $来表示一个　<i>decision rule</i>。</p>
 <p>&emsp;&emsp;如果我们进行了一个决策$ \alpha(x) $, 得到的结果是$w $，我们定义loss function 为$ \lambda(\alpha(x),w)　$。 </p>
 <p>&emsp;&emsp;</p>
 
@@ -80,7 +80,7 @@ $$ w(x) = argmax_w(p(w \space | x))　$$
 $$ R(\alpha_i | x) = \sum_{j=1}^c \lambda(\alpha_i \space | w_j)P(w_j|x) $$ </p>
 
 ### 7. Bayes Decision Theory
-&emsp;&emsp; 通过以上所说的我们就可以定义贝叶斯决策理论了: 即寻找一个决策$ \hat(\alpha) $来使得Risk　$ R(\alpha) $最小。即:
+&emsp;&emsp; 通过以上所说的我们就可以定义贝叶斯决策理论了: 即寻找一个决策$ \hat{\alpha} $来使得Risk　$ R(\alpha) $最小。即:
 $$ \hat\alpha = arg_{\alpha \in A}min(R(\alpha)), \alpha \in A $$
 <p>&emsp;&emsp;　$ \hat\alpha  $被称作贝叶斯决策(<i>Bayes Decision</i>), $ R(\hat\alpha) $被称作贝叶斯风险(<i>Bayes Risk</i>) </p>
 
