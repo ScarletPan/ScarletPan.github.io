@@ -28,60 +28,64 @@ comments: false
         </div>
     </div>
 </section>
+
 <!-- /.banner -->
 <section class="container content">
     <div class="columns">
         <div class="column two-thirds" >
-            <ol class="repo-list">
-                {% for post in paginator.posts %}
-                    {% if post.url == "/2017/04/28/summary-of-get-a-silver-medal-in-kaggle/" %}
-                    <li class="repo-list-item">
-                        <h3 class="repo-list-name">
-                        <a class="index-post-title" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-                        <image src="/images/index/top_post.png" width="4%"></image>
-                        </h3>
-                        <p class="repo-list-description">
-                            {{ post.excerpt | strip_html | strip }}
-                        </p>
-                        <p class="repo-list-meta">
-                            <span class="meta-info">
-                            <span class="octicon octicon-calendar"></span> {{ post.date | date: "%Y/%m/%d" }}
-                            </span>
-                            {% for cat in post.categories %}
-                            <span class="meta-info">
-                            <span class="octicon octicon-file-directory"></span>
-                            <a href="{{ site.url }}/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>
-                            </span>
-                            {% endfor %}
-                        </p>
-                    </li>
-                    {% endif %}
-                {% endfor %}
+            {% for post in site.posts %}
+                {% if post.stickie != true %}
+                {% continue %}
+                {% endif %}
 
-                {% for post in paginator.posts %}
-                    {% if post.url != "/2017/04/28/summary-of-get-a-silver-medal-in-kaggle/" %}
-                    <li class="repo-list-item">
-                        <h3 class="repo-list-name">
-                        <a class="index-post-title" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-                        </h3>
-                        <p class="repo-list-description">
-                            {{ post.excerpt | strip_html | strip }}
-                        </p>
-                        <p class="repo-list-meta">
-                            <span class="meta-info">
-                            <span class="octicon octicon-calendar"></span> {{ post.date | date: "%Y/%m/%d" }}
-                            </span>
-                            {% for cat in post.categories %}
-                            <span class="meta-info">
-                            <span class="octicon octicon-file-directory"></span>
-                            <a href="{{ site.url }}/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>
-                            </span>
-                            {% endfor %}
-                        </p>
-                    </li>
-                    {% endif %}
-                {% endfor %}
-            </ol>
+                {% if paginator.page != 1  %}
+                {% continue %}
+                {% endif %}
+                <li class="repo-list-item">
+                    <h3 class="repo-list-name">
+                    <a class="index-post-title" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+                    <image src="/images/index/top_post.png" width="4%"></image>
+                    </h3>
+                    <p class="repo-list-description">
+                        {{ post.excerpt | strip_html | strip }}
+                    </p>
+                    <p class="repo-list-meta">
+                        <span class="meta-info">
+                        <span class="octicon octicon-calendar"></span> {{ post.date | date: "%Y/%m/%d" }}
+                        </span>
+                        {% for cat in post.categories %}
+                        <span class="meta-info">
+                        <span class="octicon octicon-file-directory"></span>
+                        <a href="{{ site.url }}/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>
+                        </span>
+                        {% endfor %}
+                    </p>
+                </li>
+            {% endfor %}
+
+            {% for post in paginator.posts %}
+                {% if post.stickie != true  %}
+                <li class="repo-list-item">
+                    <h3 class="repo-list-name">
+                    <a class="index-post-title" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+                    </h3>
+                    <p class="repo-list-description">
+                        {{ post.excerpt | strip_html | strip }}
+                    </p>
+                    <p class="repo-list-meta">
+                        <span class="meta-info">
+                        <span class="octicon octicon-calendar"></span> {{ post.date | date: "%Y/%m/%d" }}
+                        </span>
+                        {% for cat in post.categories %}
+                        <span class="meta-info">
+                        <span class="octicon octicon-file-directory"></span>
+                        <a href="{{ site.url }}/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>
+                        </span>
+                        {% endfor %}
+                    </p>
+                </li>
+                {% endif %}
+            {% endfor %}
         </div>
         <div class="column one-third">
             {% include sidebar-search.html %}

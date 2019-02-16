@@ -9,10 +9,10 @@ permalink: /about/
 ---
 ## <center> Haojie Pan （潘浩杰） </center>
 * Email: myscarletpan@gmail.com
-* CV: [English][cv_en], [Chinese][cv_cn] (Dec. 2018)
+<!-- * CV: [English][cv_en], [Chinese][cv_cn] (Dec. 2018) -->
 
 ### Biography
-&emsp;&emsp; I am a 1st year Mphil student at [Department of Computer Science and Engineering, Hong Kong University of Science and Technology][hkustcse](HKUST), supervised by [Prof. Yangqiu Song][yqsong]. Before that, I received my B.E. degree at [College of Computer Science and Technology, Zhejiang University][zjucs](ZJU) in June 2018, supervised by [Prof. Deng Cai][dengcai]. I have interned in [Netease NetEase Fuxi AI Lab][fuxi](Sept. 2017 ~ Jan. 2018), [Alibaba IDST(DAMO Academy) NLP Group][alinlp] (Jan. 2018 ~ June. 2018) and [Tencent Wechat group][wechat] (Nov. 2018 ~ ).
+&emsp;&emsp; I am a 1st year Mphil student at [Department of Computer Science and Engineering, Hong Kong University of Science and Technology][hkustcse](HKUST), supervised by [Prof. Yangqiu Song][yqsong]. Before that, I received my B.E. degree at [College of Computer Science and Technology, Zhejiang University][zjucs](ZJU) in June 2018, supervised by [Prof. Deng Cai][dengcai]. I have interned in [Netease NetEase Fuxi AI Lab][fuxi](Sept. 2017 ~ Jan. 2018), [Alibaba IDST(DAMO Academy) NLP Group][alinlp] (Jan. 2018 ~ June. 2018) and [Tencent Wechat group][wechat] (Nov. 2018 ~ Jan. 2019).
 
 [zjucs]: http://www.cs.zju.edu.cn
 [hkust]: http://www.ust.hk/
