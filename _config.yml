@@ -63,14 +63,9 @@ kramdown:
 math_engine: mathjax
 highlighter: rouge
 
-
-comments_provider: gitalk~
-gitalk:
-    enable: true
-    owner: scarletpan
-    repo: scarletpan.github.io
-    clientID: 1283a18bfe866f10e44b
-    clientSecret: 07eded0466d1a91334d8cf9861b47d99703ddbe4 
+comment_gitalk_repo: scarletpan.github.io
+comment_gitalk_clientId: 1283a18bfe866f10e44b
+comment_gitalk_clientSecret: 07eded0466d1a91334d8cf9861b47d99703ddbe4 
 
 paginate: 8
 
