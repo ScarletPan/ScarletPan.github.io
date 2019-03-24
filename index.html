@@ -3,6 +3,8 @@ layout: default
 class: home
 css: ['pages/index.css']
 comments: false
+pagination:
+  enabled: false
 ---
 
 <section class="banner">
@@ -37,7 +39,6 @@ comments: false
                 {% if post.stickie != true %}
                 {% continue %}
                 {% endif %}
-
                 {% if paginator.page != 1  %}
                 {% continue %}
                 {% endif %}
@@ -62,9 +63,8 @@ comments: false
                     </p>
                 </li>
             {% endfor %}
-
             {% for post in paginator.posts %}
-                {% if post.stickie != true  %}
+                {% if post.stickie != true and post.algproblem != true%}
                 <li class="repo-list-item">
                     <h3 class="repo-list-name">
                     <a class="index-post-title" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>

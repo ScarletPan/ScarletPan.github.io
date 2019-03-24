@@ -26,6 +26,18 @@ timezone: Asia/Beijing
 encoding: "utf-8"
 location: Hong Kong, China
 
+plugins:
+    - jemoji
+    - jekyll-github-metadata
+    # - jekyll-html-pipeline
+    - jekyll-paginate-v2
+    - jekyll-sitemap
+    - jekyll-feed
+    - rouge
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
 navs:
   -
     href: /
@@ -38,11 +50,8 @@ navs:
   -
     href: /works/
     label: Works
-
-  -
-    href: /resource/
-    label: Resource
-
+    
+    
   -
     href: /about/
     label: About
@@ -53,38 +62,28 @@ kramdown:
     input: GFM
 math_engine: mathjax
 highlighter: rouge
+
 paginate: 8
+# pagination:
+#   enabled: true
+#   per_page: 8
+#   permalink: '/page/:num/'
+#   title: ' - page :num'
+#   limit: 0
+#   sort_field: 'date'
+#   sort_reverse: true
+
 lsi: false
 quiet: false
 excerpt_separator: "\n\n"
 permalink: /:year/:month/:day/:title/
-plugins:
-    - jekyll-github-metadata
-    - rouge
-#     - jekyll-html-pipeline
-    - jekyll-paginate
-    - jekyll-sitemap
-    - jekyll-feed
-    - jemoji
 
 github: [metadata]
 
-comments_provider: gitalk
-# https://github.com/gitalk/gitalk#install
+comments_provider: gitalk~
 gitalk:
     owner: scarletpan
     repo: scarletpan.github.io
     clientID: 1283a18bfe866f10e44b
     clientSecret: 07eded0466d1a91334d8cf9861b47d99703ddbe4 
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/

@@ -5,6 +5,8 @@ categories: Competition
 comments: true
 description: Kaggle 首战拿银总结
 keywords: Kaggle
+stickie: true
+paginate_path: "/"
 ---
 
 本文是总结我的一场Kaggle比赛拿银的经历
