@@ -1,3 +1,19 @@
+- name: ASER
+  description: ASER (activities, states, events, and their relations), a large-scale eventuality knowledge graph extracted from more than 11-billion-token unstructured textual data. ASER contains 15 relation types belonging to five categories, 194-million unique eventualities, and 64-million unique edges among them.
+  image_url: aser.png
+  link: https://hkust-knowcomp.github.io/ASER/
+
+- name: SEAN
+  description: Wenyi Xiao, Huan Zhao, <b>Haojie Pan</b>, Yangqiu Song, Vincent W. Zheng, Qiang Yang. Beyond Personalization - Social Content Recommendation for Creator Equality and Consumer Satisfaction, <i>KDD</i>. 2019
+  image_url: sean.jpg
+  link: https://github.com/HKUST-KnowComp/Social-Explorative-Attention-Networks
+
+
+- name: AbsMeetsum
+  description: Zhou Zhao*, <b>Haojie Pan</b>*, Changjie Fan,  Yan Liu, Linlin Li, Min Yang and Deng Cai, Abstractive Meeting Summarization via Hierarchical Adaptive Segmental Network Learning, <i>WWW</i>, 2019 (* Equal Contribution)
+  image_url: meetsum.jpg
+  link: https://dl.acm.org/ft_gateway.cfm?id=3313619&ftid=2057382&dwn=1&CFID=71111108&CFTOKEN=792ba380c621146-998F8A01-D123-F371-6F2F0146A4D0F130
+
 - name: VQA
   description: Visual Question Answering is a project about automatically generating answers for questions related to images, based on deep learning.
   image_url: vqa.png
