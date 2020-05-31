@@ -19,12 +19,12 @@ description: >- # this means to ignore newlines until "baseurl:"
   Beg you imprison me in Tartarus.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://scarletpan.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-organization: hkust
-organization_url: https://www.ust.hk
+organization: Alibaba Cloud
+organization_url: https://www.alibabacloud.com/
 github_username: scarletpan
 timezone: Asia/Beijing
 encoding: "utf-8"
-location: Hong Kong, China
+location: Hangzhou, China
 
 plugins:
     - jemoji
@@ -49,7 +49,7 @@ navs:
 
   -
     href: /works/
-    label: Works
+    label: Projects
     
     
   -
