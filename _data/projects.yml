@@ -1,3 +1,8 @@
+- name: EasyTransfer
+  description: EasyTransfer is designed to make the development of transfer learning in NLP applications easier.
+  image_url: easytransfer.png
+  link: https://github.com/alibaba/EasyTransfer
+
 - name: ASER
   description: ASER (activities, states, events, and their relations), a large-scale eventuality knowledge graph extracted from more than 11-billion-token unstructured textual data. ASER contains 15 relation types belonging to five categories, 194-million unique eventualities, and 64-million unique edges among them.
   image_url: aser.png
