@@ -1,31 +1,31 @@
-- name: EasyNLP
-  description: EasyNLP is a comprehensive and easy-to-use NLP toolkit.
+- name: EasyNLP 
+  description: [2022] EasyNLP is a comprehensive and easy-to-use NLP toolkit.
   image_url: easynlp.jpg
   link: https://github.com/alibaba/EasyNLP
   
-- name: EasyTransfer
-  description: EasyTransfer is designed to make the development of transfer learning in NLP applications easier.
+- name: EasyTransfer 
+  description: [2021] EasyTransfer is designed to make the development of transfer learning in NLP applications easier.
   image_url: easytransfer.png
   link: https://github.com/alibaba/EasyTransfer
 
-- name: ASER
-  description: ASER (activities, states, events, and their relations), a large-scale eventuality knowledge graph extracted from more than 11-billion-token unstructured textual data. ASER contains 15 relation types belonging to five categories, 194-million unique eventualities, and 64-million unique edges among them.
+- name: ASER 
+  description: [2019] ASER (activities, states, events, and their relations), a large-scale eventuality knowledge graph extracted from more than 11-billion-token unstructured textual data. ASER contains 15 relation types belonging to five categories, 194-million unique eventualities, and 64-million unique edges among them.
   image_url: aser.png
   link: https://hkust-knowcomp.github.io/ASER/
 
 - name: VQA
-  description: Visual Question Answering is a project about automatically generating answers for questions related to images, based on deep learning.
+  description: [2017] Visual Question Answering is a project about automatically generating answers for questions related to images, based on deep learning.
   image_url: vqa.png
-  link: http://o6qr23o6z.bkt.clouddn.com/demo.mp4
+  link: https://github.com/ScarletPan/VisualQA
 
 
-- name: Anliku
-  description: Anliku is an Android app to recommend new movies. It contains a lot of short viedos, including movie preview and clips. It also contains movie instroductions, resources and reviews.
+- name: Anliku 
+  description: [2016] Anliku is an Android app to recommend new movies. It contains a lot of short viedos, including movie preview and clips. It also contains movie instroductions, resources and reviews.
   image_url: anliku.jpg
   link: https://www.youtube.com/watch?v=VD1VV5X9Hkk
 
-- name: PACMAN
-  description: PACMAN is an FPGA game using my own created 5-stage CPU core and developed by MIPS.
+- name: PACMAN 
+  description: [2016] PACMAN is an FPGA game using my own created 5-stage CPU core and developed by MIPS.
   image_url: pacman.jpg
   link: https://www.youtube.com/watch?v=NJHnuTNNsl4
 
