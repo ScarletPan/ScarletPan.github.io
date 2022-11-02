@@ -1,6 +1,6 @@
 - name: EasyNLP
-  description: EasyTransfer is a comprehensive and easy-to-use NLP toolkit.
-  image_url: easynlp.png
+  description: EasyNLP is a comprehensive and easy-to-use NLP toolkit.
+  image_url: easynlp.jpg
   link: https://github.com/alibaba/EasyNLP
   
 - name: EasyTransfer
