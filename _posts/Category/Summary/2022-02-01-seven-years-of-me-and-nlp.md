@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 我与NLP这七年
-categories: Job
+categories: Summary
 comments: true
 description: 我与NLP这七年
 keywords: summary
