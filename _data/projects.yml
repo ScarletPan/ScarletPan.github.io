@@ -1,34 +1,34 @@
 - name: Kuaipedia
-  description: Kuaipedia is the world's first large-scale multi-modal short-video encyclopedia, where the primitive units are items, aspects, and short videos.
-  image_url: kuaipedia.jpg
+  description: Kuaipedia is the world's first large-scale multi-modal short-video encyclopedia, where the primitive units are items, aspects, and short videos. (2022)
+  image_url: kuaipedia.gif
   link: https://github.com/Kuaipedia/Kuaipedia
 
 - name: EasyNLP
-  description: EasyNLP is a comprehensive and easy-to-use NLP toolkit. 2022.
+  description: EasyNLP is a comprehensive and easy-to-use NLP toolkit. (2021).
   image_url: easynlp.jpg
   link: https://github.com/alibaba/EasyNLP
   
 - name: EasyTransfer
-  description: EasyTransfer is designed to make the development of transfer learning in NLP applications easier. 2021.
+  description: EasyTransfer is designed to make the development of transfer learning in NLP applications easier. (2021).
   image_url: easytransfer.png
   link: https://github.com/alibaba/EasyTransfer
 
 - name: ASER 
-  description: ASER (activities, states, events, and their relations), a large-scale eventuality knowledge graph extracted from more than 11-billion-token unstructured textual data. ASER contains 15 relation types belonging to five categories, 194-million unique eventualities, and 64-million unique edges among them. 2019
+  description: ASER (activities, states, events, and their relations), a large-scale eventuality knowledg graph extracted from more than 11-billion-token unstructured textual data. ASER contains 15 relation types belonging to five categories, 194-million unique eventualities, and 64-million unique edges among them. (2019)
   image_url: aser.png
   link: https://hkust-knowcomp.github.io/ASER/
 
 - name: VQA
-  description: Visual Question Answering is a project about automatically generating answers for questions related to images, based on deep learning. 2016. 
+  description: Visual Question Answering is a project about automatically generating answers for questions related to images, based on deep learning. (2016)
   image_url: vqa.png
   link: https://github.com/ScarletPan/VisualQA
 
 - name: Anliku 
-  description: Anliku is an Android app to recommend new movies. It contains a lot of short viedos, including movie preview and clips. It also contains movie instroductions, resources and reviews. 2016. 
+  description: Anliku is an Android app to recommend new movies. It contains a lot of short viedos, including movie preview and clips. It also contains movie instroductions, resources and reviews. (2016) 
   image_url: anliku.jpg
   link: https://www.youtube.com/watch?v=VD1VV5X9Hkk
 
 - name: PACMAN 
-  description: PACMAN is an FPGA game using my own created 5-stage CPU core and developed by MIPS. 2016.
+  description: PACMAN is an FPGA game using my own created 5-stage CPU core and developed by MIPS. (2016)
   image_url: pacman.jpg
   link: https://www.youtube.com/watch?v=NJHnuTNNsl4
