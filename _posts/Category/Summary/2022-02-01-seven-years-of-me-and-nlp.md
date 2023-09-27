@@ -51,13 +51,10 @@ paginate_path: "/"
 
 虽然看起来很是圆满，但是有几点是令我失望的：一是我发现我的模型完全就是实验性质，如果我输入一句自己撰写的话，输出多半是错误的，二是如果我想使用我的母语中文，模型是不可能预测出来的，这与我心目中的“情感分析”机器相差甚远。当时稚嫩的想法其实也多少映射着现在自己的忧虑，即靠纯数据驱动的学习方式得到的模型或者系统真的能够理解我们的话吗？现在的方法是不是太依赖于数据了？这种模式识别的方法真的是我们想要的吗？
 
-![img](https://pic1.zhimg.com/80/v2-2be679bc351168e8293f5bbeaff7484b_720w.png?source=d16d100b)
-
-
-
-
-
-VQA国创立项时展示的小demo
+<p>
+    <center><img src="https://pic1.zhimg.com/80/v2-2be679bc351168e8293f5bbeaff7484b_720w.png?source=d16d100b" alt></center>
+    <center><em align="middle">VQA国创立项时展示的小demo</em></center>
+</p>
 
 16年的寒假，我因一些机缘巧合与沛神和洋腿认识，一起做了导语中所说的VQA项目。现在想来，能遇到这么给力的两位队友实在是大学时代的一件幸事。沛神拥有极其可怕的综合素质，修的学分是我的1~2倍却能一直稳居计院第一，学习、社团、科研、比赛一个不拉，在CMU LTI毕业后，目前在Google Cloud做机器翻译；洋腿比我更早（大一）就进入了AI领域，研究兴趣是计算机视觉，在14、15年那种深度学习框架特别难用的时代，自己手撸了CNN网络，目前在我的强力推荐下去了蔡登老师实验室读PHD。在本科的后来几年中，我们几乎是合作最紧密和通顺的“黄金铁三角”。
 
@@ -79,13 +76,11 @@ VQA项目确实也是我想实现的AI蓝图中的很小的拼块，因为《Her
 
 当时做的是NIST发布的一个[LoReHLT](https://www.nist.gov/itl/iad/mig/lorehlt-evaluations)评测，主要研究自动将一个在一些罕见语言（如提格里尼亚语， 奥罗莫语，维吾尔语等）地区灾难新闻中抽取情景帧句子，并判断是否这个新闻里是否有一些"issue''和"need''。在这样的任务下，我第一次意识到了堆数据训练深度模型不是万能的，还需要一些语言学，如Morphology，以及迁移学习如Domain Adaptation的重要性。后续我与Yangqiu沟通后，决定去HKUST读硕士并从事关于世界知识（World Knowledge）和常识（Common-sense）的一些研究工作，去香港之前，我对导师与Dan Roth在arxiv发表的《[Machine learning with world knowledge: The position and survey](https://arxiv.org/abs/1705.02908)》进行了翻译工作，并对引入外部知识或者远程监督（Distant-Supervision）知识来辅助模型学习有了一些想法。
 
-![img](https://picx.zhimg.com/80/v2-52d3c16de3a0e3e1edb2191966732af2_720w.png?source=d16d100b)
+<p>
+    <center><img src="https://picx.zhimg.com/80/v2-52d3c16de3a0e3e1edb2191966732af2_720w.png?source=d16d100b" alt></center>
+    <center><em align="middle">ASER 1.0</em></center>
+</p>
 
-
-
-
-
-ASER 1.0 
 
 在18年下旬加入HKUST KnowComp小组后，因为我之前有一些对话相关工作，师兄[Hongming](https://panda0881.github.io/Hongming_Homepage/)向我和同届的[Xin](https://cse.hkust.edu.hk/~xliucr/)提出合作 [ASER](https://github.com/HKUST-KnowComp/ASER) 的想法。ASER（Activities, States, Events, and their Relations） 是Yangqiu在华为诺亚方舟时候就很想做的一个事情，前身为ActivityNet。这一个大规模的事件知识图谱，与当时市面上的一些知识图谱不一样的是，每个节点是一个事件(Eventuality)，而不是实体，我们希望通过大规模的数据挖掘出每个事件元之间的关系，目前已经有4.38亿的Eventuality和 6.48 亿的边。ASER是HKUST KnowComp也是Yangqiu的一个Lifelong的工作，我很有幸能够成为初始成员之一，并与实验室两位优秀的人成为了战友。在ASER的第一篇论文中稿 WWW' 20 [[链接\]](https://dl.acm.org/doi/10.1145/3366423.3380107) 之后，我们仍然在不懈地在ASER这个初版雏形体系下不断地有一些新的思考，在19~21年我们提出了[ASER2.0](https://arxiv.org/abs/2104.02137) ，我对ASER做出了一版简易的概念化模块，并搭建了Demo。
 
@@ -108,13 +103,11 @@ ASER 2.0 with Conceptualization
 
 我在阿里的工作主要聚焦在 [EasyTransfer](https://github.com/alibaba/EasyTransfer) 这个框架的开发（目前已开源），对集团内（如天猫、咸鱼、优酷）算法同学提供大规模高性能的迁移学习（包括PLM）分布式训练与预测，对集团外的客户进行NLP产品化解决方案的定制。同时这一年也是我论文井喷的一年，先前学生时代的遗留工作基本都纷纷中稿，在阿里Leader [Minghui](https://sites.google.com/site/qiumh0727)和同事 [Chengyu](https://chywang.github.io/) 的帮助下也发表了人生第一篇ACL、EMNLP、CIKM，etc.
 
-![img](https://picx.zhimg.com/80/v2-cf4316daf2fd9ddafbbbc38379c08e7c_720w.png?source=d16d100b)
+<p>
+    <center><img src="https://picx.zhimg.com/80/v2-cf4316daf2fd9ddafbbbc38379c08e7c_720w.png?source=d16d100b" alt></center>
+    <center><em align="middle">EasyTransfer Github主页</em></center>
+</p>
 
-
-
-
-
-EasyTransfer Github主页
 
 在阿里期间轻度参与的一个项目M6 ([paper](https://arxiv.org/abs/2104.02137), 以及我做的产品[体验链接](https://workbench.data.aliyun.com/experience_new.htm?spm=a2c0j.14066474.J_3832552950.1.7b34426a4BMe7x&lang=zh-CN#/m6/modules))让我见识到了大规模多模态预训练模型的强大能力，并结交到了一作[Junyang](https://justinlin610.github.io/#intro)大佬。由此我也忍不住思考，我这些年来一心坚持做文本相关的工作，但文本是否足够能够表示世界知识，是否足够能够让一个智能体理解这个世界，理解人所说的话，人的所思所想以及复杂的情感？
 
