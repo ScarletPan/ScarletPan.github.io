@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 快知（Kuaipedia）——亿级别多模态短视频百科
-categories: Job
+categories: Technology
 comments: true
 description: 快知（Kuaipedia）——亿级别多模态短视频百科
 keywords: summary
