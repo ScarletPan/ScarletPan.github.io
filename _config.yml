@@ -43,6 +43,9 @@ navs:
     href: /
     label: Home
 
+  -
+    href: /categories/
+    label: Categories
 
   -
     href: /works/
