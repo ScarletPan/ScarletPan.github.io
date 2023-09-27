@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Kaggle 首战拿银总结
-categories: Competition
+categories: Technology
 comments: true
 description: Kaggle 首战拿银总结
 keywords: Kaggle
