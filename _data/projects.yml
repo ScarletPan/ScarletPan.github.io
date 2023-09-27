@@ -4,12 +4,12 @@
   link: https://github.com/Kuaipedia/Kuaipedia
 
 - name: EasyNLP
-  description: EasyNLP is a comprehensive and easy-to-use NLP toolkit. (2021).
+  description: EasyNLP is a comprehensive and easy-to-use NLP toolkit. (2021)
   image_url: easynlp.jpg
   link: https://github.com/alibaba/EasyNLP
   
 - name: EasyTransfer
-  description: EasyTransfer is designed to make the development of transfer learning in NLP applications easier. (2021).
+  description: EasyTransfer is designed to make the development of transfer learning in NLP applications easier. (2021)
   image_url: easytransfer.png
   link: https://github.com/alibaba/EasyTransfer
 
