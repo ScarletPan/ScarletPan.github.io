@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 7B模型也能玩转AI Agents？
+title: 7B大模型玩转AI Agents
 categories: Technology
 comments: true
 description: 7B的模型也能玩转AI Agents
