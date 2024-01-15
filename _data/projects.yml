@@ -1,3 +1,8 @@
+- name: KwaiAgents
+  description: A generalized information-seeking agent system with Large Language Models (LLMs). (2023)
+  image_url: kwaiagents.png
+  link: https://github.com/KwaiKEG/KwaiAgents
+  
 - name: Kuaipedia
   description: Kuaipedia is the world's first large-scale multi-modal short-video encyclopedia, where the primitive units are items, aspects, and short videos. (2022)
   image_url: kuaipedia.gif
