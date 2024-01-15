@@ -12,12 +12,9 @@ layout: default
 
 <!-- CSS
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<link rel="stylesheet" href="https://freemind.pluskid.org/assets/styles/normalize.css">
-<link rel="stylesheet" href="https://freemind.pluskid.org/assets/styles/skeleton.css">
-
-<link href="https://freemind.pluskid.org/assets/styles/pygments.css" type="text/css" rel="stylesheet" media="all">
-
-<link rel="stylesheet" href="https://freemind.pluskid.org/assets/styles/customize.css">
+<link rel="stylesheet" href="/assets/css/posts/normalize.css">
+<link rel="stylesheet" href="/assets/css/posts/skeleton.css">
+<link rel="stylesheet" href="/assets/css/posts/customize.css">
 
 
 <script type="text/x-mathjax-config">
@@ -28,7 +25,7 @@ MathJax.Hub.Config({
 
 <script type="text/javascript" async src="/assets/js/MathJax.js">
 </script>
-<!-- <section class="collection-head small geopattern" data-pattern-id="{{ page.title | truncate: 15, ''}}"> -->
+
 
 <div class="post-container">
   <div class="post-header">
@@ -54,31 +51,6 @@ MathJax.Hub.Config({
   </div>
 </div>
 
-
-<!-- <div class="container">
-  <div class="columns">
-    <div class="column three-fourths">
-      <div class="collection-title">
-        <h1 class="collection-header">{{ page.title }}</h1>
-        <div class="collection-info">
-          {% if page.date %}
-          <span class="meta-info">
-            <span class="octicon octicon-calendar"></span> {{ page.date | date: "%Y/%m/%d" }}
-          </span>
-          {% endif %}
-          {% for cat in page.categories %}
-          <span class="meta-info">
-            <span class="octicon octicon-file-directory"></span>
-            <a href="{{ site.url }}/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>
-          </span>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</section> -->
-
 <!-- / .banner -->
 <section class="container content">
 <div class="columns">
@@ -93,11 +65,7 @@ MathJax.Hub.Config({
       {% include comments.html %}
     </div>
   </div>
-  <!-- <div class="column one-fourth">
-    {% include sidebar-search.html %}
-    {% include sidebar-qrcode.html %}
-    {% include sidebar-post-nav.html %}
-  </div> -->
+  
 </div>
 <!-- Gitalk start -->
 <div id="gitalk-container"></div> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
