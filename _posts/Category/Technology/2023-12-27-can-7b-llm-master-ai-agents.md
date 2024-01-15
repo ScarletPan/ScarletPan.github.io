@@ -11,7 +11,7 @@ paginate_path: "/"
 
 7B的模型也能玩转AI Agents了？近期，我们开源了「KwaiAgents」，问它周末滑雪问题，它不但帮你找到场地，连当天的天气都帮你考虑周到了。
 
-<img "https://github.com/KwaiKEG/KwaiAgents/blob/main/blob/example-zh.gif?raw=true" class="center-stretch">
+<div><img src="https://github.com/KwaiKEG/KwaiAgents/blob/main/blob/example-zh.gif?raw=true" class="center-stretch"></div>
 
 
 
@@ -20,7 +20,7 @@ paginate_path: "/"
 - 技术报告：[https://arxiv.org/abs/2312.04889](https://link.zhihu.com/?target=https%3A//arxiv.org/abs/2312.04889)
 - 项目主页：[https://github.com/KwaiKEG/KwaiAgents](https://link.zhihu.com/?target=https%3A//github.com/KwaiKEG/KwaiAgents)
 
-<img "https://pic4.zhimg.com/80/v2-3bb2a89d6ef228c81d632b78cfd8c35f_1440w.webp" class="center-stretch">
+<div><img src="https://pic4.zhimg.com/80/v2-3bb2a89d6ef228c81d632b78cfd8c35f_1440w.webp" class="center-stretch"></div>
 
 从「KwaiAgents」的Github主页中可以看到，本次开源内容包含：
 
@@ -28,7 +28,7 @@ paginate_path: "/"
 2. **模型（KAgentLMs）：**Meta-Agent Tuning后，具有Agents通用能力的系列大模型及其训练数据；
 3. **评测（KAgentBench）：**开箱即用的Agent能力自动化评测Benchmark与人工评测结果。
 
-<img "https://pic1.zhimg.com/80/v2-be9d3fba27c5701ae2609673c3828114_1440w.webp" class="center-stretch">
+<div><img src="https://pic1.zhimg.com/80/v2-be9d3fba27c5701ae2609673c3828114_1440w.webp" class="center-stretch"></div>
 
 ## 系统
 
@@ -44,7 +44,7 @@ KAgentSys系统，是基于大模型作为认知内核，配以记忆机制、�
 
 为了避免训练中单一模板引起的过拟合问题，团队提出Meta-Agent Tuning (MAT) 的方法，通过在训练数据中引入更多Agent Prompt模板，从而提升大模型在Agent能力上的通用性，并提升了效果。
 
-<img "https://pic2.zhimg.com/80/v2-294c4383aae39ed0f65544c63d4401b5_1440w.webp" class="center-stretch">
+<div><img src="https://pic2.zhimg.com/80/v2-294c4383aae39ed0f65544c63d4401b5_1440w.webp" class="center-stretch"></div>
 
 Meta-Agent Tuning (MAT)分为两阶段：
 
@@ -58,17 +58,17 @@ Meta-Agent Tuning (MAT)分为两阶段：
 
 KAgentBench通过人工精细化标注的上千条数据，做到了开箱即用，让大家能够用一行命令评测一个大模型在不同模板下，各方面的Agents能力。
 
-<img "https://pic1.zhimg.com/80/v2-c86d22ac630827475dc50cd90faff820_1440w.webp" class="center-stretch">
+<div><img src="https://pic1.zhimg.com/80/v2-c86d22ac630827475dc50cd90faff820_1440w.webp" class="center-stretch"></div>
 
 
 如上图所示，在KAgentBench中，会对不同种类的能力构造输入，每个query配备多个模板和多个人工编辑的真实回答，旨在综合评测准确性和泛化性，下表显示了经过MAT调优后，7B-13B模型各项能力的提升，且超越了GPT-3.5的效果：
 
-<img "https://pic3.zhimg.com/80/v2-36148f30cb8f011c9b45ef48b5be72d6_1440w.webp" class="center-stretch">
+<div><img src="https://pic3.zhimg.com/80/v2-36148f30cb8f011c9b45ef48b5be72d6_1440w.webp" class="center-stretch"></div>
 
 同时，我们还请人类标注者在200个事实性和时效性的问题（如“刘德华今年几岁了”），对不同的大模型和Agent系统进行了交叉评估，可以看到KAgentSys系统和MAT之后模型提升显著（百分号前为正确率，括号内为5分制均分）。
 
-<img "https://pic1.zhimg.com/80/v2-9ec0c5580f7f16c2438b02328565a5d8_1440w.webp" class="center-stretch">
+<div><img src="https://pic1.zhimg.com/80/v2-9ec0c5580f7f16c2438b02328565a5d8_1440w.webp" class="center-stretch"></div>
 
-<img "https://pic1.zhimg.com/80/v2-914824065b1d7f52aadcc47c0e929394_1440w.webp" class="center-stretch">
+<div><img src="https://pic1.zhimg.com/80/v2-914824065b1d7f52aadcc47c0e929394_1440w.webp" class="center-stretch"></div>
 
 通常仅依赖网页搜索对一些长尾问题和热门问题返回结果不佳。比如问到“安东内拉比梅西大多少天？”这类长尾问题，往往搜索结果返回的都是一些两者的八卦新闻，而返回不了一些关键信息。而KAgentSys 通过调用百科搜索工具获取精准的出生日期，再调用time_delta时间差工具算出年龄差，就能精准回答这个问题了。
