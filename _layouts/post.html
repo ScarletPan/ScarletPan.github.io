@@ -37,7 +37,7 @@ MathJax.Hub.Config({
 <!-- / .banner -->
 <section class="container content">
 <div class="columns">
-  <div class="column three-fourths" >
+  <div class="column" >
     <article class="article-content markdown-body">
     {{ content }}
     </article>
@@ -48,28 +48,28 @@ MathJax.Hub.Config({
       {% include comments.html %}
     </div>
   </div>
-  <div class="column one-fourth">
+  <!-- <div class="column one-fourth">
     {% include sidebar-search.html %}
     {% include sidebar-qrcode.html %}
     {% include sidebar-post-nav.html %}
-  </div>
-  <!-- Gitalk start -->
-  <div id="gitalk-container"></div> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script> 
-  <script>
-      var gitalk  = new Gitalk ({
-          id: window.location.pathname,   // Ensure uniqueness and length less than 50
-          clientID: '{{ site.comment_gitalk_clientId }}',
-          clientSecret: '{{ site.comment_gitalk_clientSecret }}',
-          repo: '{{ site.comment_gitalk_repo }}',
-          owner: '{{ site.github_username }}',
-          admin: ['{{ site.github_username }}'],
-          distractionFreeMode: false  // Facebook-like distraction free mode
-      })
-      gitalk.render('gitalk-container')
-  </script> 
-  <!-- Gitalk end -->
+  </div> -->
 </div>
+<!-- Gitalk start -->
+<div id="gitalk-container"></div> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script> 
+<script>
+    var gitalk  = new Gitalk ({
+        id: window.location.pathname,   // Ensure uniqueness and length less than 50
+        clientID: '{{ site.comment_gitalk_clientId }}',
+        clientSecret: '{{ site.comment_gitalk_clientSecret }}',
+        repo: '{{ site.comment_gitalk_repo }}',
+        owner: '{{ site.github_username }}',
+        admin: ['{{ site.github_username }}'],
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script> 
+<!-- Gitalk end -->
 </section>
 
 <!-- /section.content -->
