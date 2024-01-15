@@ -123,3 +123,8 @@
     background-color: #777;
     border-radius: 10px;
 }
+
+img::before {
+    content: "";
+    display: table;
+}
