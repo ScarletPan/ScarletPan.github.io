@@ -19,11 +19,7 @@ https://github.com/ScarletPan/awesome-autonomous-gptgithub.com/ScarletPan/awesom
 
 AI智能体（AI Agents）方向不管是在开源、研究还是业界都是一个万众瞩目的方向，自从GPT-4问世以来，形态不断在进行更迭，当前阶段我们可以从三个维度观察 这个事情：
 
-![img](https://picx.zhimg.com/80/v2-65430c2e0a4434c93a2baf187b35fe93_720w.png?source=d16d100b)
-
-
-
-
+<img src="https://picx.zhimg.com/80/v2-65430c2e0a4434c93a2baf187b35fe93_720w.png?source=d16d100b"/>
 
 
 
