@@ -179,20 +179,23 @@ data["passed"] = (data["created"].max()- data["created"])
 
 下面列出了一些比赛结束后获胜者分享的idea，这大概是我这场比赛中获益最大的一块地方了。
 * Top #1 [solution](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries/discussion/32163) @plantsgo
-<p> 主要是针对manager\_id生成了非常多的feature。如根据不同时间出现的manager\_id判断一个manager是否活跃（manager与time进行group，manager掌管有几个不同的房子（manager与building_id进行group）、平均每天处理多少房子（比值）、活动范围（同个manager掌管的房子的最大最小经纬度group），经理的开价程度（选择bedroom和bathroom作为房子型号指标，把相同房型的均价来衡量经理对于所有房子的开价程度），对经纬度进行聚类再计算每个区域中有多少个manager竞争、一个manager同时经营几个区域、在同个区域中manager的开价水平等。从Top 1选手分享的代码来看，其对于manager的各种处理的确是让人大开眼界。
+主要是针对manager\_id生成了非常多的feature。如根据不同时间出现的manager\_id判断一个manager是否活跃（manager与time进行group，manager掌管有几个不同的房子（manager与building_id进行group）、平均每天处理多少房子（比值）、活动范围（同个manager掌管的房子的最大最小经纬度group），经理的开价程度（选择bedroom和bathroom作为房子型号指标，把相同房型的均价来衡量经理对于所有房子的开价程度），对经纬度进行聚类再计算每个区域中有多少个manager竞争、一个manager同时经营几个区域、在同个区域中manager的开价水平等。从Top 1选手分享的代码来看，其对于manager的各种处理的确是让人大开眼界。
+
 * Top #2 [solution](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries/discussion/32148) @Faron
-<p> 从更为经验老道的选手给出了一些特征提取建议。其中有一类被作者称为"Likelihood Features"，他对High Cardinal Categorical的特征用了一些额外的条件概率来计算其似然值，如p(y|manager\_id, bathrooms)等，并且进行了点积操作来计算出一个合适的encoding值（类似于先前讨论区中出现的manager\_skills，同时为了防止过拟合对这些似然估计出来的feature创建了2层嵌套。另外还有一种对我启发比较大的feature是对description出现频率最高的15k单词进行一个one-hot深度xgboost训练，将这个训练出来模型的预测结果作为description的encoding。
+从更为经验老道的选手给出了一些特征提取建议。其中有一类被作者称为"Likelihood Features"，他对High Cardinal Categorical的特征用了一些额外的条件概率来计算其似然值，如p(y|manager\_id, bathrooms)等，并且进行了点积操作来计算出一个合适的encoding值（类似于先前讨论区中出现的manager\_skills，同时为了防止过拟合对这些似然估计出来的feature创建了2层嵌套。另外还有一种对我启发比较大的feature是对description出现频率最高的15k单词进行一个one-hot深度xgboost训练，将这个训练出来模型的预测结果作为description的encoding。
+
 * Top #3 [solution](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries/discussion/32123) @Little Boat
-<p> 其FE的第一部分给出了group的一套方案，类似于我自己FE中的group方法。第二部分使用了magic feature相关的feature，方法与第一部分类似
+其FE的第一部分给出了group的一套方案，类似于我自己FE中的group方法。第二部分使用了magic feature相关的feature，方法与第一部分类似
+
 * Top #9 [solution](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries/discussion/32146) @James Trotman
-<p> 没有细说，但是列出了一个feature name的详单，希望以后没有idea的时候能从中找到一些insight
+没有细说，但是列出了一个feature name的详单，希望以后没有idea的时候能从中找到一些insight
 
 * Top #11 [solution](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries/discussion/32116) @KazAnova
-<p> KazAnova无疑是这场比赛中的明星选手，他分享了对初学者模型融合比较关键的StackNet，以及对最后榜单变动起到决定性作用的magic feature。几乎所有在榜上的Kagglers都要向他致敬。同时在FE这一块，他注意到了数据集中存在很多类似的数据（仅仅在价格上有区别），因此他建立了不同的group，并在这些group间创建了很多aggregated features，比如最高的price，平均price等
+KazAnova无疑是这场比赛中的明星选手，他分享了对初学者模型融合比较关键的StackNet，以及对最后榜单变动起到决定性作用的magic feature。几乎所有在榜上的Kagglers都要向他致敬。同时在FE这一块，他注意到了数据集中存在很多类似的数据（仅仅在价格上有区别），因此他建立了不同的group，并在这些group间创建了很多aggregated features，比如最高的price，平均price等
 * Top #12 [solution](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries/discussion/32118) @b.e.s
-<p> 用到了基于高势集类别数据的group的一些统计量
+用到了基于高势集类别数据的group的一些统计量
 * Top #13 [solution](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries/discussion/32156) @qianqian
-<p> 也是用了很多基于manager\_id group的统计feature
+也是用了很多基于manager\_id group的统计feature
 
 ### 模型调参（Grid Search）
 
