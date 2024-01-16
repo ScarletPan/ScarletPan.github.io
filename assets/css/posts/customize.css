@@ -270,9 +270,6 @@ a {
 .post-container .highlight pre {
   font-size: 75%;
   margin-bottom: 5px;
-  background-color: #f5f7f9;
-  border-top: 1px solid #eaecee;
-  border-bottom: 1px solid #eaecee;
   font-family: Menlo, Monaco, Consolas, monospace;
   padding: 10px;
   width: 80%;
@@ -288,8 +285,11 @@ a {
 }
 .post-container .highlight {
   padding-left: var(--margin-desktop);
-  padding-right: var(--margin-desktop);
-  width: 80%;
+  padding-right: 150px;
+  width: 100%;
+  background-color: #f5f7f9;
+  border-top: 1px solid #eaecee;
+  border-bottom: 1px solid #eaecee;
   box-sizing: content-box;
   margin-bottom: 25px;
 }
