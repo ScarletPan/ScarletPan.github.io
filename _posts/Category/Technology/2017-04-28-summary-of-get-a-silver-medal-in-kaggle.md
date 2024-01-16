@@ -136,7 +136,7 @@ in [3]: y = data["interest_level"].apply(lambda x: target_num_map[x])
 
 * **高势集类别**（High Categorical）进行经验贝叶斯转换成数值feature
 
-什么是High Categorical的特征呢？一个简单的例子就是邮编，有100个城市就会有好几百个邮编，有些房子坐落在同一个邮编下面。很显然随着邮编的数量增多，如果用简单的one-hot编码显然效果不太好，因此有人就用一些统计学思想（经验贝叶斯）将这些类别数据进行一个map，得到的结果是数值数据。在这场比赛中有人分享了一篇 <a href="http://helios.mm.di.uoa.gr/~rouvas/ssi/sigkdd/sigkdd.vol3.1/barreca.ps">)里面就提到了具体的算法。详细就不仔细讲了，用了这个encoding之后，的确效果提升了很多。那么这场比赛中哪些数据可以进行这样的encoding呢，只要满足下面几点：1. 会重复，2. 根据相同的值分组会分出超过一定数量（比如100）的组。也就是说building\_id, manager\_id, street\_address, display\_address都能进行这样的encoding，而取舍就由最后的实验来决定了。 
+什么是High Categorical的特征呢？一个简单的例子就是邮编，有100个城市就会有好几百个邮编，有些房子坐落在同一个邮编下面。很显然随着邮编的数量增多，如果用简单的one-hot编码显然效果不太好，因此有人就用一些统计学思想（经验贝叶斯）将这些类别数据进行一个map，得到的结果是数值数据。在这场比赛中有人分享了一篇 <a href="http://helios.mm.di.uoa.gr/~rouvas/ssi/sigkdd/sigkdd.vol3.1/barreca.ps">paper</a> 里面就提到了具体的算法。详细就不仔细讲了，用了这个encoding之后，的确效果提升了很多。那么这场比赛中哪些数据可以进行这样的encoding呢，只要满足下面几点：1. 会重复，2. 根据相同的值分组会分出超过一定数量（比如100）的组。也就是说building\_id, manager\_id, street\_address, display\_address都能进行这样的encoding，而取舍就由最后的实验来决定了。 
 
 * **时间特征**
 
@@ -154,7 +154,7 @@ data["passed"] = (data["created"].max()- data["created"])
 <img src="/images/post/kaggle_RLI_data3.png"/>
 
 
- 可能简单的相除就能获得很好的结果
+可能简单的相除就能获得很好的结果
 
 * **地理位置特征**
 
@@ -176,7 +176,6 @@ data["passed"] = (data["created"].max()- data["created"])
 
 在树结构的分类器比如randomforest、xgboost中最后能够对每个特征在分类上面的重要程度进行一个评估。这时候如果已经选定了一些feature进行训练了之后，查看feature importance的反馈是非常重要的，比如本场比赛制胜的关键是运用manager_id这个feature，而它的feature importance反馈结果也是非常高。通过对重要特征的重新再提取特征，能够发现很多有意思的新特征，这才是用FE打好一场比赛的关键所在。
 
-
 下面列出了一些比赛结束后获胜者分享的idea，这大概是我这场比赛中获益最大的一块地方了。
 * Top #1 [solution](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries/discussion/32163) @plantsgo
 主要是针对manager\_id生成了非常多的feature。如根据不同时间出现的manager\_id判断一个manager是否活跃（manager与time进行group，manager掌管有几个不同的房子（manager与building_id进行group）、平均每天处理多少房子（比值）、活动范围（同个manager掌管的房子的最大最小经纬度group），经理的开价程度（选择bedroom和bathroom作为房子型号指标，把相同房型的均价来衡量经理对于所有房子的开价程度），对经纬度进行聚类再计算每个区域中有多少个manager竞争、一个manager同时经营几个区域、在同个区域中manager的开价水平等。从Top 1选手分享的代码来看，其对于manager的各种处理的确是让人大开眼界。
@@ -192,8 +191,10 @@ data["passed"] = (data["created"].max()- data["created"])
 
 * Top #11 [solution](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries/discussion/32116) @KazAnova
 KazAnova无疑是这场比赛中的明星选手，他分享了对初学者模型融合比较关键的StackNet，以及对最后榜单变动起到决定性作用的magic feature。几乎所有在榜上的Kagglers都要向他致敬。同时在FE这一块，他注意到了数据集中存在很多类似的数据（仅仅在价格上有区别），因此他建立了不同的group，并在这些group间创建了很多aggregated features，比如最高的price，平均price等
+
 * Top #12 [solution](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries/discussion/32118) @b.e.s
 用到了基于高势集类别数据的group的一些统计量
+
 * Top #13 [solution](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries/discussion/32156) @qianqian
 也是用了很多基于manager\_id group的统计feature
 
@@ -205,9 +206,7 @@ KazAnova无疑是这场比赛中的明星选手，他分享了对初学者模型
 比较常用的是进行Grid Search，从你的输入组合中暴力地搜索cv结果最优的组合。我一般会设定一个learning rate，然后尝试不同的参数组合，取最优值，因为训search的代价比较高，最好选择一定范围，比如你事先cv的时候知道estimater会在700～1000的范围内，那就不要search这个范围以外的值了。
 
 ### 模型融合
-如果你没有idea了的话，就模型融合吧！模型融合是能够快速提高比赛成绩的捷径，现在的比赛几乎没有人不用到这个技巧，通常获胜者会对很多很多模型进行融合，并且会选择不同的模型融合的方式。这里有一篇非常好的模型融合解析
-[博文](https://mlwave.com/kaggle-ensembling-guide/)
-,相信每个看过它的人都会对模型融合有一个清楚的了解
+如果你没有idea了的话，就模型融合吧！模型融合是能够快速提高比赛成绩的捷径，现在的比赛几乎没有人不用到这个技巧，通常获胜者会对很多很多模型进行融合，并且会选择不同的模型融合的方式。这里有一篇非常好的模型融合解析[博文](https://mlwave.com/kaggle-ensembling-guide/),相信每个看过它的人都会对模型融合有一个清楚的了解
 
 本次比赛中我使用了两种模型融合方式，一种是Averaging，一种是Stacking。
 
@@ -220,10 +219,8 @@ KazAnova无疑是这场比赛中的明星选手，他分享了对初学者模型
 ### Tricks
 
 在这场比赛中有一名在一开始的两个月一直遥遥领先的选手爆出这个比赛有个magic feature，大家陷入了疯狂找这个feature的过程中，直到那位分享了StackNet的选手分享出了这个magic feature：80G图片数据每个文件夹的创建时间，于是榜单大变，我一觉醒来后发现自己掉了很多就发现到了不对劲，便迅速加入到这个magic feature疯狂屠榜的大军中，从这里可以看见，一个信息量巨大的feature如果被发现的话，对比赛成绩会带来多么大的影响。
-<p>
-有一些group的feature能够起到非常重要的作用，详细见我比赛后发表的一个小样例
-[discussion topic](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries/discussion/32098#177847)
-。但是一定要防止过拟合。
+
+有一些group的feature能够起到非常重要的作用，详细见我比赛后发表的一个小样例 [discussion topic](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries/discussion/32098#177847)。但是一定要防止过拟合。
 
 ### 总结
 这篇博文还有一些关键的点没有涉及到，比如数据的清洗，有些数据在记录中似乎是不同的，但是意思是一样的，就应该归位同一个类别，还有就是清除一些outlier等。
