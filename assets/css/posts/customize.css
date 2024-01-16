@@ -275,7 +275,7 @@ a {
   border-bottom: 1px solid #eaecee;
   font-family: Menlo, Monaco, Consolas, monospace;
   padding: 10px;
-  width: 85%;
+  width: 83%;
   margin: auto;
 }
 .post-container .highlight ol {
@@ -289,7 +289,7 @@ a {
 .post-container .highlight {
   padding-left: var(--margin-desktop);
   padding-right: var(--margin-desktop);
-  width: 85%;
+  width: 83%;
   box-sizing: content-box;
   margin-bottom: 25px;
 }
