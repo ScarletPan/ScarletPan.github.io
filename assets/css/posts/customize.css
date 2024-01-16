@@ -565,10 +565,10 @@ a {
   .post-container {
     border: 1px solid #eaecee;
   }
-  /* .post-container p, .post-content h2, .post-content h3 {
+  .post-container p, .post-content h2, .post-content h3, .post-content h4, .post-content h5 {
     margin-left: var(--margin-desktop);
     margin-right: var(--margin-desktop);
-  } */
+  }
   /* .post-content h2, .post-content h3 {
     font-size: 36px;
   }

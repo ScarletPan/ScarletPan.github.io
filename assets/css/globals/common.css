@@ -410,10 +410,9 @@
 }
 
 .markdown-body table {
-    margin-left: 100px;
-    margin-right: 100px;
     display: block;
-    width: 100%;
+    width: 80%;
+    margin: auto;
     overflow: auto;
     word-break: normal;
     word-break: keep-all
