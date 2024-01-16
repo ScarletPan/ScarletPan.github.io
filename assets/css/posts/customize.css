@@ -271,9 +271,8 @@ a {
   font-size: 75%;
   margin-bottom: 5px;
   font-family: Menlo, Monaco, Consolas, monospace;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding: 10px;
+  width: 80%;
   margin: auto;
 }
 .post-container .highlight ol {
@@ -512,8 +511,7 @@ a {
 
   .post-container .highlight pre {
     margin-left: auto;
-    padding-left: 0px;
-    padding-right: 0px;
+    padding: 15px;
   }
 
   .post-container .figure.float-right.mobile-float {
@@ -626,8 +624,7 @@ a {
   .post-container .highlight pre {
     margin-left: 0px;
     margin-right: 0px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 15px;
   }
 
   .post-container .figure.float-right, .post-container .figure.float-right.mobile-float {
