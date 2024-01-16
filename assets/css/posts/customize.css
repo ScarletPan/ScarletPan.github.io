@@ -580,22 +580,26 @@ a {
   }
 
   .post-container ul li ul {
-    margin-left: 35px;
+    margin-top: 10px;
+    margin-left: 15px;
     margin-right: 10px;
   }
 
   .post-container ul li ol {
-    margin-left: 35px;
+    margin-top: 10px;
+    margin-left: 15px;
     margin-right: 10px;
   }
 
   .post-container ol li ol {
-    margin-left: 35px;
+    margin-top: 10px;
+    margin-left: 15px;
     margin-right: 10px;
   }
 
   .post-container ol li ul {
-    margin-left: 35px;
+    margin-top: 10px;
+    margin-left: 15px;
     margin-right: 10px;
   }
 
