@@ -370,9 +370,11 @@ a {
 }
 
 .post-container blockquote p {
+  margin-left: 5px;
+  margin-right: 5px;
   font-family: Lora, Georgia, 'Times New Roman', 'Xingkai SC', 'Kaiti SC', '楷体', 'STKaiti', serif;
   font-style: italic;
-  font-size: 120%;
+  font-size: 110%;
 }
 .post-container blockquote small {
   display: block;
