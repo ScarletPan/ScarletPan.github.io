@@ -289,7 +289,7 @@ a {
 .post-container .highlight {
   padding-left: var(--margin-desktop);
   padding-right: var(--margin-desktop);
-  width: 100%;
+  width: 90%;
   box-sizing: content-box;
   margin-bottom: 25px;
 }
