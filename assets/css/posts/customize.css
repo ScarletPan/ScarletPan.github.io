@@ -142,18 +142,18 @@ a {
 .post-content h2, .post-content h3 {
   font-size: 23px;
 }
-.post-content h2:before {
+/* .post-content h2:before {
   content: "# ";
   color: #d4d2d4;
-}
-.post-content h2.title:before {
+} */
+/* .post-content h2.title:before {
   content: "";  /* disable for the post titles in the index page */
-}
+} */
 
-.post-content h3:before {
+/* .post-content h3:before {
   content: "## ";
   color: #d4d2d4;
-}
+} */
 
 .post-content img {
   margin-left: auto;
