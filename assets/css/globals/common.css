@@ -351,6 +351,10 @@
 }
 
 .markdown-body hr {
+
+    margin-left: 130px;
+    margin-right: 130px;
+    height: 1px;
     margin-top: 3rem;
     margin-bottom: 3.5rem;
     border-width: 0;
