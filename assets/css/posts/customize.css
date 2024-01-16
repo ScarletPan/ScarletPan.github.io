@@ -274,8 +274,7 @@ a {
   padding-bottom: 4px;
   padding-left: 0;
   padding-right: 0;
-  margin-left: var(--margin-mobile);
-  margin-right: var(--margin-mobile);
+  margin: auto;
 }
 .post-container .highlight ol {
   margin: 0 0 0 35px;
