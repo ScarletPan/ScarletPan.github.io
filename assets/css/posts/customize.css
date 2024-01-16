@@ -594,8 +594,7 @@ a {
   }
 
   .post-container .highlight pre {
-    margin-left: var(--margin-desktop);
-    margin-right: var(--margin-desktop);
+    margin: auto;
     padding-left: 0px;
     padding-right: 0px;
   }
