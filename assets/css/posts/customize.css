@@ -576,12 +576,18 @@ a {
   }
 
   .post-container ul, .post-container ol {
-    margin-left: 100px;
+    margin-left: 155px;
     margin-right: 130px;
   }
 
-  .post-container li {
+  .post-container ul li ul {
     margin-left: 55px;
+    margin-right: 30px;
+  }
+
+  .post-container ol li ol {
+    margin-left: 55px;
+    margin-right: 30px;
   }
 
   .post-container .one-third-center {
@@ -590,7 +596,8 @@ a {
   }
 
   .post-container .highlight pre {
-    margin: auto;
+    margin-left: var(--margin-tablet);
+    margin-right: var(--margin-tablet);
     padding-left: 0px;
     padding-right: 0px;
   }
