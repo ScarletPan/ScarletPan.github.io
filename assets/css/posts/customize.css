@@ -576,6 +576,14 @@ a {
   }
 
   .post-container ul, .post-container ol {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  .post-container ul li ul {
+    margin-left: 55px;
+    margin-right: 30px;
+  }
+  .post-container ol li ol {
     margin-left: 55px;
     margin-right: 30px;
   }
