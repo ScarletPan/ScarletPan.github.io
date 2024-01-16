@@ -289,7 +289,7 @@
   /* Lists
   鈥撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€撯€� */
   ul {
-    list-style: circle inside; }
+    list-style: none; }
   ol {
     list-style: decimal inside; }
   ol, ul {
