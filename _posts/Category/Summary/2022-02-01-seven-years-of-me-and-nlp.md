@@ -86,9 +86,13 @@ VQA项目确实也是我想实现的AI蓝图中的很小的拼块，因为《Her
 
 在18年下旬加入HKUST KnowComp小组后，因为我之前有一些对话相关工作，师兄[Hongming](https://panda0881.github.io/Hongming_Homepage/)向我和同届的[Xin](https://cse.hkust.edu.hk/~xliucr/)提出合作 [ASER](https://github.com/HKUST-KnowComp/ASER) 的想法。ASER（Activities, States, Events, and their Relations） 是Yangqiu在华为诺亚方舟时候就很想做的一个事情，前身为ActivityNet。这一个大规模的事件知识图谱，与当时市面上的一些知识图谱不一样的是，每个节点是一个事件(Eventuality)，而不是实体，我们希望通过大规模的数据挖掘出每个事件元之间的关系，目前已经有4.38亿的Eventuality和 6.48 亿的边。ASER是HKUST KnowComp也是Yangqiu的一个Lifelong的工作，我很有幸能够成为初始成员之一，并与实验室两位优秀的人成为了战友。在ASER的第一篇论文中稿 WWW' 20 [[链接\]](https://dl.acm.org/doi/10.1145/3366423.3380107) 之后，我们仍然在不懈地在ASER这个初版雏形体系下不断地有一些新的思考，在19~21年我们提出了[ASER2.0](https://arxiv.org/abs/2104.02137) ，我对ASER做出了一版简易的概念化模块，并搭建了Demo。
 
-![img](https://picx.zhimg.com/80/v2-bd29648d4631b3f45cfdb68e2dc8fd80_720w.png?source=d16d100b)
 
-ASER 2.0 with Conceptualization
+<p>
+    <center><img src="https://picx.zhimg.com/80/v2-bd29648d4631b3f45cfdb68e2dc8fd80_720w.png?source=d16d100b" alt></center>
+    <center><em align="middle">ASER 2.0 with Conceptualization</em></center>
+</p>
+
+
 
 通过ASER这个项目，让我惊喜地发现常识知识是如此有魅力，并且我认为背景知识绝对是我拼图中的一部分，Samantha之所以能有如此高的智能其中一点也是因为不断地学习人类沉淀了千百年的背景知识，才知道这个世界上什么是男人和女人、为什么天黑了要睡觉。 除却ASER这个令人回味无穷的项目以外，还有我的硕士毕业论文也是让我和Yangqiu非常激动和废寝忘食的一个Topic，其源头是我 AAAI’19 被拒的一篇基于 Caption和VisualDialogue 的一篇Dialogue Summarization [论文](https://arxiv.org/abs/1811.00185)，我们惊喜地发现，通过图片建立起对话和描述间的关系，竟然可以把一些人类语言学的更深层次知识给挖掘起来，因此我们花了很长的时间去研究语用学（Pragmatics），以及对应的两个子概念：
 
