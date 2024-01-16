@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 2019实习、秋招总结
-categories: Job
+categories: Summary
 comments: true
 description: 2019实习、秋招总结
 keywords: job
@@ -11,12 +11,12 @@ paginate_path: "/"
 
 本文是总结我2019年实习、秋招的经历。
 
+<center>    <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);zoom: 80%;"     src="https://pic1.zhimg.com/v2-1e9c249daed2f97e040d5f4ffa30a9f5_1200x500.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9; margin-bottom:5px;    display: inline-block;    color: #999;    padding: 2px;"></div> </center>
 
 ## 前言
 
 在行文之前，不得不说一句，求职是一件十分漫长的拉锯战，就如很多同学现在一样，这过程中我时时刻刻都能感受到焦虑、沮丧、欣喜，但一切尘埃落定之际，也就一切拨云见日了。从各方面来看我都是比较幸运的，实习申请到了腾讯微信，秋招也收获了阿里A+、微信SSP、美团北斗计划、网易游戏、快手、百度大搜、京东等质量不错的offer。但我想通过分享我的经历和总结，企图来归结出一些运气之外的准备和经验，以供大家思考和借鉴。本文官方的[知乎链接](https://zhuanlan.zhihu.com/p/107272097)。
 
-<center>    <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);zoom: 80%;"     src="https://pic1.zhimg.com/v2-1e9c249daed2f97e040d5f4ffa30a9f5_1200x500.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;"></div> </center>
 
 
 ## 我秋招这一路 （约3k字）
@@ -25,7 +25,7 @@ paginate_path: "/"
 
 ​		我最早的尝试是参加了一个Google中国举办的Google ML Winter Camp，因为了解到在里面表现比较优异的话可以有实习的机会。在这里说一句，即使当时我身在香港，非PHD想跨域去申请北美的Google Intern也是非常不容易的。因此得知这个消息后，我便不假思索地报名了。现在回过头来看，这本是我至今为止最接近Google的一次，但由于自己准备上的不足，终究错失了机会。为何说是最接近的一次？因为在这次Camp里，我对Google的招聘流程有了更清晰的认识，同时我所在的项目组也获得了结题时的Most Technical Project。为什么说是因为准备不足错失机会？因为当时的我并没有开始刷一些经典题，导致电面的时候被一道非常经典的概率编程题挂了。
 
-<center>    <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);zoom: 50%;"     src="https://pic1.zhimg.com/80/v2-3925bcc98354619edd96204abd65af20_720w.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">Google ML Winter Camp 结题后收到的证书、奖品和各种纪念品</div> </center>
+<center>    <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);zoom: 50%;"     src="https://pic1.zhimg.com/80/v2-3925bcc98354619edd96204abd65af20_720w.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9; margin-bottom:5px;    display: inline-block;    color: #999;    padding: 2px;">Google ML Winter Camp 结题后收到的证书、奖品和各种纪念品</div> </center>
 ​		不过这次Google的经验对我来说是一笔不小的收获，除却认识了比较好的同学们以外，这次被拒意味着我的秋招一开始就吃了一口失败，使得我抛却了对自己以往经历的盲目自信，并下定决心把求职当做一场不小的战役一般好好地去准备。
 
 ​		实习投的公司并不多，因为考虑到自己在香港还有一部分学业和科研压力，地点上除了深圳以外就没有其他选择了。但自己还是好好准备了一番。在二月春节结束（也是当时KDD结束投稿）之后，我立马就开始温习机器学习/深度学习的相关知识，就像在考试周一样整理了一些A4纸，这些A4纸甚至一直用到了我的秋招结束，同时我知道此时再慢悠悠地刷Leetcode已经来不及了，就把很多人推荐的《剑指Offer》花了两三天时间刷了一遍。剩下的便是一边找实习机会，一边看面经吃着“没准会考到呢”的桃子。
@@ -34,14 +34,14 @@ paginate_path: "/"
 
 ​		最终还是去了微信。这一段实习经历的体验也非常好，团队里的人都非常厉害也非常Nice，Leader和Mentor对我都非常耐心，再加上刚搬至滨海体验感非常好的办公环境、餐品丰富且早晚餐免费的食堂以及各种福利和配套设施，让我经历了一段非常难忘的时光。在五月份的时候组里新来了一个来自清华的实习生H同学，在几次交流之后，我们成为了很好的朋友，并且在实习期结束之后一直保有联系，信息互通有无，成败互相道贺安慰，让我整个实习和求职过程不再感到是孤军奋战了。然而，虽说实习期间工作上普遍都比较顺利，但是秋招就如同卡在喉咙里的一根刺，在你工作忙活停歇之余，突然感受到难咽的痛意。
 
-<center>    <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);zoom: 80%;"     src="https://pic3.zhimg.com/80/v2-c9dbf8232160b8fa0c33521039cecf16_720w.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">左图摄于深圳某麦当劳，右图摄于腾讯滨海大厦</div> </center>
+<center>    <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);zoom: 80%;"     src="https://pic3.zhimg.com/80/v2-c9dbf8232160b8fa0c33521039cecf16_720w.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9; margin-bottom:5px;    display: inline-block;    color: #999;    padding: 2px;">左图摄于深圳某麦当劳，右图摄于腾讯滨海大厦</div> </center>
 ​		在经历过找实习期间的因“准备不足”而难受之后，我决定从结束申请实习后便开始规划起秋招的准备了，只是我当时只是粗粗将其归结为“刷题不够”而导致的准备不足，而没有深刻地总结“刷题”怎么是不够，怎么是够。因此我在每天实习结束之后，都会照例地做一些LeetCode上的题，很多题往往要耗费我1-3小时的时间。回顾来看，那段时间的刷题是极其低效的，尽管每次做题都是先自己思考、尝试，通过之后再去分析讨论区中所给的方法，看上去自己收获了很多。这个低效的最根本原因是人的遗忘特性，直到六月中下旬，我才发现很多刷过的Leetcode题自己甚至已经忘了以前做过，直到到提交之时才发现有一些记录。这个发现让我惊出一身冷汗，而此时也字节跳动提前批内推也紧锣密鼓地开始了，社区里、甚至朋友圈都能看到各种内推链接。
 
 ​		此时我在腾讯已经实习有三个月，而自从我去北美开完会回来染上当地的风寒之后，一直咳嗽就没有好，在六月之时几乎每隔几分钟就会深咳几次，看过不知道多少次医生、吃过不少种药、喝过不知道到多少杯的热水，却一直没有好的迹象。最终我做出了一个让人难以置信的决定，即向Leader提出离职申请，回去养病。当时下了这个决定的我，抱着“放弃微信转正机会”的心态，打算回去一边养病一边重新开始准备秋招。不过Leader人非常好，在肯定了我之前三个月的工作之后，提出让我先离职养病，到时八月底回来再答辩的说法。于是我便回去了。
 
 ​		尽管身体仍然没见好转，没有实习工作之后，我每天倒是有大量时间可以用来刷题、整理知识点、关注各类求职信息了。不得不说，七、八月份是我整个求职期效率最高的时间，不仅将之前刷的题分门别类地整理了一番，还整理了大量面经中的非编程类的题目（比如智力题、概率题）等，同时修改并投递了大量的简历，安排了大量的面试。
 
-<center>    <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);zoom: 80%;"     src="https://pic4.zhimg.com/80/v2-283d199979ebaa0a38d09bf22d696163_720w.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">求职期某一周的Google Calendar</div> </center>
+<center>    <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);zoom: 80%;"     src="https://pic4.zhimg.com/80/v2-283d199979ebaa0a38d09bf22d696163_720w.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9; margin-bottom:5px;    display: inline-block;    color: #999;    padding: 2px;">求职期某一周的Google Calendar</div> </center>
 ​		尽管这些准备在我求职期间的帮助很大，但是依然经历了一些挫折。而这挫折与找实习如出一辙，我秋招的首战便败北。上文说过，字节跳动在六月中下旬便开始筹划着收提前批的简历并进行面试了，我也将简历投了过去。但是面试的话，却是被安排在了七月中，此时我暗自窃喜，因为早听闻字节对算法题要求高，安排得越迟意味着我准备的时间越长。一面的时候，果不其然，在问完了我的项目之后，便在线开始码题了。面试官给了一道我做过的题，狂喜之下我迅速给出了一个 $O(N)$ 的算法并试图写代码，不料面试官却问了我是否有其他解法，并模糊地给了我一个思路，我当下就懵了，因为当时在我的理解中$O(N)$已经是最好的解法了。在他的引导下，我左磨右泡写了一些代码，并给了一个错误的复杂度分析。在面试结束后复盘之时，我惊讶地发现这个算法并没有$O(N)$ 算法来得优，于是联系到面试官，面试官很和气地回复类似”看你这么快给出思路，我猜想你做过这道题，因此要用不常规的解法来考察你“的意思。当时沮丧至极，后来反思的时候发现面试官是很好地给我上了一课，即做题不能形而上学，而应该挖掘题深处的本质，并掌握题与题之间的共性，而得出一些普适的方法论，从这个方面上，我还有很大的进步空间。字节最后还是给了我二面、三面，但是不幸地在三面问起“红黑树”的时候再次被卡住，最终收到了秋招期间第一封也是唯一一封拒信。
 
 ​		在字节求职惨遭滑铁卢之后，我也没有因此失去信心，反而由于后面几家公司面试表现越来越佳，我的心态反而是放开了。我对自己的简历逐渐越来越熟悉，能够迅速说出抓住听者兴趣的几个点；对做过的、考过的题也能融汇贯通了，甚至有些公司之间都能问到原题或者overlap的题目。在有了几个offer保证心态之后，八月中开始我由于学业上的忙碌，开始没那么有时间全职地投入招聘活动中去，因此此期间连一个简历都没有投过。而几个好的offer，如阿里、美团等均是战线拉得很长，经历了很多轮的面试才陆陆续续有了消息。到了九月底十月初，基本的意向书都已经收到，便没有再接面试，十月到十一月期间与各厂的HR交流薪资待遇，也是煞费了一番心思。最终十一月份，在已有的Offer中进行挑选，我的秋招便结束了。
@@ -122,7 +122,7 @@ paginate_path: "/"
 
 这个环节往往是旷日持久的，但是就像我自己经历过的那样，如果没有策略地去刷题而不做总结，最后跟没刷过还是提升不显著的。在这里我主要讲一个自己的总结方法，就是分门别类，总结出固定的方法论。在亲身实践中，我有两套刷题的方案，第一套方案是时间不那么紧迫，比如面试还早，我会选择将每道题都按照方法名称进行归类，如下图左一所示，这样我们就可以应对很多题目的变形了，因此方法总结来总结去最后都会归为你总结出来的那些方法。
 
-<center>    <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);zoom: 80%;"     src="https://pic1.zhimg.com/80/v2-d344f1ff31682f0dc0a4138b925087b0_720w.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;"></div> </center>
+<center>    <img style="border-radius: 0.3125em;box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);zoom: 80%;"     src="https://pic1.zhimg.com/80/v2-d344f1ff31682f0dc0a4138b925087b0_720w.jpg">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9; margin-bottom:5px;    display: inline-block;    color: #999;    padding: 2px;"></div> </center>
 
 ​		另外编程算法题以外的题可以粗粗地归类在一个文件里，比如概率题文件里出现了很多高频的公司会考的概率题，如上图中间所示。
 

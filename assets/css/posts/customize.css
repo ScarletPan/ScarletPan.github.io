@@ -289,7 +289,7 @@ a {
   border-top: 1px solid #eaecee;
   border-bottom: 1px solid #eaecee;
   margin-left: var(--margin-desktop);
-  padding-right: var(--margin-desktop);
+  margin-right: var(--margin-desktop);
   width: 100%;
   box-sizing: content-box;
   margin-bottom: 25px;
