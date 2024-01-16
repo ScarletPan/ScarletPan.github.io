@@ -9,7 +9,7 @@ stickie: true
 paginate_path: "/"
 ---
 
-本文是我对AI Agents方向的一些思考和总结
+本文是我对AI Agents方向的一些思考和总结。
 
 前阵子一直在做AI Agents方向的工作，深度参与了[Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT)社区R&D team的设立和讨论，在公司内部也上线了自研的AI Agents平台，最近趁着项目阶段性汇报，整理了一下这个方向的一些技术和架构上的思考，以供大家参考。 我还维护了一个awesome的repo，专门记录当前此方向的研究路径、项目和相关工作，大家可以点个star，后续也会持续更新，也希望小伙伴们多多贡献！
 
