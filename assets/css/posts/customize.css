@@ -622,9 +622,10 @@ a {
   }
 
   .post-container .highlight pre {
-    margin: auto;
-    padding-left: 0px;
-    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
   .post-container .figure.float-right, .post-container .figure.float-right.mobile-float {
