@@ -15,8 +15,8 @@ paginate_path: "/"
 
 上次提到我离开阿里到快手，希望通过百亿级别短视频与文本，理解世界知识。目前团队的工作已经基本成熟， 跟大家在这里分享一下目前进展，也是团队投稿在机器之心的[文章](https://mp.weixin.qq.com/s/_ngcmULg9-FwZER-Jlljvg)。
 
-> 论文链接：https://arxiv.org/abs/2211.00732 
-> 项目主页：https://github.com/Kuaipedia/Kuaipedia
+* **论文链接**：https://arxiv.org/abs/2211.00732 
+* **项目主页**：https://github.com/Kuaipedia/Kuaipedia
 
 ## **引言**
 
@@ -31,7 +31,7 @@ paginate_path: "/"
 
 ## **介绍**
 
-百科全书（Encyclopedia），可以追溯到古希腊和罗马，也是17-18世纪法国启蒙运动的一个杰出的成果。知识百科通常是指一个是概要介绍人类全部知识或某一特定领域或学科的工具书或纲要，在互联网急速发展的当下，网络百科成为知识新的载体，如维基百科、百度百科等。但这些百科通常以图文、表格为载体，比较难以表达一些需要生动演示的知识，比如教程（How-to）类知识。图一展示了使用图文讲述 “柴犬”-“怎么画” 这一知识的困境。而通过短视频，我们能够很好地对这些知识进行一个阐释和学习，具体视频见https://www.gifshow.com/fw/photo/3xhcmzgr9fq492m。
+百科全书（Encyclopedia），可以追溯到古希腊和罗马，也是17-18世纪法国启蒙运动的一个杰出的成果。知识百科通常是指一个是概要介绍人类全部知识或某一特定领域或学科的工具书或纲要，在互联网急速发展的当下，网络百科成为知识新的载体，如维基百科、百度百科等。但这些百科通常以图文、表格为载体，比较难以表达一些需要生动演示的知识，比如教程（How-to）类知识。图一展示了使用图文讲述 “柴犬”-“怎么画” 这一知识的困境。而通过短视频，我们能够很好地对这些知识进行一个阐释和学习，具体视频见 <a href="https://www.gifshow.com/fw/photo/3xhcmzgr9fq492m"> photo/3xhcmzgr9fq492m </a>。
 
 <p>
     <center><img src="https://pic1.zhimg.com/80/v2-22fe1e8c3a03607599adb4aaa2cace31_720w.png?source=d16d100b" alt></center>
